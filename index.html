@@ -374,8 +374,7 @@
 
       
         
-          
-            <h4 id="文件内容简介"><a href="#文件内容简介" class="headerlink" title="文件内容简介"></a>文件内容简介</h4><blockquote>
+          <h4 id="文件内容简介"><a href="#文件内容简介" class="headerlink" title="文件内容简介"></a>文件内容简介</h4><blockquote>
 <ol>
 <li>音频、视频添加锁屏封面</li>
 <li>控制面板点击事件</li>
@@ -391,12 +390,13 @@
 <li>每次播放暂停和继续都需要更新MPNowPlayingInfoCenter</li>
 </ol>
 </blockquote>
-<h4 id="NewPlayingInfo设置"><a href="#NewPlayingInfo设置" class="headerlink" title="NewPlayingInfo设置"></a>NewPlayingInfo设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">- (void)setbackgroudInfo</div><div class="line">&#123;</div><div class="line">    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];</div><div class="line">    [dict setObject:@&quot;标题&quot; forKey:MPMediaItemPropertyTitle];</div><div class="line">    [dict setObject:@&quot;作者&quot; forKey:MPMediaItemPropertyArtist];</div><div class="line">    [dict setObject:@&quot;专辑名称&quot; forKey:MPMediaItemPropertyAlbumTitle];</div><div class="line">    // *设置锁屏封面</div><div class="line">    UIImage *image  = [UIImage imageNamed:@&quot;1.png&quot;];</div><div class="line">    MPMediaItemArtwork *albumArt = [ [MPMediaItemArtwork alloc] initWithImage:image];</div><div class="line">    [dict setObject:albumArt forKey:MPMediaItemPropertyArtwork];</div><div class="line">    // *视频总时间</div><div class="line">    [dict setObject:[NSNumber numberWithDouble:300] forKey:MPMediaItemPropertyPlaybackDuration];</div><div class="line">    // *当前已播放时间</div><div class="line">    [dict setObject:[NSNumber numberWithDouble:0] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];</div><div class="line">    // *设置NowPlayingInfo</div><div class="line">    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:dict];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="控制面板点击事件"><a href="#控制面板点击事件" class="headerlink" title="控制面板点击事件"></a>控制面板点击事件</h4><h5 id="让app支持远程控制"><a href="#让app支持远程控制" class="headerlink" title="让app支持远程控制"></a>让app支持远程控制</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];</div></pre></td></tr></table></figure>
-<h5 id="控制面板点击事件-1"><a href="#控制面板点击事件-1" class="headerlink" title="控制面板点击事件"></a>控制面板点击事件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">- (void)remoteControlReceivedWithEvent:(UIEvent*)event</div><div class="line">&#123;</div><div class="line">    if (event.type == UIEventTypeRemoteControl) &#123;</div><div class="line">        switch (event.subtype) &#123;</div><div class="line">            case UIEventSubtypeRemoteControlTogglePlayPause:</div><div class="line">                // *播放和暂停切换</div><div class="line">                NSLog(@&quot;播放和暂停切换&quot;);</div><div class="line">                break;</div><div class="line">           case UIEventSubtypeRemoteControlPreviousTrack:</div><div class="line">                // *播放上一曲按钮</div><div class="line">                NSLog(@&quot;播放上一曲按钮&quot;);</div><div class="line">                break;</div><div class="line">           case UIEventSubtypeRemoteControlNextTrack:</div><div class="line">                // *播放下一曲按钮</div><div class="line">                NSLog(@&quot;播放下一曲按钮&quot;);</div><div class="line">                break;</div><div class="line">         case UIEventSubtypeRemoteControlPause:</div><div class="line">                // * 暂停</div><div class="line">                NSLog(@&quot;暂停按钮&quot;);</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>[TOC]</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/30/ios-音频、视频添加锁屏封面/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -549,8 +549,7 @@
 
       
         
-          
-            <h4 id="关于ios-后台播放"><a href="#关于ios-后台播放" class="headerlink" title="关于ios-后台播放"></a>关于ios-后台播放</h4><blockquote>
+          <h4 id="关于ios-后台播放"><a href="#关于ios-后台播放" class="headerlink" title="关于ios-后台播放"></a>关于ios-后台播放</h4><blockquote>
 <ol>
 <li>后台播放的不是新的技术；</li>
 <li>后台播放在音乐播放器上得到了广泛的运用；</li>
@@ -564,17 +563,13 @@
 <li>针对这篇文章关注：Audio.Airplay and Picture in Picture，后台播放视频，直播流(ps：音频)</li>
 </ol>
 </blockquote>
-<h4 id="后台播放代码实现"><a href="#后台播放代码实现" class="headerlink" title="后台播放代码实现"></a>后台播放代码实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillResignActive:(UIApplication *)application &#123;</div><div class="line">    // *让app接受远程事件控制，及锁屏是控制版会出现播放按钮</div><div class="line">    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];</div><div class="line">    // *后台播放代码</div><div class="line">    AVAudioSession*session=[AVAudioSession sharedInstance];</div><div class="line">    [session setActive:YES error:nil];</div><div class="line">    [session setCategory:AVAudioSessionCategoryPlayback error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="关于后台长时间播放的问题"><a href="#关于后台长时间播放的问题" class="headerlink" title="关于后台长时间播放的问题"></a>关于后台长时间播放的问题</h4><blockquote>
-<ol>
-<li>app的后台运行时间是有限的;</li>
-<li>耗尽之前没有调用endBackgroundTask:方法来结束相应的后台任务，系统就会杀掉这个app;</li>
-</ol>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">UIBackgroundTaskIdentifier bgTaskIdentifier;</div><div class="line">// *手动调用该方法</div><div class="line">bgTaskIdentifier  = [application beginBackgroundTaskWithExpirationHandler:^&#123;</div><div class="line">     //标记指定的后台任务完成</div><div class="line">      [[UIApplication sharedApplication]endBackgroundTask:bgTaskIdentifier];</div><div class="line">       //销毁后台任务标识符</div><div class="line">      bgTaskIdentifier=UIBackgroundTaskInvalid;</div><div class="line">&#125;];</div></pre></td></tr></table></figure>
-<p>[TOC]</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/29/ios-后台播放视频、直播流/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -727,19 +722,15 @@
 
       
         
-          
-            <h5 id="1-了解-Clutch-2-0-4-Debug，class-dump"><a href="#1-了解-Clutch-2-0-4-Debug，class-dump" class="headerlink" title="1.了解 Clutch-2.0.4-Debug，class-dump"></a>1.了解 Clutch-2.0.4-Debug，class-dump</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class-dump，是可以把Objective-C运行时的声明的信息导出来的工具。其实就是可以导出.h文件。用class-dump可以把未经加密的app的头文件导出来。</div><div class="line">使用class-dump导出头文件的命令格式：class-dump -H 需要导出的框架路径 -o 导出的头文件存放路径</div></pre></td></tr></table></figure>
+          <h5 id="1-了解-Clutch-2-0-4-Debug，class-dump"><a href="#1-了解-Clutch-2-0-4-Debug，class-dump" class="headerlink" title="1.了解 Clutch-2.0.4-Debug，class-dump"></a>1.了解 Clutch-2.0.4-Debug，class-dump</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class-dump，是可以把Objective-C运行时的声明的信息导出来的工具。其实就是可以导出.h文件。用class-dump可以把未经加密的app的头文件导出来。</div><div class="line">使用class-dump导出头文件的命令格式：class-dump -H 需要导出的框架路径 -o 导出的头文件存放路径</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Clutch-2.0.4-Debug下载地址：https://github.com/KJCracks/Clutch/releases</div></pre></td></tr></table></figure>
-<h5 id="2-查看iphone、mac本地ip"><a href="#2-查看iphone、mac本地ip" class="headerlink" title="2.查看iphone、mac本地ip"></a>2.查看iphone、mac本地ip</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mac:172.16.31.210</div><div class="line">iphone:172.16.31.240   alpine</div></pre></td></tr></table></figure>
-<h5 id="3-scp-Clutch到iphone文件路径"><a href="#3-scp-Clutch到iphone文件路径" class="headerlink" title="3.scp Clutch到iphone文件路径"></a>3.scp Clutch到iphone文件路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp Clutch-2.0.4-Debug root@172.16.31.240:/usr/bin/clutch</div></pre></td></tr></table></figure>
-<h5 id="4-接下来就可以查看iphone本地app"><a href="#4-接下来就可以查看iphone本地app" class="headerlink" title="4.接下来就可以查看iphone本地app"></a>4.接下来就可以查看iphone本地app</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ssh root@172.16.31.240</div><div class="line">clutch -i </div><div class="line">//////////////////结果如下//////////////////</div><div class="line">Installed apps:</div><div class="line">1:   WeChat &lt;com.tencent.xin&gt;</div><div class="line">2:   酷狗音乐-音乐总有新玩法 &lt;com.kugou.kugou1002&gt;</div><div class="line">3:   微粒快贷-微粒贷快贷易贷资讯指南 &lt;com.weilikuaidai.fw&gt;</div><div class="line">4:   搜狗输入法-文字语音扫描输入 &lt;com.sogou.sogouinput&gt;</div><div class="line">5:   高速浏览器 - 安全上网省流量 &lt;com.ledu.gaosullq&gt;</div><div class="line">6:   安信手机证券 &lt;com.essence.autonomous&gt;</div><div class="line">7:   爱思助手 &lt;com.diary.mood&gt;</div></pre></td></tr></table></figure>
-<h5 id="5-查看app-ipa路径"><a href="#5-查看app-ipa路径" class="headerlink" title="5.查看app-ipa路径"></a>5.查看app-ipa路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> clutch -d 6 </div><div class="line">// *ipa路径</div><div class="line">DONE: /private/var/mobile/Documents/Dumped/com.essence.autonomous-iOS7.0-(Clutch-2.0.4 DEBUG).ipa</div><div class="line">//cd到这个路径可以查看改路径下所有的ipa</div><div class="line">cd /private/var/mobile/Documents/Dumped/</div><div class="line">axzq.ipa  com.essence.autonomous-iOS7.0-(Clutch-2.0.4\ DEBUG).ipa  kugou.ipa</div></pre></td></tr></table></figure>
-<h5 id="6-将ipa包scp到mac下指定目录"><a href="#6-将ipa包scp到mac下指定目录" class="headerlink" title="6.将ipa包scp到mac下指定目录"></a>6.将ipa包scp到mac下指定目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// *安信手机证券的ipa重命名</div><div class="line">mv com.essence.autonomous-iOS7.0-\(Clutch-2.0.4\ DEBUG\).ipa yhxaxzp.ipa</div><div class="line">mv yhxaxzp.ipa yhxaxzp.zip</div><div class="line">// *scp到本地</div><div class="line">scp root@172.16.31.240:/private/var/mobile/Documents/Dumped/yhxaxzp.zip /Users/trioly/yhx</div></pre></td></tr></table></figure>
-<h5 id="7-安装class-dump-是个坑，需谨慎"><a href="#7-安装class-dump-是个坑，需谨慎" class="headerlink" title="7.安装class-dump 是个坑，需谨慎"></a>7.安装class-dump 是个坑，需谨慎</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//说明文章http://www.jianshu.com/p/eeebb43a68b7</div><div class="line">class-dump下载路径：http://stevenygard.com/projects/class-dump/</div><div class="line">1.mv ~/Desktop/class-dump ~/bin</div><div class="line">2.sudo chmod 777 ~/bin/class-dump</div><div class="line">3.chmod +x ~/bin/class-dump</div><div class="line">4.vi ~/.bash_profile 添加 export PATH=$HOME/bin/:$PATH</div><div class="line">5.source ~/.bash_profile</div><div class="line">6.class-dump</div></pre></td></tr></table></figure>
-<h5 id="8-结束，然后就可以查看到ipa里面所有的-h文件"><a href="#8-结束，然后就可以查看到ipa里面所有的-h文件" class="headerlink" title="8.结束，然后就可以查看到ipa里面所有的.h文件"></a>8.结束，然后就可以查看到ipa里面所有的.h文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class-dump -H /Users/trioly/yhx/Payload/tztMobileApp_axsc.app  armv7 -o /Users/trioly/123</div></pre></td></tr></table></figure>
-<p>[TOC]</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/28/ios-砸壳笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="不正经的IT从业者">
 <meta property="og:description" content="关于ios-后台播放  后台播放的不是新的技术； 后台播放在音乐播放器上得到了广泛的运用； 想了解和实现的原因：看到B站的视频mp4,直播流都可以后台播放(ps:音频)； 从开发者角度来说不是都会遇见这样的功能，仅做积累；   了解Background Modes后台模式、从固件获取信息  Background Modes提供的功能有：实现播放声音、提供位置信息、远程推送、提供Voice-over">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-29T08:15:29.000Z">
+<meta property="og:updated_time" content="2017-08-30T06:35:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios-后台播放视频、直播流">
 <meta name="twitter:description" content="关于ios-后台播放  后台播放的不是新的技术； 后台播放在音乐播放器上得到了广泛的运用； 想了解和实现的原因：看到B站的视频mp4,直播流都可以后台播放(ps:音频)； 从开发者角度来说不是都会遇见这样的功能，仅做积累；   了解Background Modes后台模式、从固件获取信息  Background Modes提供的功能有：实现播放声音、提供位置信息、远程推送、提供Voice-over">
@@ -385,6 +385,7 @@
 <li>针对这篇文章关注：Audio.Airplay and Picture in Picture，后台播放视频，直播流(ps：音频)</li>
 </ol>
 </blockquote>
+<a id="more"></a>
 <h4 id="后台播放代码实现"><a href="#后台播放代码实现" class="headerlink" title="后台播放代码实现"></a>后台播放代码实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (void)applicationWillResignActive:(UIApplication *)application &#123;</div><div class="line">    // *让app接受远程事件控制，及锁屏是控制版会出现播放按钮</div><div class="line">    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];</div><div class="line">    // *后台播放代码</div><div class="line">    AVAudioSession*session=[AVAudioSession sharedInstance];</div><div class="line">    [session setActive:YES error:nil];</div><div class="line">    [session setCategory:AVAudioSessionCategoryPlayback error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="关于后台长时间播放的问题"><a href="#关于后台长时间播放的问题" class="headerlink" title="关于后台长时间播放的问题"></a>关于后台长时间播放的问题</h4><blockquote>
 <ol>
