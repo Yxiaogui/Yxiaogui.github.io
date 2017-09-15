@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="VPN证书类型  CA证书 p12类型证书 CA、P12证书的都是需要用户名、密码的   证书安装实例1234567// *CA证书需要通过safair跳转安装[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;http://ceshi.com/47.100.125.109.pem&amp;quot;]];//p12">
+<meta name="description" content="VPN证书类型 1.CA证书 2.p12类型证书 3.CA、P12证书的都是需要用户名、密码的  证书安装实例1234567// *CA证书需要通过safair跳转安装[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;http://ceshi.com/47.100.125.109.pem&amp;quot;]];/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS_VPN小功能点">
 <meta property="og:url" content="http://yoursite.com/2017/09/15/iOS_VPN小功能点/index.html">
 <meta property="og:site_name" content="不正经的IT从业者">
-<meta property="og:description" content="VPN证书类型  CA证书 p12类型证书 CA、P12证书的都是需要用户名、密码的   证书安装实例1234567// *CA证书需要通过safair跳转安装[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;http://ceshi.com/47.100.125.109.pem&amp;quot;]];//p12">
+<meta property="og:description" content="VPN证书类型 1.CA证书 2.p12类型证书 3.CA、P12证书的都是需要用户名、密码的  证书安装实例1234567// *CA证书需要通过safair跳转安装[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;http://ceshi.com/47.100.125.109.pem&amp;quot;]];/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T09:52:40.000Z">
+<meta property="og:updated_time" content="2017-09-15T09:54:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS_VPN小功能点">
-<meta name="twitter:description" content="VPN证书类型  CA证书 p12类型证书 CA、P12证书的都是需要用户名、密码的   证书安装实例1234567// *CA证书需要通过safair跳转安装[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;http://ceshi.com/47.100.125.109.pem&amp;quot;]];//p12">
+<meta name="twitter:description" content="VPN证书类型 1.CA证书 2.p12类型证书 3.CA、P12证书的都是需要用户名、密码的  证书安装实例1234567// *CA证书需要通过safair跳转安装[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&amp;quot;http://ceshi.com/47.100.125.109.pem&amp;quot;]];/">
 
 
 
@@ -377,11 +377,9 @@
 
       
         <h4 id="VPN证书类型"><a href="#VPN证书类型" class="headerlink" title="VPN证书类型"></a>VPN证书类型</h4><blockquote>
-<ol>
-<li>CA证书</li>
-<li>p12类型证书</li>
-<li>CA、P12证书的都是需要用户名、密码的</li>
-</ol>
+<p>1.CA证书</p>
+<p>2.p12类型证书</p>
+<p>3.CA、P12证书的都是需要用户名、密码的</p>
 </blockquote>
 <h5 id="证书安装实例"><a href="#证书安装实例" class="headerlink" title="证书安装实例"></a>证书安装实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// *CA证书需要通过safair跳转安装</div><div class="line">[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&quot;http://ceshi.com/47.100.125.109.pem&quot;]];</div><div class="line"></div><div class="line">//p12证书的是读取本地文件，同时给p12文件的读取密码</div><div class="line">//如果你要使用证书而不是共享的秘密。您必须填补identityData数据。身份数据是VPN的PKCS12数据验证身份。这个属性的值必须是一个NSData PKCS12格式:</div><div class="line">ikev2.identityData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&quot;client&quot; ofType:@&quot;p12&quot;]];</div><div class="line">ikev2.identityDataPassword = @&quot;1234567890&quot;;</div></pre></td></tr></table></figure>
  <a id="more"></a>
