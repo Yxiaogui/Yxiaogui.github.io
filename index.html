@@ -268,6 +268,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/环创建控件(UIImageview、UIButton......)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海信">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/个人头像.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不正经的IT从业者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/17/环创建控件(UIImageview、UIButton......)/" itemprop="url">循环创建控件(UIImageview、UIButton......)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T12:25:33+08:00">
+                2017-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/swift基础/" itemprop="url" rel="index">
+                    <span itemprop="name">swift基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+        
+
+     
+          
+             <span id="/2017/09/17/环创建控件(UIImageview、UIButton......)/" class="leancloud_visitors" data-flag-title="循环创建控件(UIImageview、UIButton......)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="循环创建控件"><a href="#循环创建控件" class="headerlink" title="循环创建控件"></a>循环创建控件</h4><blockquote>
+<p>循环创建按钮如果用OC来写的话，难度不大，但是swift的语法对从事ios开发的同学来时熟悉又陌生。熟悉是因为很多名称都是一样的，陌生又因为没有换了一种写法就是不太好写，同时swift的代码提示也不是很好，写起来很费劲。</p>
+<p>下面会将OC、Swift两种循环创建按钮的方式都写出来做个对比。</p>
+</blockquote>
+<h5 id="OC循环创建按钮"><a href="#OC循环创建按钮" class="headerlink" title="OC循环创建按钮"></a>OC循环创建按钮</h5><blockquote>
+<p> 下面的这这种写是初次接触到OC是搜到的,还是挺实用的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line">#define Start_X 10.0f           // 第一个按钮的X坐标</div><div class="line">#define Start_Y 50.0f           // 第一个按钮的Y坐标</div><div class="line">#define Width_Space 5.0f        // 2个按钮之间的横间距</div><div class="line">#define Height_Space 20.0f      // 竖间距</div><div class="line">#define Button_Height 122.0f    // 高</div><div class="line">#define Button_Width 75.0f      // 宽</div><div class="line">-(void)addButtonS</div><div class="line">&#123;</div><div class="line">    for (int i = 0 ; i &lt; 6; i++) &#123;</div><div class="line">        NSInteger index = i % 3;</div><div class="line">        NSInteger page = i / 3;</div><div class="line">        // 圆角按钮</div><div class="line">        UIButton *aBt = [UIButton buttonWithType:UIButtonTypeRoundedRect];</div><div class="line">        aBt.frame = CGRectMake(index * (Button_Width + Width_Space) + Start_X, page  * (Button_Height + Height_Space)+Start_Y, Button_Width, Button_Height);</div><div class="line">        [self.view addSubview:aBt];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/17/环创建控件(UIImageview、UIButton......)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/iOS_VPN小功能点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1751,181 +1918,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/30/ios-音频、视频添加锁屏封面/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="海信">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/个人头像.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不正经的IT从业者">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/30/ios-音频、视频添加锁屏封面/" itemprop="url">ios-音频、视频添加锁屏封面</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T13:50:03+08:00">
-                2017-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS进阶/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS进阶</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-        
-
-     
-          
-             <span id="/2017/08/30/ios-音频、视频添加锁屏封面/" class="leancloud_visitors" data-flag-title="ios-音频、视频添加锁屏封面">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="文件内容简介"><a href="#文件内容简介" class="headerlink" title="文件内容简介"></a>文件内容简介</h4><blockquote>
-<ol>
-<li>音频、视频添加锁屏封面</li>
-<li>控制面板点击事件</li>
-<li>功能点不复杂，仅做积累</li>
-</ol>
-</blockquote>
-<h4 id="音频、视频添加锁屏封面"><a href="#音频、视频添加锁屏封面" class="headerlink" title="音频、视频添加锁屏封面"></a>音频、视频添加锁屏封面</h4><blockquote>
-<ol>
-<li>首先需要了解一下信息</li>
-<li>MPNowPlayingInfoCenter：即时播放中心能够用于播放APP中正在播放的媒体信息. 播放的信息会显示在锁屏页面和多任务管理页面</li>
-<li>实例MPNowPlayingInfoCenter，再把需要显示的信息组织成Dictionary并赋值给nowPlayingInfo属性用于显示锁屏信息</li>
-<li>MPNowPlayingInfoPropertyElapsedPlaybackTime表示已经播放的时间，用这个属性可以让MPNowPlayingInfoCenter显示播放进度</li>
-<li>每次播放暂停和继续都需要更新MPNowPlayingInfoCenter</li>
-</ol>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/30/ios-音频、视频添加锁屏封面/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1978,7 +1970,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
