@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="1.了解 Clutch-2.0.4-Debug，class-dump12class-dump，是可以把Objective-C运行时的声明的信息导出来的工具。其实就是可以导出.h文件。用class-dump可以把未经加密的app的头文件导出来。使用class-dump导出头文件的命令格式：class-dump -H 需要导出的框架路径 -o 导出的头文件存放路径 1Clutch-2.0.4-Debu">
+<meta name="description" content="客户端控制VPN连接的网路类型 关于通用VPN：即只提供vpn能力，vpn消耗的流量是手机的通用流量(流量池、流量包)或者wifi流量。但是如果vpn提供的流量为通用流量，那么必须就要指定网络类型，及在蜂窝网络下使用，wifi自动关闭。 服务端无法区分连接的网络类型：vpn协议IKEV2连接的是加密的udp。  配置VPN连接规则 IKEV2协议的连接，常规的连接会用到NEVPNProtocolI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios-砸壳笔记">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/ios-砸壳笔记/index.html">
+<meta property="og:title" content="iOS_VPN小功能点(二)">
+<meta property="og:url" content="http://yoursite.com/2017/09/27/iOS_VPN小功能点(二)/index.html">
 <meta property="og:site_name" content="不正经的IT从业者">
-<meta property="og:description" content="1.了解 Clutch-2.0.4-Debug，class-dump12class-dump，是可以把Objective-C运行时的声明的信息导出来的工具。其实就是可以导出.h文件。用class-dump可以把未经加密的app的头文件导出来。使用class-dump导出头文件的命令格式：class-dump -H 需要导出的框架路径 -o 导出的头文件存放路径 1Clutch-2.0.4-Debu">
+<meta property="og:description" content="客户端控制VPN连接的网路类型 关于通用VPN：即只提供vpn能力，vpn消耗的流量是手机的通用流量(流量池、流量包)或者wifi流量。但是如果vpn提供的流量为通用流量，那么必须就要指定网络类型，及在蜂窝网络下使用，wifi自动关闭。 服务端无法区分连接的网络类型：vpn协议IKEV2连接的是加密的udp。  配置VPN连接规则 IKEV2协议的连接，常规的连接会用到NEVPNProtocolI">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-05T08:41:22.000Z">
+<meta property="og:updated_time" content="2017-09-27T05:55:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios-砸壳笔记">
-<meta name="twitter:description" content="1.了解 Clutch-2.0.4-Debug，class-dump12class-dump，是可以把Objective-C运行时的声明的信息导出来的工具。其实就是可以导出.h文件。用class-dump可以把未经加密的app的头文件导出来。使用class-dump导出头文件的命令格式：class-dump -H 需要导出的框架路径 -o 导出的头文件存放路径 1Clutch-2.0.4-Debu">
+<meta name="twitter:title" content="iOS_VPN小功能点(二)">
+<meta name="twitter:description" content="客户端控制VPN连接的网路类型 关于通用VPN：即只提供vpn能力，vpn消耗的流量是手机的通用流量(流量池、流量包)或者wifi流量。但是如果vpn提供的流量为通用流量，那么必须就要指定网络类型，及在蜂窝网络下使用，wifi自动关闭。 服务端无法区分连接的网络类型：vpn协议IKEV2连接的是加密的udp。  配置VPN连接规则 IKEV2协议的连接，常规的连接会用到NEVPNProtocolI">
 
 
 
@@ -135,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/28/ios-砸壳笔记/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/27/iOS_VPN小功能点(二)/"/>
 
 
 
 
 
-  <title>ios-砸壳笔记 | 不正经的IT从业者</title>
+  <title>iOS_VPN小功能点(二) | 不正经的IT从业者</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/28/ios-砸壳笔记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/iOS_VPN小功能点(二)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="海信">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ios-砸壳笔记</h1>
+          <h1 class="post-title" itemprop="name headline">iOS_VPN小功能点(二)</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T17:53:03+08:00">
-                2017-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T09:30:43+08:00">
+                2017-09-27
               </time>
             
 
@@ -339,7 +339,7 @@
 
      
           
-             <span id="/2017/08/28/ios-砸壳笔记/" class="leancloud_visitors" data-flag-title="ios-砸壳笔记">
+             <span id="/2017/09/27/iOS_VPN小功能点(二)/" class="leancloud_visitors" data-flag-title="iOS_VPN小功能点(二)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -376,17 +376,15 @@
       
 
       
-        <h5 id="1-了解-Clutch-2-0-4-Debug，class-dump"><a href="#1-了解-Clutch-2-0-4-Debug，class-dump" class="headerlink" title="1.了解 Clutch-2.0.4-Debug，class-dump"></a>1.了解 Clutch-2.0.4-Debug，class-dump</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class-dump，是可以把Objective-C运行时的声明的信息导出来的工具。其实就是可以导出.h文件。用class-dump可以把未经加密的app的头文件导出来。</div><div class="line">使用class-dump导出头文件的命令格式：class-dump -H 需要导出的框架路径 -o 导出的头文件存放路径</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Clutch-2.0.4-Debug下载地址：https://github.com/KJCracks/Clutch/releases</div></pre></td></tr></table></figure>
+        <h4 id="客户端控制VPN连接的网路类型"><a href="#客户端控制VPN连接的网路类型" class="headerlink" title="客户端控制VPN连接的网路类型"></a>客户端控制VPN连接的网路类型</h4><blockquote>
+<p>关于通用VPN：即只提供vpn能力，vpn消耗的流量是手机的通用流量(流量池、流量包)或者wifi流量。但是如果vpn提供的流量为通用流量，那么必须就要指定网络类型，及在蜂窝网络下使用，wifi自动关闭。</p>
+<p>服务端无法区分连接的网络类型：vpn协议IKEV2连接的是加密的udp。</p>
+</blockquote>
+<h5 id="配置VPN连接规则"><a href="#配置VPN连接规则" class="headerlink" title="配置VPN连接规则"></a>配置VPN连接规则</h5><blockquote>
+<p>IKEV2协议的连接，常规的连接会用到NEVPNProtocolIKEv2、NEVPNManager就可以配置各种参数来成功连接vpn，如果没有特殊需求如：过滤域名、控制连接的网络类型等很少会用到onDemandEnabled这个属性以及相关联的按需连接类。</p>
+</blockquote>
 <a id="more"></a>
-<h5 id="2-查看iphone、mac本地ip"><a href="#2-查看iphone、mac本地ip" class="headerlink" title="2.查看iphone、mac本地ip"></a>2.查看iphone、mac本地ip</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mac:172.16.31.210</div><div class="line">iphone:172.16.31.240   alpine</div></pre></td></tr></table></figure>
-<h5 id="3-scp-Clutch到iphone文件路径"><a href="#3-scp-Clutch到iphone文件路径" class="headerlink" title="3.scp Clutch到iphone文件路径"></a>3.scp Clutch到iphone文件路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp Clutch-2.0.4-Debug root@172.16.31.240:/usr/bin/clutch</div></pre></td></tr></table></figure>
-<h5 id="4-接下来就可以查看iphone本地app"><a href="#4-接下来就可以查看iphone本地app" class="headerlink" title="4.接下来就可以查看iphone本地app"></a>4.接下来就可以查看iphone本地app</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ssh root@172.16.31.240</div><div class="line">clutch -i </div><div class="line">//////////////////结果如下//////////////////</div><div class="line">Installed apps:</div><div class="line">1:   WeChat &lt;com.tencent.xin&gt;</div><div class="line">2:   酷狗音乐-音乐总有新玩法 &lt;com.kugou.kugou1002&gt;</div><div class="line">3:   微粒快贷-微粒贷快贷易贷资讯指南 &lt;com.weilikuaidai.fw&gt;</div><div class="line">4:   搜狗输入法-文字语音扫描输入 &lt;com.sogou.sogouinput&gt;</div><div class="line">5:   高速浏览器 - 安全上网省流量 &lt;com.ledu.gaosullq&gt;</div><div class="line">6:   安信手机证券 &lt;com.essence.autonomous&gt;</div><div class="line">7:   爱思助手 &lt;com.diary.mood&gt;</div></pre></td></tr></table></figure>
-<h5 id="5-查看app-ipa路径"><a href="#5-查看app-ipa路径" class="headerlink" title="5.查看app-ipa路径"></a>5.查看app-ipa路径</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> clutch -d 6 </div><div class="line">// *ipa路径</div><div class="line">DONE: /private/var/mobile/Documents/Dumped/com.essence.autonomous-iOS7.0-(Clutch-2.0.4 DEBUG).ipa</div><div class="line">//cd到这个路径可以查看改路径下所有的ipa</div><div class="line">cd /private/var/mobile/Documents/Dumped/</div><div class="line">axzq.ipa  com.essence.autonomous-iOS7.0-(Clutch-2.0.4\ DEBUG).ipa  kugou.ipa</div></pre></td></tr></table></figure>
-<h5 id="6-将ipa包scp到mac下指定目录"><a href="#6-将ipa包scp到mac下指定目录" class="headerlink" title="6.将ipa包scp到mac下指定目录"></a>6.将ipa包scp到mac下指定目录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// *安信手机证券的ipa重命名</div><div class="line">mv com.essence.autonomous-iOS7.0-\(Clutch-2.0.4\ DEBUG\).ipa yhxaxzp.ipa</div><div class="line">mv yhxaxzp.ipa yhxaxzp.zip</div><div class="line">// *scp到本地</div><div class="line">scp root@172.16.31.240:/private/var/mobile/Documents/Dumped/yhxaxzp.zip /Users/trioly/yhx</div></pre></td></tr></table></figure>
-<h5 id="7-安装class-dump-是个坑，需谨慎"><a href="#7-安装class-dump-是个坑，需谨慎" class="headerlink" title="7.安装class-dump 是个坑，需谨慎"></a>7.安装class-dump 是个坑，需谨慎</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//说明文章http://www.jianshu.com/p/eeebb43a68b7</div><div class="line">class-dump下载路径：http://stevenygard.com/projects/class-dump/</div><div class="line">1.mv ~/Desktop/class-dump ~/bin</div><div class="line">2.sudo chmod 777 ~/bin/class-dump</div><div class="line">3.chmod +x ~/bin/class-dump</div><div class="line">4.vi ~/.bash_profile 添加 export PATH=$HOME/bin/:$PATH</div><div class="line">5.source ~/.bash_profile</div><div class="line">6.class-dump</div></pre></td></tr></table></figure>
-<h5 id="8-结束，然后就可以查看到ipa里面所有的-h文件"><a href="#8-结束，然后就可以查看到ipa里面所有的-h文件" class="headerlink" title="8.结束，然后就可以查看到ipa里面所有的.h文件"></a>8.结束，然后就可以查看到ipa里面所有的.h文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">class-dump -H /Users/trioly/yhx/Payload/tztMobileApp_axsc.app  armv7 -o /Users/trioly/123</div></pre></td></tr></table></figure>
-<p>[TOC]</p>
+<h5 id="相关代码"><a href="#相关代码" class="headerlink" title="相关代码"></a>相关代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// *配置连接规则</div><div class="line">[[NEVPNManager sharedManager] setOnDemandEnabled:YES];</div><div class="line">NEOnDemandRuleDisconnect *connectRule = [NEOnDemandRuleDisconnect new];</div><div class="line">connectRule.interfaceTypeMatch = NEOnDemandRuleInterfaceTypeWiFi;</div><div class="line">[[NEVPNManager sharedManager] setOnDemandRules:@[connectRule]];</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -411,15 +409,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/21/expected parameter declarator/" rel="next" title="expected parameter declarator">
+                <i class="fa fa-chevron-left"></i> expected parameter declarator
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/29/ios-后台播放视频、直播流/" rel="prev" title="ios-后台播放视频、直播流">
-                ios-后台播放视频、直播流 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-了解-Clutch-2-0-4-Debug，class-dump"><span class="nav-number">1.</span> <span class="nav-text">1.了解 Clutch-2.0.4-Debug，class-dump</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-查看iphone、mac本地ip"><span class="nav-number">2.</span> <span class="nav-text">2.查看iphone、mac本地ip</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-scp-Clutch到iphone文件路径"><span class="nav-number">3.</span> <span class="nav-text">3.scp Clutch到iphone文件路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-接下来就可以查看iphone本地app"><span class="nav-number">4.</span> <span class="nav-text">4.接下来就可以查看iphone本地app</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-查看app-ipa路径"><span class="nav-number">5.</span> <span class="nav-text">5.查看app-ipa路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-将ipa包scp到mac下指定目录"><span class="nav-number">6.</span> <span class="nav-text">6.将ipa包scp到mac下指定目录</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-安装class-dump-是个坑，需谨慎"><span class="nav-number">7.</span> <span class="nav-text">7.安装class-dump 是个坑，需谨慎</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-结束，然后就可以查看到ipa里面所有的-h文件"><span class="nav-number">8.</span> <span class="nav-text">8.结束，然后就可以查看到ipa里面所有的.h文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端控制VPN连接的网路类型"><span class="nav-number">1.</span> <span class="nav-text">客户端控制VPN连接的网路类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置VPN连接规则"><span class="nav-number">1.1.</span> <span class="nav-text">配置VPN连接规则</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相关代码"><span class="nav-number">1.2.</span> <span class="nav-text">相关代码</span></a></li></ol></li></ol></div>
             
 
           </div>
