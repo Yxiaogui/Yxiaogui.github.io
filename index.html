@@ -268,6 +268,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/SSH key学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="海信">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/个人头像.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不正经的IT从业者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/19/SSH key学习/" itemprop="url">SSH key学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T20:03:03+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+        
+
+     
+          
+             <span id="/2017/10/19/SSH key学习/" class="leancloud_visitors" data-flag-title="SSH key学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="SSH-key用途"><a href="#SSH-key用途" class="headerlink" title="SSH key用途"></a>SSH key用途</h4><blockquote>
+<ol>
+<li>app开发者通常会在两个地方用到SSH key，GitHub或者Gitlab.添加了SSH key之后不用每次提交代码的时候输入密码。</li>
+<li>用过SecureCRT的都知道连接服务器的方式有两种其一：用户名、密码，其二电脑的key；用电脑的key是最方便的。</li>
+<li>SecureCRT简单来说是一个登录服务器的用软件。登录到服务器就可以看到、部署的代码如：java、php代码;当然也可以scp文件到本地，也可以scp文件到服务器。拿到服务器权限能做的事情就很多了，在这方面探究不深入不多做赘述；</li>
+</ol>
+</blockquote>
+<h4 id="SSH-key的获取方式"><a href="#SSH-key的获取方式" class="headerlink" title="SSH key的获取方式"></a>SSH key的获取方式</h4><blockquote>
+<ol>
+<li>cd .ssh/</li>
+<li>ls</li>
+<li>cat id_rsa.pub</li>
+<li>当然前提是你的mac添加过key</li>
+</ol>
+</blockquote>
+<h4 id="生成SSH-key的方式"><a href="#生成SSH-key的方式" class="headerlink" title="生成SSH key的方式"></a>生成SSH key的方式</h4><blockquote>
+<ol>
+<li>如果用GitLab作为代码的工具的话，用户中心就会看到SSH key的获取方式如下：</li>
+<li>ssh-keygen -t rsa -C “$your_email”</li>
+<li>cat ~/.ssh/id_rsa.pub</li>
+</ol>
+</blockquote>
+<h4 id="小知识点"><a href="#小知识点" class="headerlink" title="小知识点"></a>小知识点</h4><blockquote>
+<p>php项目通常都会有依赖框架，比如添加thinkphp，而我们公司用的是FK,正常git clone项目的时候FK框架是没有下载下来的这个时候需要自己下载方式如下：</p>
+<ol>
+<li>git submodule init </li>
+<li>git submodule update </li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/13/ios-widget学习(1)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1755,171 +1939,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/15/iOS_VPN小功能点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="海信">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/个人头像.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不正经的IT从业者">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/15/iOS_VPN小功能点/" itemprop="url">iOS_VPN小功能点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-15T17:54:23+08:00">
-                2017-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS进阶/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS进阶</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-        
-
-     
-          
-             <span id="/2017/09/15/iOS_VPN小功能点/" class="leancloud_visitors" data-flag-title="iOS_VPN小功能点">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="VPN证书类型"><a href="#VPN证书类型" class="headerlink" title="VPN证书类型"></a>VPN证书类型</h4><blockquote>
-<p>1.CA证书</p>
-<p>2.p12类型证书</p>
-<p>3.CA、P12证书的都是需要用户名、密码的</p>
-</blockquote>
-<h5 id="证书安装实例"><a href="#证书安装实例" class="headerlink" title="证书安装实例"></a>证书安装实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// *CA证书需要通过safair跳转安装</div><div class="line">[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@&quot;http://ceshi.com/47.100.125.109.pem&quot;]];</div><div class="line"></div><div class="line">//p12证书的是读取本地文件，同时给p12文件的读取密码</div><div class="line">//如果你要使用证书而不是共享的秘密。您必须填补identityData数据。身份数据是VPN的PKCS12数据验证身份。这个属性的值必须是一个NSData PKCS12格式:</div><div class="line">ikev2.identityData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&quot;client&quot; ofType:@&quot;p12&quot;]];</div><div class="line">ikev2.identityDataPassword = @&quot;1234567890&quot;;</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/15/iOS_VPN小功能点/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1972,7 +1991,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
