@@ -375,35 +375,32 @@
       
         
           
-            <h4 id="SSH-key用途"><a href="#SSH-key用途" class="headerlink" title="SSH key用途"></a>SSH key用途</h4><blockquote>
-<ol>
+            <p>为什么作为IOS开发者需要学习了解SSH Key的用途？作为开发者或者希望在技术方面不仅仅限于app的开发，希望接触后端开发，更甚至希望去自己写一个接口(API),或者去My Sql数据库操作实践，手动写sql语句去查询语句，或者去服务器上运行一个脚本文件(比如我之间做的对账)；这些操作的前提是需要将mac的key添加到服务器上面，即使最后发现自己不感兴趣学习php、或者java,这些经历对我们的开发生涯来说都是很珍贵的经历。</p>
+<h5 id="SSH-key用途常规用途："><a href="#SSH-key用途常规用途：" class="headerlink" title="SSH key用途常规用途："></a>SSH key用途常规用途：</h5><ul>
 <li>app开发者通常会在两个地方用到SSH key，GitHub或者Gitlab.添加了SSH key之后不用每次提交代码的时候输入密码。</li>
 <li>用过SecureCRT的都知道连接服务器的方式有两种其一：用户名、密码，其二电脑的key；用电脑的key是最方便的。</li>
 <li>SecureCRT简单来说是一个登录服务器的用软件。登录到服务器就可以看到、部署的代码如：java、php代码;当然也可以scp文件到本地，也可以scp文件到服务器。拿到服务器权限能做的事情就很多了，在这方面探究不深入不多做赘述；</li>
-</ol>
-</blockquote>
-<h4 id="SSH-key的获取方式"><a href="#SSH-key的获取方式" class="headerlink" title="SSH key的获取方式"></a>SSH key的获取方式</h4><blockquote>
+</ul>
+<h5 id="mac-SSH-key的获取和生产"><a href="#mac-SSH-key的获取和生产" class="headerlink" title="mac SSH key的获取和生产"></a>mac SSH key的获取和生产</h5><blockquote>
+<p>mac上面获取的方式在终端输入命令，前提是你的mac之前已经添加key：命令如下：</p>
 <ol>
-<li>cd .ssh/</li>
-<li>ls</li>
+<li>cd .ssh/  </li>
+<li>ls  </li>
 <li>cat id_rsa.pub</li>
-<li>当然前提是你的mac添加过key</li>
 </ol>
+<p>如果用GitLab作为代码的工具的话，用户中心就会看到SSH key的获取方式如下：</p>
+<p>1.ssh-keygen -t rsa -C “$your_email” </p>
+<p>2.cat ~/.ssh/id_rsa.pub</p>
 </blockquote>
-<h4 id="生成SSH-key的方式"><a href="#生成SSH-key的方式" class="headerlink" title="生成SSH key的方式"></a>生成SSH key的方式</h4><blockquote>
-<ol>
-<li>如果用GitLab作为代码的工具的话，用户中心就会看到SSH key的获取方式如下：</li>
-<li>ssh-keygen -t rsa -C “$your_email”</li>
-<li>cat ~/.ssh/id_rsa.pub</li>
-</ol>
-</blockquote>
-<h4 id="小知识点"><a href="#小知识点" class="headerlink" title="小知识点"></a>小知识点</h4><blockquote>
-<p>php项目通常都会有依赖框架，比如添加thinkphp，而我们公司用的是FK,正常git clone项目的时候FK框架是没有下载下来的这个时候需要自己下载方式如下：</p>
+<p>上文说到SSH key在服务端的用途以及获取的方式，可能有的人就会对后端的开发有了些许的兴趣，下面对对PHP、IOS项目结构做个对比：ios项目大多都遵守MVC结构，这里就过多介绍因为大家都是ios开发从业者。php项目的结构都是遵守MVC结构，不过多了DAO。通常Controler层是业务流程控制，需要调用service层接口；Service层作为业务操作实现类，负责调用dao层接口；Dao层负责数据业务处理也就是sql语句的编写，查询数据库。对于php项目结构的介绍仅以我参与的项目为介绍，若有不对望指正。</p>
+<p>对于php项目项目也是需要依赖框架的比较火的有thinkphp，而我们公司用的是FK，git clone php项目下来为空文件，以下git命令为添加框架：</p>
+<blockquote>
 <ol>
 <li>git submodule init </li>
 <li>git submodule update </li>
 </ol>
 </blockquote>
+<p>每个人的对于技术的发展方向都是不一样的，不过作为app开发接触更多的后端开发或者能写实现简单的功能，肯定会对之后的职业发展来说是有好处的。</p>
 
           
         
