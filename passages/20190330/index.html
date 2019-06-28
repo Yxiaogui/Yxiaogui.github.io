@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不正经的IT从业者">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="" />
+
+
+    <meta name="description" content="Algorithm：本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.
+Review:本周还没看是看英语文章
+Tip:本周..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>打卡01 | 不正经的IT从业者</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不正经的IT从业者" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(https://cdn.pixabay.com/photo/2015/11/04/09/28/banner-1022119_960_720.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='海信'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">不正经的IT从业者</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/about/"><i class="fa "></i>关于</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="打卡01">
+            
+	            打卡01
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/ARTS打卡/">ARTS打卡</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/03/30</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Algorithm："><a href="#Algorithm：" class="headerlink" title="Algorithm："></a>Algorithm：</h2><p>本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review:"></a>Review:</h2><p>本周还没看是看英语文章</p>
+<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h2><p>本周学习到的技巧、知识点有：</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h3><ol>
+<li>html为网页构建基本的结构，而css定义了他们的外观</li>
+<li>定义构造器的方式有：根据元素、类Class、上线文、状态等，Class的前缀是. id的前缀是#</li>
+<li>关于盒子模型的认识，常用的参数有：padding(内边距)、border、margin、width、height、float、position、left、right等。常写app的界面布局，对于盒子模型关于父视图的认知还是有点不一样的，之前关注superview、subview等布局样式，现在需要关注left、right、float等</li>
+<li>文档流很少关注的元素的高，高度大部分都是自动适配的，如果需要元素至少具有某一种特地高度，可以设置min-height 、max-height,同时相对应的有min-width、max-width</li>
+</ol>
+<h3 id="swift"><a href="#swift" class="headerlink" title="swift"></a>swift</h3><p>本周感受最大的是学习了swift的函数方法的传参、默认值、返回值等，总体感觉比OC简单</p>
+<ol>
+<li><p>方法名是以func开头，区别于oc</p>
+</li>
+<li><p>方法传入参数的是先书写形参在写实参,返回参数可以直接书写以-&gt;开头，同时可以返回多个参数，很方便，一个字：爽。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">greet</span><span class="params">(person :String)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">let</span> greeting = <span class="string">"Hello, "</span> + person + <span class="string">"!"</span></div><div class="line">    <span class="keyword">return</span> greeting</div><div class="line">&#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">isArray</span><span class="params">(array :[Int])</span></span> -&gt; (<span class="built_in">min</span> :<span class="type">Int</span>, <span class="built_in">max</span> :<span class="type">Int</span>) &#123;</div><div class="line"><span class="comment">//        判空处理</span></div><div class="line">        <span class="keyword">if</span> array.isEmpty &#123;</div><div class="line">            <span class="keyword">return</span> (<span class="number">0</span>,<span class="number">0</span>)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">var</span> currentMin = array[<span class="number">0</span>]</div><div class="line">        <span class="keyword">var</span> currentMax = array[<span class="number">0</span>]</div><div class="line">        <span class="keyword">for</span> value <span class="keyword">in</span> array[<span class="number">1</span>..&lt;array.<span class="built_in">count</span>] &#123;</div><div class="line">            <span class="keyword">if</span> value &lt; currentMin &#123;</div><div class="line">                currentMin = value</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> value &gt; currentMax &#123;</div><div class="line">                currentMax = value</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> (currentMin, currentMax)</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用如下</span></div><div class="line"><span class="keyword">let</span> bounds = tom.isArray(array: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3545</span>,<span class="number">899</span>])</div><div class="line"><span class="built_in">print</span>(bounds.<span class="built_in">max</span>)</div><div class="line"><span class="built_in">print</span>(bounds.<span class="built_in">min</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法可以社会传入参数的默认值</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">isDefaultString</span><span class="params">(defalutis :String = <span class="string">"DASAN"</span>)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">      <span class="keyword">return</span> defalutis</div><div class="line">&#125;</div><div class="line"><span class="comment">// 调用如下</span></div><div class="line"><span class="keyword">let</span> tom = <span class="type">Tom</span>()</div><div class="line"><span class="built_in">print</span>(tom.isDefaultString())</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h3><p>本周配置了flutter的环境：在配置环境是需要注意的问题有：</p>
+<ol>
+<li><p>配置本地flutter路径：macos配置的flutter路径 ： /Users/haixin/flutter/flutter，最终配置的路径地址为：export PATH=/Users/haixin/flutter/flutter/bin:$PATH</p>
+</li>
+<li><p>路径打开、启动的方式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">open ~/.bash_profile</div><div class="line">source .bash_profile</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建flutter项目的命令有：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">flutter create flutterapp</div><div class="line">cd flutterapp</div><div class="line">flutter run</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="极客时间"><a href="#极客时间" class="headerlink" title="极客时间"></a>极客时间</h3><h4 id="ios专栏"><a href="#ios专栏" class="headerlink" title="ios专栏"></a>ios专栏</h4><p>本周专栏从大方面来说讲了两个方面：代码的静态分析、app的无侵入埋点</p>
+<p>代码静态分析：xcode自带有静态分析工具analyze,通过静态分析语法，可以找到代码层面的问题如内存泄露，同时也介绍了其他的三种工具：oclint、infer、clang.这三个工具都是clang库开发的。自己尝试安装、编译了infei,扫面了自己的代码。</p>
+<p>埋点与无侵入埋点：无侵入埋点指的是在不触碰业务逻辑、高度解耦的情况下尝试对app的页面跳转、点击事件进行监控，来降低线上bug问题的处理难度。常见的方式有runtime、 category.</p>
+<h2 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h2><p>一下你内容不用看</p>
+<p>之前的学习都是无意识的学习，所谓的无意识的学习就能学多少，学多少，这种真的是既浪费时间，有浪费空气。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">IT从业者</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/passages/20190407/" class="pre-post btn btn-default" title='打卡02-20190407'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">打卡02-20190407</span>
+        </a>
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-Hans'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithm："><span class="toc-text">Algorithm：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Review"><span class="toc-text">Review:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tip"><span class="toc-text">Tip:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS"><span class="toc-text">CSS:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swift"><span class="toc-text">swift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Flutter"><span class="toc-text">Flutter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#极客时间"><span class="toc-text">极客时间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ios专栏"><span class="toc-text">ios专栏</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Share"><span class="toc-text">Share:</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
