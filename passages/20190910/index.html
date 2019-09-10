@@ -18,11 +18,10 @@
     <link rel="dns-prefetch" href="http://yoursite.com">
     <!--SEO-->
 
-    <meta name="keywords" content="cocoapods,TokenCore,web3swift.pod" />
+    <meta name="keywords" content="React Native,OneClick" />
 
 
-    <meta name="description" content="集成TokenCore、web3swift.pod出现了库与库依赖版本的报错问题：
-报错信息如下：123456789101112[!] CocoaPods could not find comp..." />
+    <meta name="description" content="React Native项目编译：React NavigationReact Navigation库引入失败的问题，导致各种的报错，具体修复问题见官方文档提示如下：特点：容易混淆是不同版本的li..." />
 
 
 
@@ -34,7 +33,7 @@
     <!--Title-->
 
 
-<title>cocoapods库与库依赖冲突解决 | 不正经的IT从业者</title>
+<title>20190910 | 不正经的IT从业者</title>
 
 
     <link rel="alternate" href="/atom.xml" title="不正经的IT从业者" type="application/atom+xml">
@@ -131,16 +130,16 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="cocoapods库与库依赖冲突解决">
+        <h1 id="20190910">
             
-	            cocoapods库与库依赖冲突解决
+	            20190910
             
         </h1>
         <div class="post-meta">
     
         <span class="categories-meta fa-wrap">
             <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/新技能get/">新技能get</a>
+            <a class="category-link" href="/categories/每日/">每日</a>
         </span>
     
 
@@ -149,7 +148,7 @@
             <i class="fa fa-tags"></i>
             <span class="tags-meta">
                 
-                    <a class="tag-link" href="/tags/TokenCore/">TokenCore</a> <a class="tag-link" href="/tags/cocoapods/">cocoapods</a> <a class="tag-link" href="/tags/web3swift-pod/">web3swift.pod</a>
+                    <a class="tag-link" href="/tags/OneClick/">OneClick</a> <a class="tag-link" href="/tags/React-Native/">React Native</a>
                 
             </span>
         </span>
@@ -159,7 +158,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/07/03</span>
+            <span class="date-meta">2019/09/10</span>
         </span>
         
     
@@ -169,16 +168,13 @@
     </div>
     
     <div class="post-body post-content">
-        <p>集成TokenCore、web3swift.pod出现了库与库依赖版本的报错问题：</p>
-<h3 id="报错信息如下："><a href="#报错信息如下：" class="headerlink" title="报错信息如下："></a>报错信息如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[!] CocoaPods could not find compatible versions for pod &quot;BigInt&quot;:</div><div class="line">  In snapshot (Podfile.lock):</div><div class="line">    BigInt (= 3.1, = 3.1.0, ~&gt; 3.1)</div><div class="line"></div><div class="line">  In Podfile:</div><div class="line">    TokenCore was resolved to 0.1, which depends on</div><div class="line">      BigInt (= 3.0.0)</div><div class="line"></div><div class="line">    web3swift.pod was resolved to 2.1.10, which depends on</div><div class="line">      BigInt (~&gt; 3.1)</div><div class="line"></div><div class="line">Specs satisfying the `BigInt (= 3.1, = 3.1.0, ~&gt; 3.1), BigInt (~&gt; 3.1), BigInt (= 3.0.0)` dependency were found, but they required a higher minimum deployment target.</div></pre></td></tr></table></figure>
-<h3 id="解决的方法如下："><a href="#解决的方法如下：" class="headerlink" title="解决的方法如下："></a>解决的方法如下：</h3><ol>
-<li>fork TokenCore到自己的github</li>
-<li>修改 s.dependency “BigInt”, “3.1”</li>
-<li>更改pod ‘TokenCore’为 pod ‘TokenCore’, git: ‘<a href="https://github.com/Yxiaogui/token-core-ios.git" target="_blank" rel="external">https://github.com/Yxiaogui/token-core-ios.git</a>‘, commit: ‘c87640c72c1cf1662495cf28a90824c6731f790f’</li>
-<li>重新pod install 解决冲突</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">pod &apos;web3swift.pod&apos;</div><div class="line">pod &apos;TokenCore&apos;, git: &apos;https://github.com/Yxiaogui/token-core-ios.git&apos;, commit: &apos;c87640c72c1cf1662495cf28a90824c6731f790f&apos;</div></pre></td></tr></table></figure>
-<h3 id="参考文章地址："><a href="#参考文章地址：" class="headerlink" title="参考文章地址："></a>参考文章地址：</h3><p><a href="http://ju.outofmemory.cn/entry/150210" target="_blank" rel="external">http://ju.outofmemory.cn/entry/150210</a></p>
+        <h3 id="React-Native项目编译："><a href="#React-Native项目编译：" class="headerlink" title="React Native项目编译："></a>React Native项目编译：</h3><h4 id="React-Navigation"><a href="#React-Navigation" class="headerlink" title="React Navigation"></a>React Navigation</h4><p>React Navigation库引入失败的问题，导致各种的报错，具体修复问题见官方文档提示如下：特点：容易混淆是不同版本的link的方式不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.In your project directory, run yarn add react-native-reanimated react-native-gesture-handler react-native-screens.</div><div class="line">2.React Native 0.60 and higher:linking is automatic; cd ios、pod install</div><div class="line">3.React Native 0.59 and lower；react-native link react-native-reanimated、react-native link react-native-gesture-handler、react-native link react-native-screens</div></pre></td></tr></table></figure>
+<h4 id="编译报错"><a href="#编译报错" class="headerlink" title="编译报错"></a>编译报错</h4><p>编译报错内如下，特点：通过react-native run-ios 会提示报错，通过build ios app可以编译通过。</p>
+<p>error Failed to build iOS project. We ran “xcodebuild” command but it exited with error code 65. To debug build logs further, consider building your app with Xcode.app, by opening ctranceplatform.xcworkspace. Run CLI with –verbose flag for more details.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">解决方法：</div><div class="line">clear build folder: &apos;Your Project&apos;/ios/build</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
+<h3 id="One-Click"><a href="#One-Click" class="headerlink" title="One-Click:"></a>One-Click:</h3><p>简介：通过运营商的接口能力直接获取用户的手机的号码。</p>
+<p>能力输入：集成三大运营的接口能力做成SDK，以供客户使用。同时开发了One-Click应用发布应该市场，便于大家体现能力。</p>
 
     </div>
     
@@ -196,15 +192,10 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/passages/20190704/" class="pre-post btn btn-default" title='制作私有仓库'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">制作私有仓库</span>
-        </a>
     
-    
-        <a href="/passages/20190617/" class="next-post btn btn-default" title='React Native'>
+        <a href="/passages/20190704/" class="next-post btn btn-default" title='制作私有仓库'>
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">React Native</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">制作私有仓库</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -247,7 +238,7 @@
     <div class="widget">
         <h3 class="title">目次</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#报错信息如下："><span class="toc-text">报错信息如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决的方法如下："><span class="toc-text">解决的方法如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章地址："><span class="toc-text">参考文章地址：</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Native项目编译："><span class="toc-text">React Native项目编译：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#React-Navigation"><span class="toc-text">React Navigation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译报错"><span class="toc-text">编译报错</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#One-Click"><span class="toc-text">One-Click:</span></a></li></ol>
         
     </div>
 </aside>
