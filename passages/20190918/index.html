@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不正经的IT从业者">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="React Native,Vue" />
+
+
+    <meta name="description" content="20190918React Native:关于flex 、postion的结合在移动端的布局，在C端App的实践很有效果，十几个页面写完，布局不在困难。
+自定义组件传入参数，后调点击事件：
+12..." />
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+
+    <!--Title-->
+
+
+<title>20190918 | 不正经的IT从业者</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不正经的IT从业者" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(https://haixinhome.files.wordpress.com/2018/12/pexels-photo-30732.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='海信'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">不正经的IT从业者</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/"><i class="fa "></i>分类</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="20190918">
+            
+	            20190918
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            <a class="category-link" href="/categories/每日/">每日</a>
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/React-Native/">React Native</a> <a class="tag-link" href="/tags/Vue/">Vue</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/09/19</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="20190918"><a href="#20190918" class="headerlink" title="20190918"></a>20190918</h2><h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native:"></a>React Native:</h3><p>关于flex 、postion的结合在移动端的布局，在C端App的实践很有效果，十几个页面写完，布局不在困难。</p>
+<h4 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h4><p>传入参数，后调点击事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 以下的自定义组件的为导航栏右侧按钮</div><div class="line">// 需要注意的是要导入 import PropTypes from &apos;prop-types&apos;;</div><div class="line">class NavRightTextView extends Component &#123;</div><div class="line">    static propTypes = &#123;</div><div class="line">        title: PropTypes.string,</div><div class="line">        rightButtonClick: PropTypes.func,</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    static defaultProps = &#123;</div><div class="line">        title: &apos;&apos;,</div><div class="line">        rightButtonClick: PropTypes.func,</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    _rightButtonClick() &#123;</div><div class="line">        this.props.rightButtonClick()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;TouchableOpacity onPress=&#123;() =&gt; this._rightButtonClick()&#125;&gt;</div><div class="line">                &lt;Text style=&#123;styles.rightButton&#125;&gt;&#123;this.props.title&#125;&lt;/Text&gt;</div><div class="line">            &lt;/TouchableOpacity&gt;</div><div class="line">        )</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue:"></a>Vue:</h3><p>vue 渐进式框架 关注视图层.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"app"</span>&gt;</div><div class="line">    &lt;p&gt;&#123;&#123;mg&#125;&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">    &lt;input v-on:input="inputHandle"&gt;</span></div><div class="line"><span class="regexp">    &lt;p v-bind:title="mg"&gt;&#123;&#123;mg&#125;&#125;&lt;/</span>p&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp">    var msg = 'hello world ';</span></div><div class="line"><span class="regexp">    /</span><span class="regexp">/根实例 启动应用</span></div><div class="line"><span class="regexp">    /</span><span class="regexp">/ 传入一个对象作为参数</span></div><div class="line"><span class="regexp">    /</span><span class="regexp">/&#123;&#123;&#125;&#125; 模板语法</span></div><div class="line"><span class="regexp">    /</span><span class="regexp">/ vue 绑定事件</span></div><div class="line"><span class="regexp">    /</span>*</div><div class="line">    * 指令 将数据与dom关联 v-bind   预期值是一个表达式</div><div class="line">    * v-on:事件名=<span class="string">"表达式"</span></div><div class="line">    * *<span class="regexp">/</span></div><div class="line"><span class="regexp">    var app = document.getElementById('app')</span></div><div class="line"><span class="regexp">    var vm = new Vue(&#123;</span></div><div class="line"><span class="regexp">        /</span><span class="regexp">/ el: app</span></div><div class="line"><span class="regexp">        el:'#app',</span></div><div class="line"><span class="regexp">        data:&#123;/</span><span class="regexp">/数据对象</span></div><div class="line"><span class="regexp">            mg:msg,</span></div><div class="line"><span class="regexp">        &#125;,</span></div><div class="line"><span class="regexp">        methods:&#123;</span></div><div class="line"><span class="regexp">            inputHandle()&#123;</span></div><div class="line"><span class="regexp">                console.log("09090")</span></div><div class="line"><span class="regexp">            &#125;,</span></div><div class="line"><span class="regexp">        &#125;</span></div><div class="line"><span class="regexp">    &#125;)</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div></pre></td></tr></table></figure>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">库：方法的封装，以供调用。</div><div class="line">框架： 一套架构 是一个解决方法，必须要延续使用框架定义的规范。同时要注意框架也是有复杂度的。</div><div class="line">区别在于控制权在谁手里。</div></pre></td></tr></table></figure>
+<p><img src="https://note.youdao.com/yws/public/resource/df2c890cec0be60ecefe86f863f26ae8/xmlnote/WEBRESOURCE5c670c98bbed5a86ec030c6dc6fc609d/6984" alt=""></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">IT从业者</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/passages/20190911/" class="next-post btn btn-default" title='20190911'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">20190911</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-Hans'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#20190918"><span class="toc-text">20190918</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-Native"><span class="toc-text">React Native:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义组件"><span class="toc-text">自定义组件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue"><span class="toc-text">Vue:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tips"><span class="toc-text">Tips:</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2019
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
