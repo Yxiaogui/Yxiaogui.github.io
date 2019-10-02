@@ -33,7 +33,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
 
 
     
@@ -115,6 +115,12 @@
     
 <div class="card">
     
+    <div class="card-image">
+        <a href="/passages/20190929/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/24/12/50/sea-4501231_1280.jpg" alt="第一周weekly">
+        </a>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -125,12 +131,6 @@
                 <a class="has-link-grey -link" href="/categories/每周/">每周</a>
                 </div>
                 
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9 minutes 读完 (大约 1292 个字)
-                </span>
                 
                 
             </div>
@@ -205,12 +205,6 @@
                 </div>
                 
                 
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes 读完 (大约 291 个字)
-                </span>
-                
                 
             </div>
         </div>
@@ -221,7 +215,7 @@
             
         </h1>
         <div class="content">
-            <h2 id="20190918"><a href="#20190918" class="headerlink" title="20190918"></a>20190918</h2><h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native:"></a>React Native:</h3><p>关于flex 、postion的结合在移动端的布局，在C端App的实践很有效果，十几个页面写完，布局不在困难。</p>
+            <h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native:"></a>React Native:</h3><p>关于flex 、postion的结合在移动端的布局，在C端App的实践很有效果，十几个页面写完，布局不在困难。</p>
 <h4 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h4><p>传入参数，后调点击事件：</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 以下的自定义组件的为导航栏右侧按钮</div><div class="line">// 需要注意的是要导入 import PropTypes from &apos;prop-types&apos;;</div><div class="line">class NavRightTextView extends Component &#123;</div><div class="line">    static propTypes = &#123;</div><div class="line">        title: PropTypes.string,</div><div class="line">        rightButtonClick: PropTypes.func,</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    static defaultProps = &#123;</div><div class="line">        title: &apos;&apos;,</div><div class="line">        rightButtonClick: PropTypes.func,</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    _rightButtonClick() &#123;</div><div class="line">        this.props.rightButtonClick()</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            &lt;TouchableOpacity onPress=&#123;() =&gt; this._rightButtonClick()&#125;&gt;</div><div class="line">                &lt;Text style=&#123;styles.rightButton&#125;&gt;&#123;this.props.title&#125;&lt;/Text&gt;</div><div class="line">            &lt;/TouchableOpacity&gt;</div><div class="line">        )</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue:"></a>Vue:</h3><p>vue 渐进式框架 关注视图层.</p>
@@ -255,12 +249,6 @@
                 <a class="has-link-grey -link" href="/categories/每日/">每日</a>
                 </div>
                 
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute 读完 (大约 153 个字)
-                </span>
                 
                 
             </div>
@@ -454,7 +442,7 @@
             
             <a href="/passages/20190929/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/24/12/50/sea-4501231_1280.jpg" alt="第一周weekly">
                 </p>
             </a>
             
@@ -710,7 +698,7 @@
             
             <a href="/passages/20190929/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/24/12/50/sea-4501231_1280.jpg" alt="第一周weekly">
                 </p>
             </a>
             
