@@ -1,209 +1,200 @@
-<!DOCTYPE HTML>
-<html lang="zh-Hans">
+<!DOCTYPE html>
+<html  lang="zh">
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="不正经的IT从业者">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="http://yoursite.com">
-    <!--SEO-->
+    <meta charset="utf-8" />
 
-    <meta name="keywords" content="RN" />
+<meta name="generator" content="Hexo 3.3.8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>React Native - 不正经的IT从业者</title>
 
 
-    <meta name="description" content="移动开发现状：1231. 原生开发2. 混合开发3. 跨平台开发
-技术选型：1231.Native2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点..." />
-
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-
-    <!--Title-->
-
-
-<title>React Native | 不正经的IT从业者</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="不正经的IT从业者" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
+    <meta name="description" content="移动开发现状： 1231. 原生开发2. 混合开发3. 跨平台开发 技术选型： 1231.Native2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点击事件Key；2.原生通过富文本的方式渲染H5字符串)3.React-Native 、Weex 、Flutter &amp;lt;!--more--&amp;gt; 跨平台的优势 一次编写，多平台使用，试图解决安卓、i">
+<meta name="keywords" content="RN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native">
+<meta property="og:url" content="http://yoursite.com/passages/20190617/index.html">
+<meta property="og:site_name" content="不正经的IT从业者">
+<meta property="og:description" content="移动开发现状： 1231. 原生开发2. 混合开发3. 跨平台开发 技术选型： 1231.Native2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点击事件Key；2.原生通过富文本的方式渲染H5字符串)3.React-Native 、Weex 、Flutter &amp;lt;!--more--&amp;gt; 跨平台的优势 一次编写，多平台使用，试图解决安卓、i">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-07-03T07:37:17.601Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native">
+<meta name="twitter:description" content="移动开发现状： 1231. 原生开发2. 混合开发3. 跨平台开发 技术选型： 1231.Native2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点击事件Key；2.原生通过富文本的方式渲染H5字符串)3.React-Native 、Weex 、Flutter &amp;lt;!--more--&amp;gt; 跨平台的优势 一次编写，多平台使用，试图解决安卓、i">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
 
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
 
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
-
-
-
-
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
 
     
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
 
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-
-<body>
-    <header class="main-header"  style="background-image:url(https://haixinhome.files.wordpress.com/2018/12/pexels-photo-30732.jpg)"  >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='海信'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-    	</div>
-    </div>
-</header>
-    <nav class="main-navigation">
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://yoursite.com">不正经的IT从业者</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/"><i class="fa "></i>分类</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间轴</a>
-                            </li>
-                        
-                    </ul>
-                </div>
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="React Native" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
             </div>
         </div>
     </div>
 </nav>
-    <section class="content-wrap">
+    
+    <section class="section">
         <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="React Native">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-17T08:15:21.000Z">2019-06-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes 读完 (大约 1401 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-	            React Native
+                React Native
             
         </h1>
-        <div class="post-meta">
-    
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/每日/">每日</a>
-        </span>
-    
-
-    
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/RN/">RN</a>
-                
-            </span>
-        </span>
-    
-
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/06/17</span>
-        </span>
-        
-    
-</div>
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <h2 id="移动开发现状："><a href="#移动开发现状：" class="headerlink" title="移动开发现状："></a>移动开发现状：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 原生开发</div><div class="line">2. 混合开发</div><div class="line">3. 跨平台开发</div></pre></td></tr></table></figure>
-<h2 id="技术选型："><a href="#技术选型：" class="headerlink" title="技术选型："></a>技术选型：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.Native</div><div class="line">2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点击事件Key；2.原生通过富文本的方式渲染H5字符串)</div><div class="line">3.React-Native 、Weex 、Flutter</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="跨平台的优势"><a href="#跨平台的优势" class="headerlink" title="跨平台的优势"></a>跨平台的优势</h2><p>一次编写，多平台使用，试图解决安卓、ios从交互到UI的统一。</p>
-<h2 id="React-Native-、Weex-、Flutter对比"><a href="#React-Native-、Weex-、Flutter对比" class="headerlink" title="React-Native 、Weex 、Flutter对比"></a>React-Native 、Weex 、Flutter对比</h2><p>1.React Native 基于React 的，而React 是Facebook用户构建用户界面的Javascript库</p>
+        <div class="content">
+            <h2>移动开发现状：</h2>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 原生开发</div><div class="line">2. 混合开发</div><div class="line">3. 跨平台开发</div></pre></td></tr></table></figure></p>
+<h2>技术选型：</h2>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.Native</div><div class="line">2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点击事件Key；2.原生通过富文本的方式渲染H5字符串)</div><div class="line">3.React-Native 、Weex 、Flutter</div></pre></td></tr></table></figure></p>
+<p>&lt;!--more--&gt;</p>
+<h2>跨平台的优势</h2>
+<p>一次编写，多平台使用，试图解决安卓、ios从交互到UI的统一。</p>
+<h2>React-Native 、Weex 、Flutter对比</h2>
+<p>1.React Native 基于React 的，而React 是Facebook用户构建用户界面的Javascript库</p>
 <p>2.Weex基于Vue的，而Vue是阿里开源的渐进式 JavaScript 框架</p>
 <p>3.Flutter是谷歌开源的响应式框架,开发语言为Dart</p>
 <p>4.以上可以看出RN、Weex对于前端工程师进入移动开发领域是相对友好的，而Flutter对于移动开发者、前端开发者都是有学习成本的。</p>
 <p>5.从社区的活跃度来看RN高于Weex,而Flutter刚刚起步，但是也得到了社区的支持，因为RN是通过调用原生系统的UI组件来渲染页面，在不同的开发平台实现效果会有所偏差，毕竟是两个操作系统。而Flutter是是自有的UI框架，更接近于实现跨平台的理想。</p>
-<h2 id="React-Native-VS-原生"><a href="#React-Native-VS-原生" class="headerlink" title="React Native VS 原生"></a>React Native VS 原生</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">React Native的设计理念：既拥有Native的用户体验、又保留React的开发效率</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Native的优势：</div><div class="line">1.Native的原生控件有更好的体验</div><div class="line">2.Native有更好的手势识别</div><div class="line">3.Native能实现更丰富细腻的动画效果，归根结底是现阶段Native具有更好的人机交互体验</div><div class="line"></div><div class="line">Native劣势</div><div class="line">1.Native开发成本更高</div></pre></td></tr></table></figure>
+<h2>React Native VS 原生</h2>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">React Native的设计理念：既拥有Native的用户体验、又保留React的开发效率</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Native的优势：</div><div class="line">1.Native的原生控件有更好的体验</div><div class="line">2.Native有更好的手势识别</div><div class="line">3.Native能实现更丰富细腻的动画效果，归根结底是现阶段Native具有更好的人机交互体验</div><div class="line"></div><div class="line">Native劣势</div><div class="line">1.Native开发成本更高</div></pre></td></tr></table></figure></p>
 <p>综上对于开发团队在对于项目技术选型的时候需要做好平衡点：追求开发效率，还是原生体验。以此会带来对移动项目架构新的设想、实践。</p>
-<h2 id="React-Native宣言："><a href="#React-Native宣言：" class="headerlink" title="React Native宣言："></a>React Native宣言：</h2><p>“Learn once, write anywhere”</p>
-<h2 id="React-Native介绍："><a href="#React-Native介绍：" class="headerlink" title="React Native介绍："></a>React Native介绍：</h2><p>React Native 是一个 JavaScript 的框架，用来撰写实时的、可原生呈现 iOS 和 Android 的应用。它是基于 React 的，而 React 是 Facebook 的用于构建用户界面的 JavaScript 库，但是 React Native 不是给浏览器解释的，而是为移动平台。换句话说：如果你是一名 web 开发者，你可以使用熟悉的框架和单一的 JavaScript 代码库，即 React Native来撰写清晰的、高效的移动应用。</p>
-<h2 id="React-Native应用原理："><a href="#React-Native应用原理：" class="headerlink" title="React Native应用原理："></a>React Native应用原理：</h2><p>在JavaScript中用React.js抽象操作系统的原生UI组件，继而代替DOM元素来渲染，比如使用<view>取代<div>，使用<image>替代<img>等。在后台，React Native运行在主线程之外，而在另一个专门的后台线程里运行JavaScript引擎，两个线程之间通过异步消息协议来通信。</image></div></view></p>
+<h2>React Native宣言：</h2>
+<p>“Learn once, write anywhere”</p>
+<h2>React Native介绍：</h2>
+<p>React Native 是一个 JavaScript 的框架，用来撰写实时的、可原生呈现 iOS 和 Android 的应用。它是基于 React 的，而 React 是 Facebook 的用于构建用户界面的 JavaScript 库，但是 React Native 不是给浏览器解释的，而是为移动平台。换句话说：如果你是一名 web 开发者，你可以使用熟悉的框架和单一的 JavaScript 代码库，即 React Native来撰写清晰的、高效的移动应用。</p>
+<h2>React Native应用原理：</h2>
+<p>在JavaScript中用React.js抽象操作系统的原生UI组件，继而代替DOM元素来渲染，比如使用&lt;View&gt;取代&lt;div&gt;，使用&lt;Image&gt;替代&lt;img&gt;等。在后台，React Native运行在主线程之外，而在另一个专门的后台线程里运行JavaScript引擎，两个线程之间通过异步消息协议来通信。</p>
 <p><img src="https://note.youdao.com/yws/public/resource/df2c890cec0be60ecefe86f863f26ae8/xmlnote/WEBRESOURCE523fd43bb1456b85254bd486b0476ad0/6750.jpg" alt=""></p>
 <p><img src="https://note.youdao.com/yws/public/resource/df2c890cec0be60ecefe86f863f26ae8/xmlnote/WEBRESOURCEe223d81b3dcf4921a5dd6bc03545ccc4/6749.jpg" alt=""></p>
-<h2 id="React-Native-VS-Flutter"><a href="#React-Native-VS-Flutter" class="headerlink" title="React Native VS Flutter:"></a>React Native VS Flutter:</h2><p><img src="https://note.youdao.com/yws/public/resource/df2c890cec0be60ecefe86f863f26ae8/xmlnote/WEBRESOURCE5f0358bb4f2e5ea27d7084e6aede4a07/6751.jpg" alt=""></p>
-<h2 id="React-Native开发工具"><a href="#React-Native开发工具" class="headerlink" title="React Native开发工具"></a>React Native开发工具</h2><p>VSCode、WebStorm; </p>
+<h2>React Native VS Flutter:</h2>
+<p><img src="https://note.youdao.com/yws/public/resource/df2c890cec0be60ecefe86f863f26ae8/xmlnote/WEBRESOURCE5f0358bb4f2e5ea27d7084e6aede4a07/6751.jpg" alt=""></p>
+<h2>React Native开发工具</h2>
+<p>VSCode、WebStorm;</p>
 <p>推荐使用VSCode</p>
-<h2 id="VSCode需要安装的插件"><a href="#VSCode需要安装的插件" class="headerlink" title="VSCode需要安装的插件"></a>VSCode需要安装的插件</h2><p>React Native Tools：微软官方出的ReactNative插件</p>
+<h2>VSCode需要安装的插件</h2>
+<p>React Native Tools：微软官方出的ReactNative插件</p>
 <p>path Intellisense：文件路径提示补全</p>
 <p>Reactjs code snippets：react的代码提示</p>
 <p>React Developer Tools：浏览器安装调试扩展</p>
-<h2 id="学习知识准备："><a href="#学习知识准备：" class="headerlink" title="学习知识准备："></a>学习知识准备：</h2><p>了解一些基本的 React 的概念，比如 JSX 语法、组件、<code>state</code>状态以及<code>props</code>属性</p>
-<h2 id="JSX语法："><a href="#JSX语法：" class="headerlink" title="JSX语法："></a>JSX语法：</h2><p>JSX就是Javascript和XML结合的一种格式。React发明了JSX，利用HTML语法来创建虚拟DOM。当遇到&lt;，JSX就当HTML解析，遇到{就当JavaScript解析。</p>
-<p>jsx语法：<a href="https://www.cnblogs.com/zourong/p/6043914.html" target="_blank" rel="external">https://www.cnblogs.com/zourong/p/6043914.html</a></p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">xml网上示例：</div><div class="line"><span class="tag">&lt;<span class="name">to</span>&gt;</span>George<span class="tag">&lt;/<span class="name">to</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">from</span>&gt;</span>John<span class="tag">&lt;/<span class="name">from</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">heading</span>&gt;</span>Reminder<span class="tag">&lt;/<span class="name">heading</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>Don't forget the meeting!<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">js写法</div><div class="line"><span class="keyword">var</span> child1 = React.createElement(<span class="string">'li'</span>, <span class="literal">null</span>, <span class="string">'First Text Content'</span>);</div><div class="line"><span class="keyword">var</span> child2 = React.createElement(<span class="string">'li'</span>, <span class="literal">null</span>, <span class="string">'Second Text Content'</span>);</div><div class="line"><span class="keyword">var</span> root = React.createElement(<span class="string">'ul'</span>, &#123; <span class="attr">className</span>: <span class="string">'my-list'</span> &#125;, child1, child2);</div></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">等价于(JSX写法)</div><div class="line"><span class="keyword">var</span> root =(</div><div class="line">  &lt;ul className=<span class="string">"my-list"</span>&gt;</div><div class="line">    &lt;li&gt;First Text Content&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">    &lt;li&gt;Second Text Content&lt;/</span>li&gt;</div><div class="line">  &lt;<span class="regexp">/ul&gt;</span></div><div class="line"><span class="regexp">);</span></div></pre></td></tr></table></figure>
-<h3 id="props、State"><a href="#props、State" class="headerlink" title="props、State"></a>props、State</h3><p>我们使用两种数据来控制一个组件：<code>props</code>和<code>state</code>。<code>props</code>是在父组件中指定，而且一经指定，在被指定的组件的生命周期中则不再改变。 对于需要改变的数据，我们需要使用<code>state</code>。</p>
+<h2>学习知识准备：</h2>
+<p>了解一些基本的 React 的概念，比如 JSX 语法、组件、<code>state</code>状态以及<code>props</code>属性</p>
+<h2>JSX语法：</h2>
+<p>JSX就是Javascript和XML结合的一种格式。React发明了JSX，利用HTML语法来创建虚拟DOM。当遇到&lt;，JSX就当HTML解析，遇到{就当JavaScript解析。</p>
+<p>jsx语法：https://www.cnblogs.com/zourong/p/6043914.html</p>
+<h3>示例</h3>
+<p><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">xml网上示例：</div><div class="line"><span class="hljs-tag">&lt;<span class="hljs-name">to</span>&gt;</span>George<span class="hljs-tag">&lt;/<span class="hljs-name">to</span>&gt;</span></div><div class="line"><span class="hljs-tag">&lt;<span class="hljs-name">from</span>&gt;</span>John<span class="hljs-tag">&lt;/<span class="hljs-name">from</span>&gt;</span></div><div class="line"><span class="hljs-tag">&lt;<span class="hljs-name">heading</span>&gt;</span>Reminder<span class="hljs-tag">&lt;/<span class="hljs-name">heading</span>&gt;</span></div><div class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>Don't forget the meeting!<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">js写法</div><div class="line"><span class="hljs-keyword">var</span> child1 = React.createElement(<span class="hljs-string">'li'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'First Text Content'</span>);</div><div class="line"><span class="hljs-keyword">var</span> child2 = React.createElement(<span class="hljs-string">'li'</span>, <span class="hljs-literal">null</span>, <span class="hljs-string">'Second Text Content'</span>);</div><div class="line"><span class="hljs-keyword">var</span> root = React.createElement(<span class="hljs-string">'ul'</span>, &#123; <span class="hljs-attr">className</span>: <span class="hljs-string">'my-list'</span> &#125;, child1, child2);</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight jsx hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">等价于(JSX写法)</div><div class="line"><span class="hljs-keyword">var</span> root =(</div><div class="line">  &lt;ul className=<span class="hljs-string">"my-list"</span>&gt;</div><div class="line">    &lt;li&gt;First Text Content&lt;<span class="hljs-regexp">/li&gt;</span></div><div class="line"><span class="hljs-regexp">    &lt;li&gt;Second Text Content&lt;/</span>li&gt;</div><div class="line">  &lt;<span class="hljs-regexp">/ul&gt;</span></div><div class="line"><span class="hljs-regexp">);</span></div></pre></td></tr></table></figure></p>
+<h3>props、State</h3>
+<p>我们使用两种数据来控制一个组件：<code>props</code>和<code>state</code>。<code>props</code>是在父组件中指定，而且一经指定，在被指定的组件的生命周期中则不再改变。 对于需要改变的数据，我们需要使用<code>state</code>。</p>
 <p>一般来说，你需要在 constructor 中初始化<code>state</code>（译注：这是 ES6 的写法，早期的很多 ES5 的例子使用的是 getInitialState 方法来初始化 state，这一做法会逐渐被淘汰），然后在需要修改时调用<code>setState</code>方法。</p>
-<h4 id="props示例："><a href="#props示例：" class="headerlink" title="props示例："></a>props示例：</h4><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">_HomeListCell(item, index) &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;HomeListCell name=&#123;item.key&#125; index=&#123;index&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">HomeListCell</span>&gt;</span></span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HomeListCell</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;View style=&#123;styles.listcellView&#125;&gt;</div><div class="line">                &lt;Text style=&#123;styles.listcellText&#125;&gt;&#123;<span class="keyword">this</span>.props.name + <span class="keyword">this</span>.props.index&#125;&lt;<span class="regexp">/Text&gt;</span></div><div class="line"><span class="regexp">            &lt;/</span>View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="state示例："><a href="#state示例：" class="headerlink" title="state示例："></a>state示例：</h4><p>要点:</p>
+<h4>props示例：</h4>
+<p><figure class="highlight jsx hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">_HomeListCell(item, index) &#123;</div><div class="line">    <span class="hljs-keyword">return</span> (</div><div class="line">        &lt;HomeListCell name=&#123;item.key&#125; index=&#123;index&#125;&gt;<span class="hljs-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">HomeListCell</span>&gt;</span></span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight jsx hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomeListCell</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>&#123;</div><div class="line">    <span class="hljs-keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="hljs-keyword">super</span>(props);</div><div class="line">    &#125;</div><div class="line">  </div><div class="line">    render() &#123;</div><div class="line">        <span class="hljs-keyword">return</span> (</div><div class="line">            &lt;View style=&#123;styles.listcellView&#125;&gt;</div><div class="line">                &lt;Text style=&#123;styles.listcellText&#125;&gt;&#123;<span class="hljs-keyword">this</span>.props.name + <span class="hljs-keyword">this</span>.props.index&#125;&lt;<span class="hljs-regexp">/Text&gt;</span></div><div class="line"><span class="hljs-regexp">            &lt;/</span>View&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4>state示例：</h4>
+<p>要点:</p>
 <ul>
 <li>一切界面变化都是<code>状态state变化</code></li>
 <li><code>state</code>的修改必须通过<code>setState()</code>方法</li>
@@ -211,132 +202,945 @@
 <li>setState 是一个 merge 合并操作，只修改指定属性，不影响其他属性</li>
 <li>setState 是<code>异步</code>操作，修改<code>不会马上生效</code>(疑问数据不是实时更新的？)</li>
 </ul>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">        listData: [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>],</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">_loadRequest()&#123;</div><div class="line">    <span class="keyword">this</span>.setState(&#123;</div><div class="line">        listData: [<span class="string">'3'</span>,<span class="string">'2'</span>,<span class="string">'1'</span>],</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="组件："><a href="#组件：" class="headerlink" title="组件："></a>组件：</h2><p>UI组件学习这个需要时间</p>
-<h2 id="第三方库集成："><a href="#第三方库集成：" class="headerlink" title="第三方库集成："></a>第三方库集成：</h2><p>安装： npm install react-native-device-info –save</p>
+<p><figure class="highlight jsx hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="hljs-keyword">super</span>(props);</div><div class="line">    <span class="hljs-keyword">this</span>.state = &#123;</div><div class="line">        listData: [<span class="hljs-string">'1'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'3'</span>],</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">_loadRequest()&#123;</div><div class="line">    <span class="hljs-keyword">this</span>.setState(&#123;</div><div class="line">        listData: [<span class="hljs-string">'3'</span>,<span class="hljs-string">'2'</span>,<span class="hljs-string">'1'</span>],</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2>组件：</h2>
+<p>UI组件学习这个需要时间</p>
+<h2>第三方库集成：</h2>
+<p>安装： npm install react-native-device-info --save</p>
 <p>卸载： npm uninstall react-native-device-info</p>
-<p>搜索： <a href="https://js.coach/" target="_blank" rel="external">https://js.coach/</a></p>
+<p>搜索： https://js.coach/</p>
 
-    </div>
-    
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">IT从业者</a>
-            
         </div>
-        <div>
-            
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/RN/">RN</a>
+                </div>
+            </div>
         </div>
+        
+        
+        
     </div>
-</article>
-
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/passages/20190703/" class="pre-post btn btn-default" title='cocoapods库与库依赖冲突解决'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">cocoapods库与库依赖冲突解决</span>
-        </a>
-    
-    
-        <a href="/passages/20190514/" class="next-post btn btn-default" title='swift请求'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">swift请求</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
 </div>
 
 
-    <div id="comments">
-        
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
 
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: true,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-Hans'.toLowerCase()
-        })
-    </script>
-
-
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+        </div>
     </div>
+</div>
 
 
 
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">文章目录</h3>
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#移动开发现状："><span class="toc-text">移动开发现状：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技术选型："><span class="toc-text">技术选型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨平台的优势"><span class="toc-text">跨平台的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native-、Weex-、Flutter对比"><span class="toc-text">React-Native 、Weex 、Flutter对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native-VS-原生"><span class="toc-text">React Native VS 原生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native宣言："><span class="toc-text">React Native宣言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native介绍："><span class="toc-text">React Native介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native应用原理："><span class="toc-text">React Native应用原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native-VS-Flutter"><span class="toc-text">React Native VS Flutter:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Native开发工具"><span class="toc-text">React Native开发工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VSCode需要安装的插件"><span class="toc-text">VSCode需要安装的插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习知识准备："><span class="toc-text">学习知识准备：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSX语法："><span class="toc-text">JSX语法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#props、State"><span class="toc-text">props、State</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#props示例："><span class="toc-text">props示例：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#state示例："><span class="toc-text">state示例：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件："><span class="toc-text">组件：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三方库集成："><span class="toc-text">第三方库集成：</span></a></li></ol>
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/passages/20190703/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">cocoapods库与库依赖冲突解决</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/passages/20190514/">
+                <span class="level-item">swift请求</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
-</aside>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="IT从业者">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        IT从业者
+                    </p>
+                    
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        14
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/ARTS打卡/">
+            <span class="level-start">
+                <span class="level-item">ARTS打卡</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/新技能get/">
+            <span class="level-start">
+                <span class="level-item">新技能get</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/每周/">
+            <span class="level-start">
+                <span class="level-item">每周</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/每日/">
+            <span class="level-start">
+                <span class="level-item">每日</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Alamofire/" style="font-size: 10px;">Alamofire</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/TokenCore/" style="font-size: 10px;">TokenCore</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/cocoapods/" style="font-size: 15px;">cocoapods</a> <a href="/tags/pod/" style="font-size: 10px;">pod</a> <a href="/tags/web3swift-pod/" style="font-size: 10px;">web3swift.pod</a> <a href="/tags/weekly/" style="font-size: 10px;">weekly'</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20190929/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time></div>
+                    <a href="/passages/20190929/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190918/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190918">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T16:12:16.395Z">2019-09-19</time></div>
+                    <a href="/passages/20190918/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190918</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190911/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
+                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190910/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
+                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190704/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="制作私有仓库">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T08:54:16.502Z">2019-07-04</time></div>
+                    <a href="/passages/20190704/" class="title has-link-black-ter is-size-6 has-text-weight-normal">制作私有仓库</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Alamofire/">
+                        <span class="tag">Alamofire</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCD/">
+                        <span class="tag">GCD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/K线/">
+                        <span class="tag">K线</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MQTT/">
+                        <span class="tag">MQTT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OneClick/">
+                        <span class="tag">OneClick</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RN/">
+                        <span class="tag">RN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React-Native/">
+                        <span class="tag">React Native</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TokenCore/">
+                        <span class="tag">TokenCore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cocoapods/">
+                        <span class="tag">cocoapods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pod/">
+                        <span class="tag">pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/web3swift-pod/">
+                        <span class="tag">web3swift.pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weekly/">
+                        <span class="tag">weekly&#39;</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
 
                 
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20190929/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time></div>
+                    <a href="/passages/20190929/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190918/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190918">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T16:12:16.395Z">2019-09-19</time></div>
+                    <a href="/passages/20190918/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190918</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190911/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
+                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190910/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
+                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190704/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="制作私有仓库">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T08:54:16.502Z">2019-07-04</time></div>
+                    <a href="/passages/20190704/" class="title has-link-black-ter is-size-6 has-text-weight-normal">制作私有仓库</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Alamofire/">
+                        <span class="tag">Alamofire</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCD/">
+                        <span class="tag">GCD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/K线/">
+                        <span class="tag">K线</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MQTT/">
+                        <span class="tag">MQTT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OneClick/">
+                        <span class="tag">OneClick</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RN/">
+                        <span class="tag">RN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React-Native/">
+                        <span class="tag">React Native</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TokenCore/">
+                        <span class="tag">TokenCore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cocoapods/">
+                        <span class="tag">cocoapods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pod/">
+                        <span class="tag">pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/web3swift-pod/">
+                        <span class="tag">web3swift.pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weekly/">
+                        <span class="tag">weekly&#39;</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
             </div>
         </div>
     </section>
-    <footer class="main-footer">
+    <footer class="footer">
     <div class="container">
-        <div class="row">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="React Native" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 海信&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
         </div>
     </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-Hans");</script>
 
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
 
 
 
-
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
     
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
 
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy; 2019
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+<script src="/js/main.js" defer></script>
 
-
-
-
-
-<script src="/js/app.js?rev=@@hash"></script>
-
+    
 </body>
 </html>

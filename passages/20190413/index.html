@@ -1,317 +1,1122 @@
-<!DOCTYPE HTML>
-<html lang="zh-Hans">
+<!DOCTYPE html>
+<html  lang="zh">
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="不正经的IT从业者">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="http://yoursite.com">
-    <!--SEO-->
+    <meta charset="utf-8" />
 
-    <meta name="keywords" content="MQTT,K线,GCD" />
+<meta name="generator" content="Hexo 3.3.8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>ARTS打卡打卡03 - 不正经的IT从业者</title>
 
 
-    <meta name="description" content="本周小结:OC:MQTT：解释：MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的..." />
-
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-
-    <!--Title-->
-
-
-<title>ARTS打卡打卡03 | 不正经的IT从业者</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="不正经的IT从业者" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
+    <meta name="description" content="本周小结: OC: MQTT： 解释： MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。 本次项目用到mqtt主要使用在k线绘制，订阅K线实时数据、买卖盘数据等。 用法： 用到的第三方库是阿里推">
+<meta name="keywords" content="MQTT,K线,GCD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS打卡打卡03">
+<meta property="og:url" content="http://yoursite.com/passages/20190413/index.html">
+<meta property="og:site_name" content="不正经的IT从业者">
+<meta property="og:description" content="本周小结: OC: MQTT： 解释： MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。 本次项目用到mqtt主要使用在k线绘制，订阅K线实时数据、买卖盘数据等。 用法： 用到的第三方库是阿里推">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-07-03T07:36:23.358Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS打卡打卡03">
+<meta name="twitter:description" content="本周小结: OC: MQTT： 解释： MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。 本次项目用到mqtt主要使用在k线绘制，订阅K线实时数据、买卖盘数据等。 用法： 用到的第三方库是阿里推">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
 
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
 
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
-
-
-
-
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
 
     
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
 
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-
-<body>
-    <header class="main-header"  style="background-image:url(https://haixinhome.files.wordpress.com/2018/12/pexels-photo-30732.jpg)"  >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='海信'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-    	</div>
-    </div>
-</header>
-    <nav class="main-navigation">
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://yoursite.com">不正经的IT从业者</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/"><i class="fa "></i>分类</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间轴</a>
-                            </li>
-                        
-                    </ul>
-                </div>
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="ARTS打卡打卡03" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
             </div>
         </div>
     </div>
 </nav>
-    <section class="content-wrap">
+    
+    <section class="section">
         <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="ARTS打卡打卡03">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-13T13:45:20.000Z">2019-04-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/ARTS打卡/">ARTS打卡</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes 读完 (大约 1252 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-	            ARTS打卡打卡03
+                ARTS打卡打卡03
             
         </h1>
-        <div class="post-meta">
-    
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/ARTS打卡/">ARTS打卡</a>
-        </span>
-    
-
-    
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-                    <a class="tag-link" href="/tags/GCD/">GCD</a> <a class="tag-link" href="/tags/K线/">K线</a> <a class="tag-link" href="/tags/MQTT/">MQTT</a>
-                
-            </span>
-        </span>
-    
-
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/04/13</span>
-        </span>
-        
-    
-</div>
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <h1 id="本周小结"><a href="#本周小结" class="headerlink" title="本周小结:"></a>本周小结:</h1><h2 id="OC"><a href="#OC" class="headerlink" title="OC:"></a>OC:</h2><h3 id="MQTT："><a href="#MQTT：" class="headerlink" title="MQTT："></a>MQTT：</h3><h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><p>MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。</p>
+        <div class="content">
+            <h1>本周小结:</h1>
+<h2>OC:</h2>
+<h3>MQTT：</h3>
+<h4>解释：</h4>
+<p>MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。</p>
 <p>本次项目用到mqtt主要使用在k线绘制，订阅K线实时数据、买卖盘数据等。</p>
-<h4 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h4><p>用到的第三方库是阿里推荐的MQTTClient。常规参数配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">- (MQTTCFSocketTransport *)transport&#123;</div><div class="line">  if (!_transport) &#123;</div><div class="line">      _transport = [[MQTTCFSocketTransport alloc] init];</div><div class="line">      _transport.host = @&quot;your host&quot;;</div><div class="line">      _transport.port = your port;</div><div class="line">  &#125;</div><div class="line">  return _transport;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (MQTTSession *)session&#123;</div><div class="line">  if (!_session) &#123;</div><div class="line">      _session = [[MQTTSession alloc] init];</div><div class="line">      _session.userName = @&quot;your userName&quot;;</div><div class="line">      _session.password = @&quot;your password&quot;;</div><div class="line">      _session.clientId = @&quot;you clientId&quot;;</div><div class="line">      _session.delegate = self;</div><div class="line">  &#125;</div><div class="line">  return _session;</div><div class="line">&#125;</div><div class="line">//连接</div><div class="line">- (void)connectMqtt&#123;</div><div class="line">      self.session.transport = self.transport;</div><div class="line">      [self.session connectWithConnectHandler:^(NSError *error) &#123;</div><div class="line">          if (!error) &#123;</div><div class="line">               [self.session subscribeToTopic:self.topicName atLevel:MQTTQosLevelExactlyOnce];</div><div class="line">          &#125;</div><div class="line">      &#125;];   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="易错点："><a href="#易错点：" class="headerlink" title="易错点："></a>易错点：</h4><p> <strong>mqtt需要维持重连的</strong>。看了网上的文档有两种常规的方式。1：KVO即观察session的status；2.通过定时器，判断mqtt的状态，如果断开连接就重连。通过第一种方法观察不到status的变化，导致不能及时判断状态，因此选择了第二张方式。</p>
+<h4>用法：</h4>
+<p>用到的第三方库是阿里推荐的MQTTClient。常规参数配置如下：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">- (MQTTCFSocketTransport *)transport&#123;</div><div class="line">  if (!_transport) &#123;</div><div class="line">      _transport = [[MQTTCFSocketTransport alloc] init];</div><div class="line">      _transport.host = @&quot;your host&quot;;</div><div class="line">      _transport.port = your port;</div><div class="line">  &#125;</div><div class="line">  return _transport;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (MQTTSession *)session&#123;</div><div class="line">  if (!_session) &#123;</div><div class="line">      _session = [[MQTTSession alloc] init];</div><div class="line">      _session.userName = @&quot;your userName&quot;;</div><div class="line">      _session.password = @&quot;your password&quot;;</div><div class="line">      _session.clientId = @&quot;you clientId&quot;;</div><div class="line">      _session.delegate = self;</div><div class="line">  &#125;</div><div class="line">  return _session;</div><div class="line">&#125;</div><div class="line">//连接</div><div class="line">- (void)connectMqtt&#123;</div><div class="line">      self.session.transport = self.transport;</div><div class="line">      [self.session connectWithConnectHandler:^(NSError *error) &#123;</div><div class="line">          if (!error) &#123;</div><div class="line">               [self.session subscribeToTopic:self.topicName atLevel:MQTTQosLevelExactlyOnce];</div><div class="line">          &#125;</div><div class="line">      &#125;];   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4>易错点：</h4>
+<p><strong>mqtt需要维持重连的</strong>。看了网上的文档有两种常规的方式。1：KVO即观察session的status；2.通过定时器，判断mqtt的状态，如果断开连接就重连。通过第一种方法观察不到status的变化，导致不能及时判断状态，因此选择了第二张方式。</p>
 <p>mqtt关闭。需要设置<strong>self.session = nil</strong>。如果不设置只调用[self.session disconnect]，会看到mqtt日志在一直打印。因此完整的关闭mqtt的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (void)disconnectMqtt&#123;</div><div class="line">    [self.session unsubscribeTopic:self.topicName];</div><div class="line">    [self.session disconnect];</div><div class="line">    self.session = nil;</div><div class="line">    [self.timer invalidate];</div><div class="line">    self.timer = nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="K线："><a href="#K线：" class="headerlink" title="K线："></a>K线：</h3><p>k线主要的作用是反应盘口大势状态和价格的信息，通常绘制k线需要的数据有：最高价、最低价、开盘价、收盘价、日期、成交量。</p>
-<h4 id="单个蜡烛图的绘制："><a href="#单个蜡烛图的绘制：" class="headerlink" title="单个蜡烛图的绘制："></a>单个蜡烛图的绘制：</h4><p>绘制k线首先需要了解：UIBezierPath、CAShapeLayer。其中UIBezierPath指定了蜡烛图的大小位置，CAShapeLayer根据路径将蜡烛图绘制在layer上。以下是一个蜡烛图的绘制：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">CGRect candleFrame = CGRectMake(313.5, 160, 5,20);    </div><div class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRect:candleFrame];</div><div class="line">[path moveToPoint:CGPointMake(316, 103)];</div><div class="line">[path addLineToPoint:CGPointMake(316,  160 + 20 + 7)];</div><div class="line">CAShapeLayer *layer = [CAShapeLayer layer];</div><div class="line">layer.path = path.CGPath;</div><div class="line">layer.lineWidth = 1.0f;</div><div class="line">layer.strokeColor = [UIColor redColor].CGColor;</div><div class="line">layer.fillColor = [UIColor redColor].CGColor;</div><div class="line">[self.view.layer addSublayer:layer];</div></pre></td></tr></table></figure>
-<h4 id="web端与移动端数据问题："><a href="#web端与移动端数据问题：" class="headerlink" title="web端与移动端数据问题："></a>web端与移动端数据问题：</h4><p>由于这个项目是是先开发web端先定版本，导致在移动端在使用K线数据是需要沿用web使用的数据结构。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.web端使用数据按照日期倒叙的，移动端需要自己手动逆序数据。</div><div class="line">2.mqtt订阅主题数据的时间维度问题：每次订阅都会给出全量的时间维度数据即：1分钟、5分钟、15分钟、1小时、4小时......,每次想获取数据增量都需要遍历自己查找。</div></pre></td></tr></table></figure>
-<h4 id="k线实时绘制："><a href="#k线实时绘制：" class="headerlink" title="k线实时绘制："></a>k线实时绘制：</h4><p>用消息队列就是K线可以实时绘制，提供准确的交易信息。在处理K线实时绘制是的一个错误的认识：每次拿到K线数据就替换之前的数据开重新绘制界面。通过对比火币的K线图发现，火币的1分钟蜡烛图只会重复绘制最后一个蜡烛图，同时实施修改蜡烛图的颜色(蜡烛图的颜色表示涨跌)，下一分钟在新增一个蜡烛图。同理5分钟、15分钟的维度也是这样绘制的。因此要以时间为参考指标来判断是否需要新增数据，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NSString *timeString = dict[@&quot;time&quot;];</div><div class="line">if ([timeString isEqualToString:oldDict[@&quot;time&quot;]]) &#123;</div><div class="line">    [self.oldklineModels replaceObjectAtIndex:0 withObject:dict];</div><div class="line">    [self.timeTypeArray addObject:dict];</div><div class="line">&#125;else&#123;</div><div class="line">    [self.oldklineModels insertObject:dict atIndex:0];</div><div class="line">    [self.timeTypeArray addObject:dict];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD:"></a>GCD:</h2><h3 id="常用："><a href="#常用：" class="headerlink" title="常用："></a>常用：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123; </div><div class="line">  // 处理耗时操作的代码块... </div><div class="line">  //通知主线程刷新 </div><div class="line">  dispatch_async(dispatch_get_main_queue(), ^&#123; </div><div class="line">  //回调或者说是通知主线程刷新， </div><div class="line">  &#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">+ (instancetype)sharedInstance &#123;</div><div class="line">    static id sharedInstance = nil;</div><div class="line">    static dispatch_once_t onceToken;</div><div class="line">    dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">        sharedInstance = [[self alloc] init];</div><div class="line">    &#125;);</div><div class="line">    return sharedInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="什么是GCD："><a href="#什么是GCD：" class="headerlink" title="什么是GCD："></a>什么是GCD：</h3><p>GCD是异步执行任务的技术之一，开发者只需要定义想要执行的任务并追加到适当的Dispatch Queue内，GCD就能生产必需的线程并计划任务执行。GCD 通过简单的方式实现了复杂的多线程编程。</p>
-<h1 id="ARTS"><a href="#ARTS" class="headerlink" title="ARTS:"></a>ARTS:</h1><h2 id="算法："><a href="#算法：" class="headerlink" title="算法："></a>算法：</h2><h2 id="极客时间："><a href="#极客时间：" class="headerlink" title="极客时间："></a>极客时间：</h2><h3 id="ios自动布局："><a href="#ios自动布局：" class="headerlink" title="ios自动布局："></a>ios自动布局：</h3><h4 id="常用：-1"><a href="#常用：-1" class="headerlink" title="常用："></a>常用：</h4><p>关不布局，最开始的时候用frame,慢慢的随着屏幕尺寸的不断新增，自动布局便成了需要被关注的点。常用的自动布局库有：Masonry、SDAutoLayout、SnapKit。其次需要了解两个单位pt、px.</p>
-<h4 id="学习："><a href="#学习：" class="headerlink" title="学习："></a>学习：</h4><ol>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (void)disconnectMqtt&#123;</div><div class="line">    [self.session unsubscribeTopic:self.topicName];</div><div class="line">    [self.session disconnect];</div><div class="line">    self.session = nil;</div><div class="line">    [self.timer invalidate];</div><div class="line">    self.timer = nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3>K线：</h3>
+<p>k线主要的作用是反应盘口大势状态和价格的信息，通常绘制k线需要的数据有：最高价、最低价、开盘价、收盘价、日期、成交量。</p>
+<h4>单个蜡烛图的绘制：</h4>
+<p>绘制k线首先需要了解：UIBezierPath、CAShapeLayer。其中UIBezierPath指定了蜡烛图的大小位置，CAShapeLayer根据路径将蜡烛图绘制在layer上。以下是一个蜡烛图的绘制：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">CGRect candleFrame = CGRectMake(313.5, 160, 5,20);    </div><div class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRect:candleFrame];</div><div class="line">[path moveToPoint:CGPointMake(316, 103)];</div><div class="line">[path addLineToPoint:CGPointMake(316,  160 + 20 + 7)];</div><div class="line">CAShapeLayer *layer = [CAShapeLayer layer];</div><div class="line">layer.path = path.CGPath;</div><div class="line">layer.lineWidth = 1.0f;</div><div class="line">layer.strokeColor = [UIColor redColor].CGColor;</div><div class="line">layer.fillColor = [UIColor redColor].CGColor;</div><div class="line">[self.view.layer addSublayer:layer];</div></pre></td></tr></table></figure></p>
+<h4>web端与移动端数据问题：</h4>
+<p>由于这个项目是是先开发web端先定版本，导致在移动端在使用K线数据是需要沿用web使用的数据结构。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.web端使用数据按照日期倒叙的，移动端需要自己手动逆序数据。</div><div class="line">2.mqtt订阅主题数据的时间维度问题：每次订阅都会给出全量的时间维度数据即：1分钟、5分钟、15分钟、1小时、4小时......,每次想获取数据增量都需要遍历自己查找。</div></pre></td></tr></table></figure></p>
+<h4>k线实时绘制：</h4>
+<p>用消息队列就是K线可以实时绘制，提供准确的交易信息。在处理K线实时绘制是的一个错误的认识：每次拿到K线数据就替换之前的数据开重新绘制界面。通过对比火币的K线图发现，火币的1分钟蜡烛图只会重复绘制最后一个蜡烛图，同时实施修改蜡烛图的颜色(蜡烛图的颜色表示涨跌)，下一分钟在新增一个蜡烛图。同理5分钟、15分钟的维度也是这样绘制的。因此要以时间为参考指标来判断是否需要新增数据，代码如下：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NSString *timeString = dict[@&quot;time&quot;];</div><div class="line">if ([timeString isEqualToString:oldDict[@&quot;time&quot;]]) &#123;</div><div class="line">    [self.oldklineModels replaceObjectAtIndex:0 withObject:dict];</div><div class="line">    [self.timeTypeArray addObject:dict];</div><div class="line">&#125;else&#123;</div><div class="line">    [self.oldklineModels insertObject:dict atIndex:0];</div><div class="line">    [self.timeTypeArray addObject:dict];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2>GCD:</h2>
+<h3>常用：</h3>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123; </div><div class="line">  // 处理耗时操作的代码块... </div><div class="line">  //通知主线程刷新 </div><div class="line">  dispatch_async(dispatch_get_main_queue(), ^&#123; </div><div class="line">  //回调或者说是通知主线程刷新， </div><div class="line">  &#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">+ (instancetype)sharedInstance &#123;</div><div class="line">    static id sharedInstance = nil;</div><div class="line">    static dispatch_once_t onceToken;</div><div class="line">    dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">        sharedInstance = [[self alloc] init];</div><div class="line">    &#125;);</div><div class="line">    return sharedInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3>什么是GCD：</h3>
+<p>GCD是异步执行任务的技术之一，开发者只需要定义想要执行的任务并追加到适当的Dispatch Queue内，GCD就能生产必需的线程并计划任务执行。GCD 通过简单的方式实现了复杂的多线程编程。</p>
+<h1>ARTS:</h1>
+<h2>算法：</h2>
+<h2>极客时间：</h2>
+<h3>ios自动布局：</h3>
+<h4>常用：</h4>
+<p>关不布局，最开始的时候用frame,慢慢的随着屏幕尺寸的不断新增，自动布局便成了需要被关注的点。常用的自动布局库有：Masonry、SDAutoLayout、SnapKit。其次需要了解两个单位pt、px.</p>
+<h4>学习：</h4>
+<ol>
 <li>1997年，Auto Layout用到的布局算法Cassowary出现。</li>
 <li>2011年，苹果将Cassowary算法用到自动布局引擎Auto Layout。</li>
 <li>Auto Layout的核心：Layout Engine布局引擎系统，主导整个页面布局。</li>
 </ol>
 
-    </div>
-    
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">IT从业者</a>
-            
         </div>
-        <div>
-            
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/GCD/">GCD</a>, <a class="has-link-grey -link" href="/tags/K线/">K线</a>, <a class="has-link-grey -link" href="/tags/MQTT/">MQTT</a>
+                </div>
+            </div>
         </div>
+        
+        
+        
     </div>
-</article>
-
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/passages/20190514/" class="pre-post btn btn-default" title='swift请求'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">swift请求</span>
-        </a>
-    
-    
-        <a href="/passages/20190407/" class="next-post btn btn-default" title='ARTS打卡02'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">ARTS打卡02</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
 </div>
 
 
-    <div id="comments">
-        
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
 
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: true,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-Hans'.toLowerCase()
-        })
-    </script>
-
-
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+        </div>
     </div>
+</div>
 
 
 
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">文章目录</h3>
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#本周小结"><span class="toc-text">本周小结:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OC"><span class="toc-text">OC:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MQTT："><span class="toc-text">MQTT：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解释："><span class="toc-text">解释：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用法："><span class="toc-text">用法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#易错点："><span class="toc-text">易错点：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#K线："><span class="toc-text">K线：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单个蜡烛图的绘制："><span class="toc-text">单个蜡烛图的绘制：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web端与移动端数据问题："><span class="toc-text">web端与移动端数据问题：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k线实时绘制："><span class="toc-text">k线实时绘制：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GCD"><span class="toc-text">GCD:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用："><span class="toc-text">常用：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是GCD："><span class="toc-text">什么是GCD：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ARTS"><span class="toc-text">ARTS:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法："><span class="toc-text">算法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#极客时间："><span class="toc-text">极客时间：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ios自动布局："><span class="toc-text">ios自动布局：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用：-1"><span class="toc-text">常用：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#学习："><span class="toc-text">学习：</span></a></li></ol></li></ol></li></ol></li></ol>
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/passages/20190514/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">swift请求</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/passages/20190407/">
+                <span class="level-item">ARTS打卡02</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
-</aside>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="IT从业者">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        IT从业者
+                    </p>
+                    
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        14
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/ARTS打卡/">
+            <span class="level-start">
+                <span class="level-item">ARTS打卡</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/新技能get/">
+            <span class="level-start">
+                <span class="level-item">新技能get</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/每周/">
+            <span class="level-start">
+                <span class="level-item">每周</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/每日/">
+            <span class="level-start">
+                <span class="level-item">每日</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Alamofire/" style="font-size: 10px;">Alamofire</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/TokenCore/" style="font-size: 10px;">TokenCore</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/cocoapods/" style="font-size: 15px;">cocoapods</a> <a href="/tags/pod/" style="font-size: 10px;">pod</a> <a href="/tags/web3swift-pod/" style="font-size: 10px;">web3swift.pod</a> <a href="/tags/weekly/" style="font-size: 10px;">weekly'</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20190929/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time></div>
+                    <a href="/passages/20190929/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190918/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190918">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T16:12:16.395Z">2019-09-19</time></div>
+                    <a href="/passages/20190918/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190918</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190911/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
+                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190910/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
+                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190704/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="制作私有仓库">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T08:54:16.502Z">2019-07-04</time></div>
+                    <a href="/passages/20190704/" class="title has-link-black-ter is-size-6 has-text-weight-normal">制作私有仓库</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Alamofire/">
+                        <span class="tag">Alamofire</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCD/">
+                        <span class="tag">GCD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/K线/">
+                        <span class="tag">K线</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MQTT/">
+                        <span class="tag">MQTT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OneClick/">
+                        <span class="tag">OneClick</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RN/">
+                        <span class="tag">RN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React-Native/">
+                        <span class="tag">React Native</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TokenCore/">
+                        <span class="tag">TokenCore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cocoapods/">
+                        <span class="tag">cocoapods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pod/">
+                        <span class="tag">pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/web3swift-pod/">
+                        <span class="tag">web3swift.pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weekly/">
+                        <span class="tag">weekly&#39;</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
 
                 
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20190929/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time></div>
+                    <a href="/passages/20190929/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190918/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190918">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T16:12:16.395Z">2019-09-19</time></div>
+                    <a href="/passages/20190918/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190918</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190911/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
+                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190910/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
+                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190704/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="制作私有仓库">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T08:54:16.502Z">2019-07-04</time></div>
+                    <a href="/passages/20190704/" class="title has-link-black-ter is-size-6 has-text-weight-normal">制作私有仓库</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Alamofire/">
+                        <span class="tag">Alamofire</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCD/">
+                        <span class="tag">GCD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/K线/">
+                        <span class="tag">K线</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MQTT/">
+                        <span class="tag">MQTT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OneClick/">
+                        <span class="tag">OneClick</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RN/">
+                        <span class="tag">RN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React-Native/">
+                        <span class="tag">React Native</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TokenCore/">
+                        <span class="tag">TokenCore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cocoapods/">
+                        <span class="tag">cocoapods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pod/">
+                        <span class="tag">pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/web3swift-pod/">
+                        <span class="tag">web3swift.pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weekly/">
+                        <span class="tag">weekly&#39;</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
             </div>
         </div>
     </section>
-    <footer class="main-footer">
+    <footer class="footer">
     <div class="container">
-        <div class="row">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="ARTS打卡打卡03" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 海信&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
         </div>
     </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-Hans");</script>
 
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
 
 
 
-
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
     
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
 
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy; 2019
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+<script src="/js/main.js" defer></script>
 
-
-
-
-
-<script src="/js/app.js?rev=@@hash"></script>
-
+    
 </body>
 </html>

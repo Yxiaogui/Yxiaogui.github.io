@@ -1,314 +1,1101 @@
-<!DOCTYPE HTML>
-<html lang="zh-Hans">
+<!DOCTYPE html>
+<html  lang="zh">
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="不正经的IT从业者">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.2.3">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="http://yoursite.com">
-    <!--SEO-->
+    <meta charset="utf-8" />
 
-    <meta name="keywords" content="" />
+<meta name="generator" content="Hexo 3.3.8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>ARTS打卡02 - 不正经的IT从业者</title>
 
 
-    <meta name="description" content="TIP：极客时间：Vue:Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。
-Vue组件的核..." />
-
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-
-    <!--Title-->
-
-
-<title>ARTS打卡02 | 不正经的IT从业者</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="不正经的IT从业者" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
+    <meta name="description" content="TIP： 极客时间： Vue: Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。 Vue组件的核心概念：属性、时间、插槽。属性是单项事件流，不能再组件改变父组件传入的值。 同时学习了自定义组件，通过props传参数，点击事件回调参数等。 1234//创建vue项目1.vue create vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ARTS打卡02">
+<meta property="og:url" content="http://yoursite.com/passages/20190407/index.html">
+<meta property="og:site_name" content="不正经的IT从业者">
+<meta property="og:description" content="TIP： 极客时间： Vue: Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。 Vue组件的核心概念：属性、时间、插槽。属性是单项事件流，不能再组件改变父组件传入的值。 同时学习了自定义组件，通过props传参数，点击事件回调参数等。 1234//创建vue项目1.vue create vue">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-07-03T07:33:48.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ARTS打卡02">
+<meta name="twitter:description" content="TIP： 极客时间： Vue: Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。 Vue组件的核心概念：属性、时间、插槽。属性是单项事件流，不能再组件改变父组件传入的值。 同时学习了自定义组件，通过props传参数，点击事件回调参数等。 1234//创建vue项目1.vue create vue">
+<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
 
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
 
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
 
 
     
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
-
-
-
-
-
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
 
     
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
 
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-
-<body>
-    <header class="main-header"  style="background-image:url(https://haixinhome.files.wordpress.com/2018/12/pexels-photo-30732.jpg)"  >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='海信'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
-            
-    	</div>
-    </div>
-</header>
-    <nav class="main-navigation">
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://yoursite.com">不正经的IT从业者</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>首页</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/"><i class="fa "></i>分类</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>时间轴</a>
-                            </li>
-                        
-                    </ul>
-                </div>
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="ARTS打卡02" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">首页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
             </div>
         </div>
     </div>
 </nav>
-    <section class="content-wrap">
+    
+    <section class="section">
         <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="ARTS打卡02">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-07T13:45:20.000Z">2019-04-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/ARTS打卡/">ARTS打卡</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes 读完 (大约 1085 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-	            ARTS打卡02
+                ARTS打卡02
             
         </h1>
-        <div class="post-meta">
-    
-        <span class="categories-meta fa-wrap">
-            <i class="fa fa-folder-open-o"></i>
-            <a class="category-link" href="/categories/ARTS打卡/">ARTS打卡</a>
-        </span>
-    
-
-    
-        <span class="fa-wrap">
-            <i class="fa fa-tags"></i>
-            <span class="tags-meta">
-                
-            </span>
-        </span>
-    
-
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/04/07</span>
-        </span>
-        
-    
-</div>
-            
-            
-    </div>
-    
-    <div class="post-body post-content">
-        <h1 id="TIP："><a href="#TIP：" class="headerlink" title="TIP："></a>TIP：</h1><h2 id="极客时间："><a href="#极客时间：" class="headerlink" title="极客时间："></a>极客时间：</h2><h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue:"></a>Vue:</h3><p>Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。</p>
+        <div class="content">
+            <h1>TIP：</h1>
+<h2>极客时间：</h2>
+<h3>Vue:</h3>
+<p>Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。</p>
 <p>Vue组件的核心概念：属性、时间、插槽。属性是单项事件流，不能再组件改变父组件传入的值。</p>
 <p>同时学习了自定义组件，通过props传参数，点击事件回调参数等。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建vue项目</div><div class="line">1.vue create vueapp</div><div class="line">2.cd vueapp</div><div class="line">3.npm run serve</div></pre></td></tr></table></figure>
-<h3 id="OC"><a href="#OC" class="headerlink" title="OC:"></a>OC:</h3><h4 id="App启动："><a href="#App启动：" class="headerlink" title="App启动："></a>App启动：</h4><p> 首选需要了解的是：app的启动分为冷启动、热启动。app的启动主要分为三个阶段：1.main()函数执行前即pre-main()；2.main()函数执行后；3；首屏渲染完成后。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//创建vue项目</div><div class="line">1.vue create vueapp</div><div class="line">2.cd vueapp</div><div class="line">3.npm run serve</div></pre></td></tr></table></figure></p>
+<h3>OC:</h3>
+<h4>App启动：</h4>
+<p>首选需要了解的是：app的启动分为冷启动、热启动。app的启动主要分为三个阶段：1.main()函数执行前即pre-main()；2.main()函数执行后；3；首屏渲染完成后。</p>
 <p>那么main()函数执行之前app 做了哪些事情呢：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.加载可执行文件,(app的.o文件)</div><div class="line">2.加载动态链接库，进行rebase指针调整和bind符号绑定。</div><div class="line">3.objc运行时的初始化处理，包括objc相关类的注册、category注册、selector唯一性检查等</div><div class="line">4.初始化，包括执行+load()方法，attribute((constructor))修改的函数的跳转、创建c++静态全局变量。</div><div class="line">//相应的对于这个阶段启动的速度优化方法有：</div><div class="line">1.减少动态库加载。</div><div class="line">2.减少加载启动后不会去使用的类或者方法</div><div class="line">3.+load()方法里面的内容可以方法首屏渲染完成之后再执行，或者使用+initialize()方法替换掉。</div><div class="line">4.控制c++全局变量的数量。</div><div class="line">//同时去看了苹果开发者大会的视频，关于性能优化之后的建议是：切换成swift，因为它足够优秀。</div></pre></td></tr></table></figure>
-<h4 id="二维码图片保存相册"><a href="#二维码图片保存相册" class="headerlink" title="二维码图片保存相册:"></a>二维码图片保存相册:</h4><p>第一种：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#import &lt;Photos/PHPhotoLibrary.h&gt;</div><div class="line">#import &lt;Photos/PHAssetChangeRequest.h&gt;</div><div class="line">[[PHPhotoLibrary sharedPhotoLibrary]performChanges:^&#123;</div><div class="line">        [PHAssetChangeRequest creationRequestForAssetFromImage:image];</div><div class="line">    &#125; completionHandler:^(BOOL success, NSError * _Nullable error) &#123;</div><div class="line">        if (error) &#123;</div><div class="line">            [BaseLoading showOnlyText:@&quot;保存失败&quot;];</div><div class="line">        &#125; else &#123;</div><div class="line">            [BaseLoading showOnlyText:@&quot;保存成功&quot;];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1.加载可执行文件,(app的.o文件)</div><div class="line">2.加载动态链接库，进行rebase指针调整和bind符号绑定。</div><div class="line">3.objc运行时的初始化处理，包括objc相关类的注册、category注册、selector唯一性检查等</div><div class="line">4.初始化，包括执行+load()方法，attribute((constructor))修改的函数的跳转、创建c++静态全局变量。</div><div class="line">//相应的对于这个阶段启动的速度优化方法有：</div><div class="line">1.减少动态库加载。</div><div class="line">2.减少加载启动后不会去使用的类或者方法</div><div class="line">3.+load()方法里面的内容可以方法首屏渲染完成之后再执行，或者使用+initialize()方法替换掉。</div><div class="line">4.控制c++全局变量的数量。</div><div class="line">//同时去看了苹果开发者大会的视频，关于性能优化之后的建议是：切换成swift，因为它足够优秀。</div></pre></td></tr></table></figure></p>
+<h4>二维码图片保存相册:</h4>
+<p>第一种：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#import &lt;Photos/PHPhotoLibrary.h&gt;</div><div class="line">#import &lt;Photos/PHAssetChangeRequest.h&gt;</div><div class="line">[[PHPhotoLibrary sharedPhotoLibrary]performChanges:^&#123;</div><div class="line">        [PHAssetChangeRequest creationRequestForAssetFromImage:image];</div><div class="line">    &#125; completionHandler:^(BOOL success, NSError * _Nullable error) &#123;</div><div class="line">        if (error) &#123;</div><div class="line">            [BaseLoading showOnlyText:@&quot;保存失败&quot;];</div><div class="line">        &#125; else &#123;</div><div class="line">            [BaseLoading showOnlyText:@&quot;保存成功&quot;];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div></pre></td></tr></table></figure></p>
 <p>第二种：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UIGraphicsBeginImageContext(self.qrImage.size);</div><div class="line">[self.qrImage drawInRect:CGRectMake(0, 0, self.qrImage.size.width, self.qrImage.size.height)];</div><div class="line">self.qrImage  = UIGraphicsGetImageFromCurrentImageContext();</div><div class="line">UIGraphicsEndImageContext();</div><div class="line">UIImageWriteToSavedPhotosAlbum(self.qrImage, nil, nil, NULL);</div></pre></td></tr></table></figure>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">UIGraphicsBeginImageContext(self.qrImage.size);</div><div class="line">[self.qrImage drawInRect:CGRectMake(0, 0, self.qrImage.size.width, self.qrImage.size.height)];</div><div class="line">self.qrImage  = UIGraphicsGetImageFromCurrentImageContext();</div><div class="line">UIGraphicsEndImageContext();</div><div class="line">UIImageWriteToSavedPhotosAlbum(self.qrImage, nil, nil, NULL);</div></pre></td></tr></table></figure></p>
 <p>测试发现通过[UIImage imageWithCIImage:outImage]生产的图片需要需要第二种方法才能保存到相册。</p>
-<h4 id="App项目架构-VIEW："><a href="#App项目架构-VIEW：" class="headerlink" title="App项目架构-VIEW："></a>App项目架构-VIEW：</h4><p>之前很少关注项目架构、代码的统一性问题；了解了设计模式代码缺写的还是很不漂亮。现在在对已有项目作调整，都是欠下的，现在需要补上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.#pragma mark life &amp;&amp; cycle</div><div class="line">2.#pragma mark - Table view data source</div><div class="line">3.#pragma mark - customeview delegate</div><div class="line">4.#pragma mark - viewmodel kvo</div><div class="line">5.#pragma mark - getters &amp;&amp; setters</div><div class="line">6.为了语义上的好理解，所有常见subview方法为customUI或者buildUI选其中之一</div></pre></td></tr></table></figure>
+<h4>App项目架构-VIEW：</h4>
+<p>之前很少关注项目架构、代码的统一性问题；了解了设计模式代码缺写的还是很不漂亮。现在在对已有项目作调整，都是欠下的，现在需要补上。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1.#pragma mark life &amp;&amp; cycle</div><div class="line">2.#pragma mark - Table view data source</div><div class="line">3.#pragma mark - customeview delegate</div><div class="line">4.#pragma mark - viewmodel kvo</div><div class="line">5.#pragma mark - getters &amp;&amp; setters</div><div class="line">6.为了语义上的好理解，所有常见subview方法为customUI或者buildUI选其中之一</div></pre></td></tr></table></figure></p>
 <p>除了视图层的规范还需要关注网络层、缓存层、以及第三方库的管理，这个项目可能是最后一个oc项目了。</p>
-<h3 id="Swift"><a href="#Swift" class="headerlink" title="Swift:"></a>Swift:</h3><p>代理书写：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建代理</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">NewViewControllerDelegate</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">testCallBackFunc</span><span class="params">(callName:String)</span></span></div><div class="line">&#125;</div><div class="line"><span class="comment">//使用代理</span></div><div class="line"> <span class="keyword">var</span> delegate: <span class="type">NewViewControllerDelegate</span>?</div><div class="line"> <span class="meta">@objc</span> <span class="function"><span class="keyword">func</span> <span class="title">clickEventTap</span><span class="params">()</span></span>  &#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.delegate != <span class="literal">nil</span> &#123;</div><div class="line">            delegate?.testCallBackFunc(callName: <span class="string">"nihao"</span>)</div><div class="line">        &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h3 id="CSS："><a href="#CSS：" class="headerlink" title="CSS："></a>CSS：</h3><p>个人很关注css布局、定位，因为移动端上使用的autolayout有比较明显的父视图，再布局是很清楚的知道superview、subview。css在这方面的就显得比较弱，但也不是不可理解。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">postion的6个属性：</div><div class="line">1.static(默认)静态定位；2.relative相对定位；3.absolute绝对定位；4.fixed固定位置跟绝对定位相似；5.sticky;6.inherit.</div><div class="line">偏移量:top、right、bottom 、left</div><div class="line">float属性：left 、right、 none默认值，不浮动、 inherit继承父元素的浮动属性</div><div class="line">浮动会脱离正常的文档流布局，会吸附在父容器的左边或者右边等。清除浮动clear三个值：left、right、both</div></pre></td></tr></table></figure>
+<h3>Swift:</h3>
+<p>代理书写：</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">//创建代理</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">NewViewControllerDelegate</span> </span>&#123;</div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testCallBackFunc</span><span class="hljs-params">(callName:String)</span></span></div><div class="line">&#125;</div><div class="line"><span class="hljs-comment">//使用代理</span></div><div class="line"> <span class="hljs-keyword">var</span> delegate: <span class="hljs-type">NewViewControllerDelegate</span>?</div><div class="line"> <span class="hljs-meta">@objc</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">clickEventTap</span><span class="hljs-params">()</span></span>  &#123;</div><div class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span> &#123;</div><div class="line">            delegate?.testCallBackFunc(callName: <span class="hljs-string">"nihao"</span>)</div><div class="line">        &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h3>CSS：</h3>
+<p>个人很关注css布局、定位，因为移动端上使用的autolayout有比较明显的父视图，再布局是很清楚的知道superview、subview。css在这方面的就显得比较弱，但也不是不可理解。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">postion的6个属性：</div><div class="line">1.static(默认)静态定位；2.relative相对定位；3.absolute绝对定位；4.fixed固定位置跟绝对定位相似；5.sticky;6.inherit.</div><div class="line">偏移量:top、right、bottom 、left</div><div class="line">float属性：left 、right、 none默认值，不浮动、 inherit继承父元素的浮动属性</div><div class="line">浮动会脱离正常的文档流布局，会吸附在父容器的左边或者右边等。清除浮动clear三个值：left、right、both</div></pre></td></tr></table></figure></p>
 <p>看了书里面对H5的布局称为容器，移动端称为视图。其实作为渲染的View来说两个的称谓可以统一。</p>
-<h1 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h1><p>这周看了村上春树的我的职业是小说家，里面提到关于自己没有得到芥川奖的描述总结下来应该是不高估自己、心态平和、关注自己创作。</p>
+<h1>Share:</h1>
+<p>这周看了村上春树的我的职业是小说家，里面提到关于自己没有得到芥川奖的描述总结下来应该是不高估自己、心态平和、关注自己创作。</p>
 
-    </div>
-    
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">IT从业者</a>
-            
         </div>
-        <div>
-            
-        </div>
+        
+        
+        
     </div>
-</article>
-
-<div class="article-nav prev-next-wrap clearfix">
-    
-        <a href="/passages/20190413/" class="pre-post btn btn-default" title='ARTS打卡打卡03'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">ARTS打卡打卡03</span>
-        </a>
-    
-    
-        <a href="/passages/20190330/" class="next-post btn btn-default" title='打卡01'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">打卡01</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
 </div>
 
 
-    <div id="comments">
-        
-	
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
 
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
-            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: true,
-            avatar: 'mm',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: 'zh-Hans'.toLowerCase()
-        })
-    </script>
-
-
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+        </div>
     </div>
+</div>
 
 
 
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">文章目录</h3>
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TIP："><span class="toc-text">TIP：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#极客时间："><span class="toc-text">极客时间：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue"><span class="toc-text">Vue:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OC"><span class="toc-text">OC:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#App启动："><span class="toc-text">App启动：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二维码图片保存相册"><span class="toc-text">二维码图片保存相册:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#App项目架构-VIEW："><span class="toc-text">App项目架构-VIEW：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Swift"><span class="toc-text">Swift:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS："><span class="toc-text">CSS：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Share"><span class="toc-text">Share:</span></a></li></ol>
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/passages/20190413/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">ARTS打卡打卡03</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/passages/20190330/">
+                <span class="level-item">打卡01</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
-</aside>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="IT从业者">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        IT从业者
+                    </p>
+                    
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>杭州</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        14
+                    </p>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/ARTS打卡/">
+            <span class="level-start">
+                <span class="level-item">ARTS打卡</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/新技能get/">
+            <span class="level-start">
+                <span class="level-item">新技能get</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/每周/">
+            <span class="level-start">
+                <span class="level-item">每周</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/每日/">
+            <span class="level-start">
+                <span class="level-item">每日</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Alamofire/" style="font-size: 10px;">Alamofire</a> <a href="/tags/GCD/" style="font-size: 10px;">GCD</a> <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/RN/" style="font-size: 10px;">RN</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/TokenCore/" style="font-size: 10px;">TokenCore</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/cocoapods/" style="font-size: 15px;">cocoapods</a> <a href="/tags/pod/" style="font-size: 10px;">pod</a> <a href="/tags/web3swift-pod/" style="font-size: 10px;">web3swift.pod</a> <a href="/tags/weekly/" style="font-size: 10px;">weekly'</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20190929/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time></div>
+                    <a href="/passages/20190929/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190918/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190918">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T16:12:16.395Z">2019-09-19</time></div>
+                    <a href="/passages/20190918/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190918</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190911/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
+                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190910/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
+                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190704/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="制作私有仓库">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T08:54:16.502Z">2019-07-04</time></div>
+                    <a href="/passages/20190704/" class="title has-link-black-ter is-size-6 has-text-weight-normal">制作私有仓库</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Alamofire/">
+                        <span class="tag">Alamofire</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCD/">
+                        <span class="tag">GCD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/K线/">
+                        <span class="tag">K线</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MQTT/">
+                        <span class="tag">MQTT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OneClick/">
+                        <span class="tag">OneClick</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RN/">
+                        <span class="tag">RN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React-Native/">
+                        <span class="tag">React Native</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TokenCore/">
+                        <span class="tag">TokenCore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cocoapods/">
+                        <span class="tag">cocoapods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pod/">
+                        <span class="tag">pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/web3swift-pod/">
+                        <span class="tag">web3swift.pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weekly/">
+                        <span class="tag">weekly&#39;</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
 
                 
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20190929/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第一周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time></div>
+                    <a href="/passages/20190929/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第一周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190918/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190918">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-18T16:12:16.395Z">2019-09-19</time></div>
+                    <a href="/passages/20190918/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190918</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190911/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
+                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190910/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
+                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/passages/20190704/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="制作私有仓库">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T08:54:16.502Z">2019-07-04</time></div>
+                    <a href="/passages/20190704/" class="title has-link-black-ter is-size-6 has-text-weight-normal">制作私有仓库</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Alamofire/">
+                        <span class="tag">Alamofire</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GCD/">
+                        <span class="tag">GCD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/K线/">
+                        <span class="tag">K线</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/MQTT/">
+                        <span class="tag">MQTT</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/OneClick/">
+                        <span class="tag">OneClick</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/RN/">
+                        <span class="tag">RN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React/">
+                        <span class="tag">React</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/React-Native/">
+                        <span class="tag">React Native</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/TokenCore/">
+                        <span class="tag">TokenCore</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Vue/">
+                        <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cocoapods/">
+                        <span class="tag">cocoapods</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/pod/">
+                        <span class="tag">pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/web3swift-pod/">
+                        <span class="tag">web3swift.pod</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/weekly/">
+                        <span class="tag">weekly&#39;</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
             </div>
         </div>
     </section>
-    <footer class="main-footer">
+    <footer class="footer">
     <div class="container">
-        <div class="row">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="ARTS打卡02" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 海信&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
         </div>
     </div>
 </footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-Hans");</script>
 
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
 
 
 
-
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
     
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
 
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy; 2019
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
+<script src="/js/main.js" defer></script>
 
-
-
-
-
-<script src="/js/app.js?rev=@@hash"></script>
-
+    
 </body>
 </html>
