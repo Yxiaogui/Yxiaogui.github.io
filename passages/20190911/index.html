@@ -10,19 +10,19 @@
 <title>20190911 - IT从业者</title>
 
 
-    <meta name="description" content="React1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方">
+    <meta name="description" content="React 1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box 123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation 12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的">
 <meta name="keywords" content="React Native,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20190911">
 <meta property="og:url" content="http://yoursite.com/passages/20190911/index.html">
 <meta property="og:site_name" content="IT从业者">
-<meta property="og:description" content="React1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方">
+<meta property="og:description" content="React 1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box 123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation 12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="og:updated_time" content="2019-10-02T08:43:34.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20190911">
-<meta name="twitter:description" content="React1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方">
+<meta name="twitter:description" content="React 1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box 123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation 12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -137,9 +137,12 @@
             
         </h1>
         <div class="content">
-            <h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.组件化</div><div class="line">2.单向数据流 ,props state</div><div class="line">3.虚拟DOM</div></pre></td></tr></table></figure>
-<h3 id="Flex-Box"><a href="#Flex-Box" class="headerlink" title="Flex Box"></a>Flex Box</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果</div><div class="line">1.flexWrap子组件组件换行方向</div><div class="line">2.flexDirection决定组件主轴的排列方向</div></pre></td></tr></table></figure>
-<h3 id="react-navigation"><a href="#react-navigation" class="headerlink" title="react-navigation"></a>react-navigation</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方式容易把之前的经验自动带入，属性赋值操作看起来就没有想象中的那么容易，方法如下：</div><div class="line"></div><div class="line">showIcon: true</div><div class="line">HomeTab: &#123;</div><div class="line">            screen: HomeNav,</div><div class="line">            navigationOptions: &#123;</div><div class="line">                tabBarLabel: &apos;首页&apos;,</div><div class="line">                tabBarIcon: (&#123;focused&#125;) =&gt; (</div><div class="line">                    focused ? &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_select.png&apos;)&#125;/&gt; :</div><div class="line">                        &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_normal.png&apos;)&#125;/&gt;</div><div class="line">                ),</div><div class="line">            &#125;,</div><div class="line">        &#125;,</div></pre></td></tr></table></figure>
+            <h3>React</h3>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.组件化</div><div class="line">2.单向数据流 ,props state</div><div class="line">3.虚拟DOM</div></pre></td></tr></table></figure></p>
+<h3>Flex Box</h3>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果</div><div class="line">1.flexWrap子组件组件换行方向</div><div class="line">2.flexDirection决定组件主轴的排列方向</div></pre></td></tr></table></figure></p>
+<h3>react-navigation</h3>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方式容易把之前的经验自动带入，属性赋值操作看起来就没有想象中的那么容易，方法如下：</div><div class="line"></div><div class="line">showIcon: true</div><div class="line">HomeTab: &#123;</div><div class="line">            screen: HomeNav,</div><div class="line">            navigationOptions: &#123;</div><div class="line">                tabBarLabel: &apos;首页&apos;,</div><div class="line">                tabBarIcon: (&#123;focused&#125;) =&gt; (</div><div class="line">                    focused ? &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_select.png&apos;)&#125;/&gt; :</div><div class="line">                        &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_normal.png&apos;)&#125;/&gt;</div><div class="line">                ),</div><div class="line">            &#125;,</div><div class="line">        &#125;,</div></pre></td></tr></table></figure></p>
 
         </div>
         

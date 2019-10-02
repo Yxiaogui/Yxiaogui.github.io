@@ -119,97 +119,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-17T08:15:21.000Z">2019-06-17</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20190617/">React Native</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="移动开发现状："><a href="#移动开发现状：" class="headerlink" title="移动开发现状："></a>移动开发现状：</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 原生开发</div><div class="line">2. 混合开发</div><div class="line">3. 跨平台开发</div></pre></td></tr></table></figure>
-<h2 id="技术选型："><a href="#技术选型：" class="headerlink" title="技术选型："></a>技术选型：</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.Native</div><div class="line">2.Native + H5 (1.原生与H5通过jsbridge交互，双发需要提前约定相互调用点击事件Key；2.原生通过富文本的方式渲染H5字符串)</div><div class="line">3.React-Native 、Weex 、Flutter</div></pre></td></tr></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/passages/20190617/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-14T12:20:21.000Z">2019-05-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20190514/">swift请求</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="Alamofire-请求简单封装"><a href="#Alamofire-请求简单封装" class="headerlink" title="Alamofire 请求简单封装"></a>Alamofire 请求简单封装</h3><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="hljs-keyword">import</span> UIKit</div><div class="line"><span class="hljs-keyword">import</span> Alamofire</div><div class="line"><span class="hljs-keyword">import</span> SwiftyJSON</div><div class="line"></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">HTTPProxyDelegate</span> </span>&#123;</div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxySuccess</span><span class="hljs-params">(msg:String,data:NSDictionary)</span></span></div><div class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxyfailure</span><span class="hljs-params">(msg:String)</span></span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTTPProxy</span>: <span class="hljs-title">NSObject</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isPost :<span class="hljs-type">Bool</span>!</div><div class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isFile :<span class="hljs-type">Bool</span>!</div><div class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> path = <span class="hljs-string">""</span></div><div class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> hosturl = <span class="hljs-string">""</span></div><div class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> urlString = <span class="hljs-string">""</span></div><div class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> parameters = [<span class="hljs-type">String</span> :<span class="hljs-type">Any</span>]()</div><div class="line">    <span class="hljs-keyword">var</span> delegate :<span class="hljs-type">HTTPProxyDelegate</span>?</div><div class="line">    </div><div class="line">    <span class="hljs-keyword">let</span> headers = [<span class="hljs-string">"Sign"</span>:<span class="hljs-string">"ios"</span>,<span class="hljs-string">"Authorization"</span>:<span class="hljs-string">"1234567890"</span>]</div><div class="line"></div><div class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">loadData</span><span class="hljs-params">()</span></span> &#123;</div><div class="line">        urlString = hosturl + path</div><div class="line">        <span class="hljs-keyword">if</span> isPost &#123;</div><div class="line">            postRequest()</div><div class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</div><div class="line">            getRequest()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRequest</span><span class="hljs-params">()</span></span> &#123;</div><div class="line">        <span class="hljs-type">Alamofire</span>.request(urlString, method:.<span class="hljs-keyword">get</span>, parameters: parameters, encoding: <span class="hljs-type">URLEncoding</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">ParameterEncoding</span>, headers: headers).responseJSON &#123; (response) <span class="hljs-keyword">in</span></div><div class="line">            <span class="hljs-built_in">print</span>(<span class="hljs-string">"get request "</span>)</div><div class="line">        &#125; </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">   <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">postRequest</span><span class="hljs-params">()</span></span>  &#123;</div><div class="line">        <span class="hljs-type">Alamofire</span>.request(urlString, method:.post, parameters: parameters, encoding: <span class="hljs-type">URLEncoding</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">ParameterEncoding</span>, headers: headers).responseJSON &#123; (responese) <span class="hljs-keyword">in</span></div><div class="line"></div><div class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> value = responese.result.value &#123;  </div><div class="line">                <span class="hljs-keyword">let</span> jsonData = <span class="hljs-type">JSON</span>(value)</div><div class="line">                <span class="hljs-keyword">let</span> code = jsonData[<span class="hljs-string">"Code"</span>].stringValue</div><div class="line">                <span class="hljs-keyword">let</span> msg = jsonData[<span class="hljs-string">"Msg"</span>].stringValue</div><div class="line">                <span class="hljs-keyword">let</span> data = jsonData[<span class="hljs-string">"Data"</span>].dictionary</div><div class="line">              </div><div class="line">                <span class="hljs-keyword">if</span> (code == <span class="hljs-string">"200"</span>)&#123;</div><div class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</div><div class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxySuccess(msg: msg, data: data! <span class="hljs-keyword">as</span> <span class="hljs-type">NSDictionary</span>)</div><div class="line">                    &#125;</div><div class="line">                &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (code ==  <span class="hljs-string">"202"</span>)&#123;</div><div class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</div><div class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: msg)</div><div class="line">                    &#125;</div><div class="line">                &#125;<span class="hljs-keyword">else</span>&#123;</div><div class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</div><div class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: msg)</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="hljs-keyword">else</span>&#123;</div><div class="line">                <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</div><div class="line">                    <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: <span class="hljs-string">"网络错误"</span>)</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="请求调用"><a href="#请求调用" class="headerlink" title="请求调用"></a>请求调用</h3><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">let</span> httpproxy = <span class="hljs-type">HTTPProxy</span>()</div><div class="line">httpproxy.isPost = <span class="hljs-literal">true</span></div><div class="line">httpproxy.path = <span class="hljs-string">"index/investlist"</span></div><div class="line">httpproxy.delegate = <span class="hljs-keyword">self</span></div><div class="line">httpproxy.loadData()</div><div class="line"></div><div class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxyfailure</span><span class="hljs-params">(msg:String)</span></span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxySuccess</span><span class="hljs-params">(msg:String,data:NSDictionary)</span></span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>项目一直用的OC开发的，swift作为趋势，慢慢的需要对项目代码做迁移，OC请求封装跟swift的不同点在于：oc用的是block回调的方式，swift选择的代理。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-04-13T13:45:20.000Z">2019-04-13</time>
+                <time class="level-item has-text-grey" datetime="2019-03-30T07:50:23.000Z">2019-03-30</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/ARTS打卡/">ARTS打卡</a>
@@ -222,33 +132,61 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/passages/20190413/">ARTS打卡打卡03</a>
+                <a class="has-link-black-ter" href="/passages/20190330/">打卡01</a>
             
         </h1>
         <div class="content">
-            <h1 id="本周小结"><a href="#本周小结" class="headerlink" title="本周小结:"></a>本周小结:</h1><h2 id="OC"><a href="#OC" class="headerlink" title="OC:"></a>OC:</h2><h3 id="MQTT："><a href="#MQTT：" class="headerlink" title="MQTT："></a>MQTT：</h3><h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><p>MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。</p>
-<p>本次项目用到mqtt主要使用在k线绘制，订阅K线实时数据、买卖盘数据等。</p>
-<h4 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h4><p>用到的第三方库是阿里推荐的MQTTClient。常规参数配置如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">- (MQTTCFSocketTransport *)transport&#123;</div><div class="line">  if (!_transport) &#123;</div><div class="line">      _transport = [[MQTTCFSocketTransport alloc] init];</div><div class="line">      _transport.host = @&quot;your host&quot;;</div><div class="line">      _transport.port = your port;</div><div class="line">  &#125;</div><div class="line">  return _transport;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (MQTTSession *)session&#123;</div><div class="line">  if (!_session) &#123;</div><div class="line">      _session = [[MQTTSession alloc] init];</div><div class="line">      _session.userName = @&quot;your userName&quot;;</div><div class="line">      _session.password = @&quot;your password&quot;;</div><div class="line">      _session.clientId = @&quot;you clientId&quot;;</div><div class="line">      _session.delegate = self;</div><div class="line">  &#125;</div><div class="line">  return _session;</div><div class="line">&#125;</div><div class="line">//连接</div><div class="line">- (void)connectMqtt&#123;</div><div class="line">      self.session.transport = self.transport;</div><div class="line">      [self.session connectWithConnectHandler:^(NSError *error) &#123;</div><div class="line">          if (!error) &#123;</div><div class="line">               [self.session subscribeToTopic:self.topicName atLevel:MQTTQosLevelExactlyOnce];</div><div class="line">          &#125;</div><div class="line">      &#125;];   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="易错点："><a href="#易错点：" class="headerlink" title="易错点："></a>易错点：</h4><p> <strong>mqtt需要维持重连的</strong>。看了网上的文档有两种常规的方式。1：KVO即观察session的status；2.通过定时器，判断mqtt的状态，如果断开连接就重连。通过第一种方法观察不到status的变化，导致不能及时判断状态，因此选择了第二张方式。</p>
-<p>mqtt关闭。需要设置<strong>self.session = nil</strong>。如果不设置只调用[self.session disconnect]，会看到mqtt日志在一直打印。因此完整的关闭mqtt的代码如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (void)disconnectMqtt&#123;</div><div class="line">    [self.session unsubscribeTopic:self.topicName];</div><div class="line">    [self.session disconnect];</div><div class="line">    self.session = nil;</div><div class="line">    [self.timer invalidate];</div><div class="line">    self.timer = nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="K线："><a href="#K线：" class="headerlink" title="K线："></a>K线：</h3><p>k线主要的作用是反应盘口大势状态和价格的信息，通常绘制k线需要的数据有：最高价、最低价、开盘价、收盘价、日期、成交量。</p>
-<h4 id="单个蜡烛图的绘制："><a href="#单个蜡烛图的绘制：" class="headerlink" title="单个蜡烛图的绘制："></a>单个蜡烛图的绘制：</h4><p>绘制k线首先需要了解：UIBezierPath、CAShapeLayer。其中UIBezierPath指定了蜡烛图的大小位置，CAShapeLayer根据路径将蜡烛图绘制在layer上。以下是一个蜡烛图的绘制：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">CGRect candleFrame = CGRectMake(313.5, 160, 5,20);    </div><div class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRect:candleFrame];</div><div class="line">[path moveToPoint:CGPointMake(316, 103)];</div><div class="line">[path addLineToPoint:CGPointMake(316,  160 + 20 + 7)];</div><div class="line">CAShapeLayer *layer = [CAShapeLayer layer];</div><div class="line">layer.path = path.CGPath;</div><div class="line">layer.lineWidth = 1.0f;</div><div class="line">layer.strokeColor = [UIColor redColor].CGColor;</div><div class="line">layer.fillColor = [UIColor redColor].CGColor;</div><div class="line">[self.view.layer addSublayer:layer];</div></pre></td></tr></table></figure>
-<h4 id="web端与移动端数据问题："><a href="#web端与移动端数据问题：" class="headerlink" title="web端与移动端数据问题："></a>web端与移动端数据问题：</h4><p>由于这个项目是是先开发web端先定版本，导致在移动端在使用K线数据是需要沿用web使用的数据结构。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.web端使用数据按照日期倒叙的，移动端需要自己手动逆序数据。</div><div class="line">2.mqtt订阅主题数据的时间维度问题：每次订阅都会给出全量的时间维度数据即：1分钟、5分钟、15分钟、1小时、4小时......,每次想获取数据增量都需要遍历自己查找。</div></pre></td></tr></table></figure>
-<h4 id="k线实时绘制："><a href="#k线实时绘制：" class="headerlink" title="k线实时绘制："></a>k线实时绘制：</h4><p>用消息队列就是K线可以实时绘制，提供准确的交易信息。在处理K线实时绘制是的一个错误的认识：每次拿到K线数据就替换之前的数据开重新绘制界面。通过对比火币的K线图发现，火币的1分钟蜡烛图只会重复绘制最后一个蜡烛图，同时实施修改蜡烛图的颜色(蜡烛图的颜色表示涨跌)，下一分钟在新增一个蜡烛图。同理5分钟、15分钟的维度也是这样绘制的。因此要以时间为参考指标来判断是否需要新增数据，代码如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NSString *timeString = dict[@&quot;time&quot;];</div><div class="line">if ([timeString isEqualToString:oldDict[@&quot;time&quot;]]) &#123;</div><div class="line">    [self.oldklineModels replaceObjectAtIndex:0 withObject:dict];</div><div class="line">    [self.timeTypeArray addObject:dict];</div><div class="line">&#125;else&#123;</div><div class="line">    [self.oldklineModels insertObject:dict atIndex:0];</div><div class="line">    [self.timeTypeArray addObject:dict];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD:"></a>GCD:</h2><h3 id="常用："><a href="#常用：" class="headerlink" title="常用："></a>常用：</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123; </div><div class="line">  // 处理耗时操作的代码块... </div><div class="line">  //通知主线程刷新 </div><div class="line">  dispatch_async(dispatch_get_main_queue(), ^&#123; </div><div class="line">  //回调或者说是通知主线程刷新， </div><div class="line">  &#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">+ (instancetype)sharedInstance &#123;</div><div class="line">    static id sharedInstance = nil;</div><div class="line">    static dispatch_once_t onceToken;</div><div class="line">    dispatch_once(&amp;onceToken, ^&#123;</div><div class="line">        sharedInstance = [[self alloc] init];</div><div class="line">    &#125;);</div><div class="line">    return sharedInstance;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="什么是GCD："><a href="#什么是GCD：" class="headerlink" title="什么是GCD："></a>什么是GCD：</h3><p>GCD是异步执行任务的技术之一，开发者只需要定义想要执行的任务并追加到适当的Dispatch Queue内，GCD就能生产必需的线程并计划任务执行。GCD 通过简单的方式实现了复杂的多线程编程。</p>
-<h1 id="ARTS"><a href="#ARTS" class="headerlink" title="ARTS:"></a>ARTS:</h1><h2 id="算法："><a href="#算法：" class="headerlink" title="算法："></a>算法：</h2><h2 id="极客时间："><a href="#极客时间：" class="headerlink" title="极客时间："></a>极客时间：</h2><h3 id="ios自动布局："><a href="#ios自动布局：" class="headerlink" title="ios自动布局："></a>ios自动布局：</h3><h4 id="常用：-1"><a href="#常用：-1" class="headerlink" title="常用："></a>常用：</h4><p>关不布局，最开始的时候用frame,慢慢的随着屏幕尺寸的不断新增，自动布局便成了需要被关注的点。常用的自动布局库有：Masonry、SDAutoLayout、SnapKit。其次需要了解两个单位pt、px.</p>
-<h4 id="学习："><a href="#学习：" class="headerlink" title="学习："></a>学习：</h4><ol>
-<li>1997年，Auto Layout用到的布局算法Cassowary出现。</li>
-<li>2011年，苹果将Cassowary算法用到自动布局引擎Auto Layout。</li>
-<li>Auto Layout的核心：Layout Engine布局引擎系统，主导整个页面布局。</li>
+            <h2>Algorithm：</h2>
+<p>本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.</p>
+<h2>Review:</h2>
+<p>本周还没看是看英语文章</p>
+<h2>Tip:</h2>
+<p>本周学习到的技巧、知识点有：</p>
+<h3>CSS:</h3>
+<ol>
+<li>html为网页构建基本的结构，而css定义了他们的外观</li>
+<li>定义构造器的方式有：根据元素、类Class、上线文、状态等，Class的前缀是. id的前缀是#</li>
+<li>关于盒子模型的认识，常用的参数有：padding(内边距)、border、margin、width、height、float、position、left、right等。常写app的界面布局，对于盒子模型关于父视图的认知还是有点不一样的，之前关注superview、subview等布局样式，现在需要关注left、right、float等</li>
+<li>文档流很少关注的元素的高，高度大部分都是自动适配的，如果需要元素至少具有某一种特地高度，可以设置min-height 、max-height,同时相对应的有min-width、max-width</li>
 </ol>
+<h3>swift</h3>
+<p>本周感受最大的是学习了swift的函数方法的传参、默认值、返回值等，总体感觉比OC简单</p>
+<ol>
+<li>
+<p>方法名是以func开头，区别于oc</p>
+</li>
+<li>
+<p>方法传入参数的是先书写形参在写实参,返回参数可以直接书写以-&gt;开头，同时可以返回多个参数，很方便，一个字：爽。</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">greet</span><span class="hljs-params">(person :String)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</div><div class="line">    <span class="hljs-keyword">let</span> greeting = <span class="hljs-string">"Hello, "</span> + person + <span class="hljs-string">"!"</span></div><div class="line">    <span class="hljs-keyword">return</span> greeting</div><div class="line">&#125;</div><div class="line"></div><div class="line">  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isArray</span><span class="hljs-params">(array :[Int])</span></span> -&gt; (<span class="hljs-built_in">min</span> :<span class="hljs-type">Int</span>, <span class="hljs-built_in">max</span> :<span class="hljs-type">Int</span>) &#123;</div><div class="line"><span class="hljs-comment">//        判空处理</span></div><div class="line">        <span class="hljs-keyword">if</span> array.isEmpty &#123;</div><div class="line">            <span class="hljs-keyword">return</span> (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</div><div class="line">        &#125;</div><div class="line">        <span class="hljs-keyword">var</span> currentMin = array[<span class="hljs-number">0</span>]</div><div class="line">        <span class="hljs-keyword">var</span> currentMax = array[<span class="hljs-number">0</span>]</div><div class="line">        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>..&lt;array.<span class="hljs-built_in">count</span>] &#123;</div><div class="line">            <span class="hljs-keyword">if</span> value &lt; currentMin &#123;</div><div class="line">                currentMin = value</div><div class="line">            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> value &gt; currentMax &#123;</div><div class="line">                currentMax = value</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="hljs-keyword">return</span> (currentMin, currentMax)</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">// 调用如下</span></div><div class="line"><span class="hljs-keyword">let</span> bounds = tom.isArray(array: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3545</span>,<span class="hljs-number">899</span>])</div><div class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">max</span>)</div><div class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">min</span>)</div></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>方法可以社会传入参数的默认值</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isDefaultString</span><span class="hljs-params">(defalutis :String = <span class="hljs-string">"DASAN"</span>)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</div><div class="line">      <span class="hljs-keyword">return</span> defalutis</div><div class="line">&#125;</div><div class="line"><span class="hljs-comment">// 调用如下</span></div><div class="line"><span class="hljs-keyword">let</span> tom = <span class="hljs-type">Tom</span>()</div><div class="line"><span class="hljs-built_in">print</span>(tom.isDefaultString())</div></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<h3>Flutter</h3>
+<p>本周配置了flutter的环境：在配置环境是需要注意的问题有：</p>
+<ol>
+<li>
+<p>配置本地flutter路径：macos配置的flutter路径 ： /Users/haixin/flutter/flutter，最终配置的路径地址为：export PATH=/Users/haixin/flutter/flutter/bin:$PATH</p>
+</li>
+<li>
+<p>路径打开、启动的方式为：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">open ~/.bash_profile</div><div class="line">source .bash_profile</div></pre></td></tr></table></figure></p>
+</li>
+<li>
+<p>创建flutter项目的命令有：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">flutter create flutterapp</div><div class="line">cd flutterapp</div><div class="line">flutter run</div></pre></td></tr></table></figure></p>
+</li>
+</ol>
+<h3>极客时间</h3>
+<h4>ios专栏</h4>
+<p>本周专栏从大方面来说讲了两个方面：代码的静态分析、app的无侵入埋点</p>
+<p>代码静态分析：xcode自带有静态分析工具analyze,通过静态分析语法，可以找到代码层面的问题如内存泄露，同时也介绍了其他的三种工具：oclint、infer、clang.这三个工具都是clang库开发的。自己尝试安装、编译了infei,扫面了自己的代码。</p>
+<p>埋点与无侵入埋点：无侵入埋点指的是在不触碰业务逻辑、高度解耦的情况下尝试对app的页面跳转、点击事件进行监控，来降低线上bug问题的处理难度。常见的方式有runtime、 category.</p>
+<h2>Share:</h2>
+<p>一下你内容不用看</p>
+<p>之前的学习都是无意识的学习，所谓的无意识的学习就能学多少，学多少，这种真的是既浪费时间，有浪费空气。</p>
 
         </div>
         
@@ -271,7 +209,7 @@
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/page/2/">上一页</a>
         </div>
-        <div class="pagination-next">
+        <div class="pagination-next is-invisible is-hidden-mobile">
             <a class="is-flex-grow has-text-black-ter" href="/page/4/">下一页</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -281,8 +219,6 @@
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
             
             <li><a class="pagination-link is-current" href="/page/3/">3</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
             
         </ul>
     </nav>
