@@ -116,6 +116,80 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191013/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_1280.jpg" alt="第3周weekly">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-13T12:53:13.501Z">2019-10-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191013/">第3周weekly</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="MacOS-10-15："><a href="#MacOS-10-15：" class="headerlink" title="MacOS 10.15："></a>MacOS 10.15：</h2><p>本周Mac更新系统遇到的问题：</p>
+<ul>
+<li>键盘的中/英切换的按钮，灯不亮了，功能还在，真的是让人不爽。</li>
+<li>终端改为zsh,个人还是比较喜欢的，因为有很多主题可以更换，很不错的。</li>
+<li>Pod install出错。这个网上的教程很多，更新gem源就好了。</li>
+</ul>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><p>以下是本周使用React Native开发遇到的问题：</p>
+<ol>
+<li><p>FlatList空数据渲染，<strong>ListEmptyComponent</strong>这个属性</p>
+</li>
+<li><p>navigationOptions不能引用this.xxx方法的问题,解决方向如下示例：</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">//外部引用</span></div><div class="line"><span class="hljs-keyword">let</span> that;</div><div class="line"></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EditAddressViewController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>&#123;</div><div class="line">    <span class="hljs-keyword">static</span>  navigationOptions = <span class="hljs-function">(<span class="hljs-params">&#123;navigation&#125;</span>) =&gt;</span> &#123;</div><div class="line">        <span class="hljs-keyword">const</span> params = navigation.state.params;</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            title: params.NavTitle,</div><div class="line">            headerRight: (</div><div class="line">                &lt;NavRightTextView</div><div class="line">                    title=&#123;<span class="hljs-string">'保存'</span>&#125;</div><div class="line">                    rightButtonClick=&#123;() =&gt; &#123;</div><div class="line">                        that._addAddressRequest();</div><div class="line">                    &#125;&#125;</div><div class="line">                /&gt;</div><div class="line">            ),</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="hljs-keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="hljs-keyword">super</span>(props);</div><div class="line">        that = <span class="hljs-keyword">this</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    _addAddressRequest() &#123;&#125;</div><div class="line"></div><div class="line">    render() &#123;</div><div class="line">        <span class="hljs-keyword">return</span> (</div><div class="line">            &lt;View style=&#123;styles.container&#125;</div><div class="line">            &lt;<span class="hljs-regexp">/View&gt;</span></div><div class="line"><span class="hljs-regexp">        );</span></div><div class="line"><span class="hljs-regexp">    &#125;</span></div><div class="line"><span class="hljs-regexp">&#125;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>TextInput</strong>的使用问题：输入框<strong>设置固定宽度</strong>可以解决输入内容闪烁的问题、设置默认文本用<strong>defaultValue</strong> 代替 value。</p>
+</li>
+<li><p>静态图片的问题：Packager 就会去这个组件所在的文件夹下查找<code>my-icon.png</code>。并且，如果你有<code>my-icon.ios.png</code>和<code>my-icon.android.png</code>，Packager 就会根据平台而选择不同的文件。</p>
+<p>你还可以使用<code>@2x</code>，<code>@3x</code>这样的文件名后缀，来为不同的屏幕精度提供图片。</p>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 加载远端图片  </span></div><div class="line">&lt;Image source=&#123;&#123;<span class="hljs-attr">uri</span>: <span class="hljs-keyword">this</span>.props.item.PicUrl&#125;&#125;/&gt;</div><div class="line"></div><div class="line"><span class="hljs-comment">// 加载本地图片</span></div><div class="line">&lt;Image source=&#123;<span class="hljs-built_in">require</span>(<span class="hljs-string">'../../Images/address_edit_image.png'</span>)&#125;/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>react-navigation:<strong>导航栏反向传参数</strong>的问题，示例如下:</p>
+</li>
+<li><figure class="highlight js hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// B页面--&gt;&gt;A页面反向传参 </span></div><div class="line"><span class="hljs-comment">// B页面代码</span></div><div class="line">_coinListTap() &#123;</div><div class="line">    <span class="hljs-keyword">this</span>.props.navigation.state.params.callBack(&#123;</div><div class="line">        CoinId: <span class="hljs-keyword">this</span>.props.item.CoinId,</div><div class="line">        CoinName: <span class="hljs-keyword">this</span>.props.item.CoinName,</div><div class="line">    &#125;);</div><div class="line">    <span class="hljs-keyword">this</span>.props.navigation.goBack();</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">// A页面</span></div><div class="line"> _callBack(params) &#123;</div><div class="line">      <span class="hljs-keyword">this</span>.setState(&#123;</div><div class="line">          coinName: params.CoinName,</div><div class="line">          coinId: params.CoinId</div><div class="line">      &#125;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  _coinNameTap() &#123;</div><div class="line">      <span class="hljs-keyword">this</span>.props.navigation.navigate(<span class="hljs-string">'CoinListVC'</span>,&#123;<span class="hljs-attr">callBack</span>:<span class="hljs-keyword">this</span>._callBack.bind(<span class="hljs-keyword">this</span>)&#125;);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><ul>
+<li>本周对我个人而言有两个关键词：前端、算法。</li>
+<li>前端是必定要涉足的领域，因为是移动端开发入行的，现在的趋势是大前端，为了提高自身的核心竞争力，必须要拥抱js、vue、react。</li>
+<li>本周是极客大学算法训练营的预习周，下周正式开始算法的学习，希望努力学习给自己核心竞争力提供支持。努力学习是什么、为什么、怎么做的。</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191006/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/10/10/08/autumn-4465774_1280.jpg" alt="第二周weekly">
         </a>
@@ -330,53 +404,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20190910/">20190910</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="React-Native项目编译："><a href="#React-Native项目编译：" class="headerlink" title="React Native项目编译："></a>React Native项目编译：</h3><h4 id="React-Navigation"><a href="#React-Navigation" class="headerlink" title="React Navigation"></a>React Navigation</h4><p>React Navigation库引入失败的问题，导致各种的报错，具体修复问题见官方文档提示如下：特点：容易混淆是不同版本的link的方式不同。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1.In your project directory, run yarn add react-native-reanimated react-native-gesture-handler react-native-screens.</div><div class="line">2.React Native 0.60 and higher:linking is automatic; cd ios、pod install</div><div class="line">3.React Native 0.59 and lower；react-native link react-native-reanimated、react-native link react-native-gesture-handler、react-native link react-native-screens</div></pre></td></tr></table></figure>
-<h4 id="编译报错"><a href="#编译报错" class="headerlink" title="编译报错"></a>编译报错</h4><p>编译报错内如下，特点：通过react-native run-ios 会提示报错，通过build ios app可以编译通过；错误信息如下：</p>
-<p>error Failed to build iOS project. We ran “xcodebuild” command but it exited with error code 65. To debug build logs further, consider building your app with Xcode.app, by opening ctranceplatform.xcworkspace. Run CLI with –verbose flag for more details.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">解决方法：</div><div class="line">clear build folder: &apos;Your Project&apos;/ios/build</div><div class="line">react-native run-ios</div></pre></td></tr></table></figure>
-<h3 id="One-Click"><a href="#One-Click" class="headerlink" title="One-Click:"></a>One-Click:</h3><p>简介：通过运营商的接口能力直接获取用户的手机的号码。</p>
-<p>能力输出：集成三大运营的接口能力做成SDK，以供客户使用。同时开发了One-Click应用发布应该市场，便于大家体现能力。</p>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p>1.React 自定义组件命名需要首字母大写</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -438,7 +465,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        12
+                        13
                     </p>
                 </div>
             </div>
@@ -501,7 +528,7 @@
                 <span class="level-item">每周</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/每日/">
@@ -522,7 +549,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/weekly/" style="font-size: 15px;">weekly</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/weekly/" style="font-size: 20px;">weekly</a>
     </div>
 </div>
     
@@ -534,6 +561,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20191013/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_1280.jpg" alt="第3周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T12:53:13.501Z">2019-10-13</time></div>
+                    <a href="/passages/20191013/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第3周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -611,25 +657,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20190910/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
-                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -647,7 +674,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -776,7 +803,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
@@ -804,6 +831,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191013/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_1280.jpg" alt="第3周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T12:53:13.501Z">2019-10-13</time></div>
+                    <a href="/passages/20191013/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第3周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/每周/">每周</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191006/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/10/10/08/autumn-4465774_1280.jpg" alt="第二周weekly">
@@ -878,25 +924,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20190910/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190910">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time></div>
-                    <a href="/passages/20190910/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190910</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -914,7 +941,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1043,7 +1070,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
