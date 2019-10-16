@@ -18,7 +18,7 @@
 <meta property="og:description" content="​    制作私有仓库的首先需要创建一个仓库地址,名字如XXPods,这个仓库的功能是存储，里面会包换创建的各个模块如(Test-Home)的包地址。 1.创建存储仓库的过程如下：1231.pod repo add XXPods git@gitee.com:****/XXPods.git2.cd ~/.cocoapods/repos 可以看到已创建的文件3.pod repo push XXPods">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-02T08:43:16.663Z">
+<meta property="og:updated_time" content="2019-10-16T03:17:05.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="制作私有仓库">
 <meta name="twitter:description" content="​    制作私有仓库的首先需要创建一个仓库地址,名字如XXPods,这个仓库的功能是存储，里面会包换创建的各个模块如(Test-Home)的包地址。 1.创建存储仓库的过程如下：1231.pod repo add XXPods git@gitee.com:****/XXPods.git2.cd ~/.cocoapods/repos 可以看到已创建的文件3.pod repo push XXPods">
@@ -30,11 +30,13 @@
 
 
 
+<link rel="icon" href="/images/favicon.svg">
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
 
 
     
@@ -87,16 +89,19 @@
             <div class="navbar-start">
                 
                 <a class="navbar-item"
-                href="/">首页</a>
+                href="/">Home</a>
                 
                 <a class="navbar-item"
-                href="/archives">类别</a>
+                href="/archives">Archives</a>
                 
                 <a class="navbar-item"
-                href="/categories">分类</a>
+                href="/categories">Categories</a>
                 
                 <a class="navbar-item"
-                href="/about">关于</a>
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
                 
             </div>
             
@@ -125,6 +130,12 @@
                 <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
                 </div>
                 
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes 读完 (大约 550 个字)
+                </span>
                 
                 
             </div>
@@ -193,13 +204,17 @@
                 <div>
                     
                     <figure class="image is-128x128 has-mb-6">
-                        <img class="" src="/images/avatar.png" alt="IT从业者">
+                        <img class="" src="/images/avatar.png" alt="hai xin">
                     </figure>
                     
                     <p class="is-size-4 is-block">
-                        IT从业者
+                        hai xin
                     </p>
                     
+                    
+                    <p class="is-size-6 is-block">
+                        IT从业者
+                    </p>
                     
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
@@ -895,13 +910,15 @@
 var IcarusThemeSettings = {
     article: {
         highlight: {
-            clipboard: false,
+            clipboard: true,
             fold: 'unfolded'
         }
     }
 };
 </script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
 
 
 
