@@ -10,19 +10,19 @@
 <title>20190911 - IT从业者</title>
 
 
-    <meta name="description" content="React 1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box 123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation 12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的">
+    <meta name="description" content="React1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方">
 <meta name="keywords" content="React Native,React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20190911">
 <meta property="og:url" content="http://yoursite.com/passages/20190911/index.html">
 <meta property="og:site_name" content="IT从业者">
-<meta property="og:description" content="React 1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box 123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation 12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的">
+<meta property="og:description" content="React1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
 <meta property="og:updated_time" content="2019-10-16T03:17:14.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20190911">
-<meta name="twitter:description" content="React 1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box 123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation 12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的">
+<meta name="twitter:description" content="React1231.组件化2.单向数据流 ,props state3.虚拟DOM Flex Box123通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果1.flexWrap子组件组件换行方向2.flexDirection决定组件主轴的排列方向 react-navigation12345678910111213今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -148,12 +148,9 @@
             
         </h1>
         <div class="content">
-            <h3>React</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.组件化</span><br><span class="line">2.单向数据流 ,props state</span><br><span class="line">3.虚拟DOM</span><br></pre></td></tr></table></figure></p>
-<h3>Flex Box</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果</span><br><span class="line">1.flexWrap子组件组件换行方向</span><br><span class="line">2.flexDirection决定组件主轴的排列方向</span><br></pre></td></tr></table></figure></p>
-<h3>react-navigation</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方式容易把之前的经验自动带入，属性赋值操作看起来就没有想象中的那么容易，方法如下：</span><br><span class="line"></span><br><span class="line">showIcon: true</span><br><span class="line">HomeTab: &#123;</span><br><span class="line">            screen: HomeNav,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &apos;首页&apos;,</span><br><span class="line">                tabBarIcon: (&#123;focused&#125;) =&gt; (</span><br><span class="line">                    focused ? &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_select.png&apos;)&#125;/&gt; :</span><br><span class="line">                        &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_normal.png&apos;)&#125;/&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure></p>
+            <h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.组件化</span><br><span class="line">2.单向数据流 ,props state</span><br><span class="line">3.虚拟DOM</span><br></pre></td></tr></table></figure>
+<h3 id="Flex-Box"><a href="#Flex-Box" class="headerlink" title="Flex Box"></a>Flex Box</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果</span><br><span class="line">1.flexWrap子组件组件换行方向</span><br><span class="line">2.flexDirection决定组件主轴的排列方向</span><br></pre></td></tr></table></figure>
+<h3 id="react-navigation"><a href="#react-navigation" class="headerlink" title="react-navigation"></a>react-navigation</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方式容易把之前的经验自动带入，属性赋值操作看起来就没有想象中的那么容易，方法如下：</span><br><span class="line"></span><br><span class="line">showIcon: true</span><br><span class="line">HomeTab: &#123;</span><br><span class="line">            screen: HomeNav,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &apos;首页&apos;,</span><br><span class="line">                tabBarIcon: (&#123;focused&#125;) =&gt; (</span><br><span class="line">                    focused ? &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_select.png&apos;)&#125;/&gt; :</span><br><span class="line">                        &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_normal.png&apos;)&#125;/&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -241,7 +238,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        14
                     </p>
                 </div>
             </div>
@@ -296,7 +293,7 @@
                 <span class="level-item">weekly</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/新技能get/">
@@ -325,7 +322,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 20px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/weekly/" style="font-size: 20px;">weekly</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 15px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/weekly/" style="font-size: 20px;">weekly</a>
     </div>
 </div>
     
@@ -337,6 +334,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20191020/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/04/20/19/47/wolf-1341881_1280.jpg" alt="第4周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-20T14:34:36.716Z">2019-10-20</time></div>
+                    <a href="/passages/20191020/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第4周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -414,25 +430,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20190911/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
-                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -450,7 +447,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -579,7 +576,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -607,6 +604,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191020/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/04/20/19/47/wolf-1341881_1280.jpg" alt="第4周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-20T14:34:36.716Z">2019-10-20</time></div>
+                    <a href="/passages/20191020/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第4周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191013/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_1280.jpg" alt="第3周weekly">
@@ -681,25 +697,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20190911/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="20190911">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-11T15:41:44.912Z">2019-09-11</time></div>
-                    <a href="/passages/20190911/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20190911</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -717,7 +714,7 @@
                     <span class="level-item">October 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -846,7 +843,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
