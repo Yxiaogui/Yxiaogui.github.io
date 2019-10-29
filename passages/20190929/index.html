@@ -19,7 +19,7 @@
 <meta property="og:description" content="Tips:1.React Native编译文件导致的编译失败 1234//错误提示error Failed to build iOS project. We ran &amp;quot;xcodebuild&amp;quot; command but it exited with error code 65://处理方法：clear build folder: &amp;apos;Your Project&amp;apos;/i">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/09/24/12/50/sea-4501231_1280.jpg">
-<meta property="og:updated_time" content="2019-10-17T07:05:03.323Z">
+<meta property="og:updated_time" content="2019-10-29T09:22:17.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第一周weekly">
 <meta name="twitter:description" content="Tips:1.React Native编译文件导致的编译失败 1234//错误提示error Failed to build iOS project. We ran &amp;quot;xcodebuild&amp;quot; command but it exited with error code 65://处理方法：clear build folder: &amp;apos;Your Project&amp;apos;/i">
@@ -141,7 +141,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 minutes 读完 (大约 1285 个字)
+                    9 minutes 读完 (大约 1286 个字)
                 </span>
                 
                 
@@ -158,6 +158,7 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//错误提示</span><br><span class="line">error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65:</span><br><span class="line">//处理方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build。</span><br></pre></td></tr></table></figure>
 <p>2.安卓真机调试：摇晃手机选择Dev，手机连接电脑本地Ip地址，例如：192.168.0.105：8081。</p>
 <p>3.父组件向子组件传值通过props方式；子组件向父组件传值：通过props回传，涉及到组件传值，以及点击事件回调。</p>
+<a id="more"></a>
 <p>4.处理console.log不打印日志的问题：之前index.js文件引入了处理RN项目模拟器显示警告信息代码如下,带来的结果是调试日志打印不出来。</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.ignoredYellowBox = [<span class="hljs-string">'Warning: BackAndroid is deprecated. Please use BackHandler instead.'</span>,<span class="hljs-string">'source.uri should not be an empty string'</span>,<span class="hljs-string">'Invalid props.style key'</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.disableYellowBox = <span class="hljs-literal">true</span>;</span><br></pre></td></tr></table></figure>
 <p>5.8081端口被占用:</p>
