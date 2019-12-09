@@ -121,6 +121,59 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/algorithm-01/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/22/13/55/background-4644934_1280.jpg" alt="algorithm-01">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-09T14:30:47.977Z">2019-12-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds 读完 (大约 95 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/algorithm-01/">algorithm-01</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="两数之和："><a href="#两数之和：" class="headerlink" title="两数之和："></a>两数之和：</h4><h5 id="解法01"><a href="#解法01" class="headerlink" title="解法01:"></a>解法01:</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//暴力求解</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n^2)</span></span><br><span class="line"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; nums.length;i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j= i + <span class="hljs-number">1</span>;j &lt;nums.length;j ++)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(nums[i] + nums[j] === target)&#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> [i,j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a>解法02：</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 时间复杂度O(n)</span></span><br><span class="line"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt;nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> next = target- nums[i]</span><br><span class="line">        <span class="hljs-keyword">if</span>(map.has(next))&#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> [map.get(next),i]</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            map.set(nums[i],i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191208/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/21/07/snowman-4676142_1280.jpg" alt="第11周weekly">
         </a>
@@ -338,60 +391,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/passages/20191110/" class="image is-7by1">
-            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/04/16/33/background-4601537_1280.jpg" alt="第7周weekly">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-10T14:11:48.086Z">2019-11-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute 读完 (大约 130 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20191110/">第7周weekly</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h4><p>react-navigation4.0保持ios、android导航栏标题居中，push样式一直的方式：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import StackViewStyleInterpolator from &apos;react-navigation-stack/src/views/StackView/StackViewStyleInterpolator&apos;; </span><br><span class="line"></span><br><span class="line">//导航ios、android保持一直</span><br><span class="line">headerMode: &apos;screen&apos;,</span><br><span class="line">transitionConfig: () =&gt; (&#123;</span><br><span class="line">            screenInterpolator: StackViewStyleInterpolator.forHorizontal,</span><br><span class="line">&#125;),</span><br><span class="line">//标题居中</span><br><span class="line">headerLayoutPreset: &apos;center&apos;,</span><br></pre></td></tr></table></figure>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p>本周两件事情，家人的手术经过一周时间的恢复，结果很不错。其二就是某些具体的原因拒绝了一位小朋友的购物需求，希望过年的时候可以补偿这位小朋友。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -459,7 +458,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        22
                     </p>
                 </div>
             </div>
@@ -469,7 +468,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -479,7 +478,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -507,6 +506,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/algorithm/">
+            <span class="level-start">
+                <span class="level-item">algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -543,7 +550,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 15px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/weekly/" style="font-size: 20px;">weekly</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 15px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 20px;">weekly</a>
     </div>
 </div>
     
@@ -555,6 +562,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/algorithm-01/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/22/13/55/background-4644934_1280.jpg" alt="algorithm-01">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T14:30:47.977Z">2019-12-09</time></div>
+                    <a href="/passages/algorithm-01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">algorithm-01</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -632,25 +658,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191110/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/04/16/33/background-4601537_1280.jpg" alt="第7周weekly">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-10T14:11:48.086Z">2019-11-10</time></div>
-                    <a href="/passages/20191110/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第7周weekly</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -668,7 +675,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -812,6 +819,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Vue/">
                         <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/algorithm/">
+                        <span class="tag">algorithm</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -847,6 +861,25 @@
         
         <article class="media">
             
+            <a href="/passages/algorithm-01/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/22/13/55/background-4644934_1280.jpg" alt="algorithm-01">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T14:30:47.977Z">2019-12-09</time></div>
+                    <a href="/passages/algorithm-01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">algorithm-01</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191208/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/21/07/snowman-4676142_1280.jpg" alt="第11周weekly">
@@ -921,25 +954,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191110/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/04/16/33/background-4601537_1280.jpg" alt="第7周weekly">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-10T14:11:48.086Z">2019-11-10</time></div>
-                    <a href="/passages/20191110/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第7周weekly</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -957,7 +971,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1101,6 +1115,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Vue/">
                         <span class="tag">Vue</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/algorithm/">
+                        <span class="tag">algorithm</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
