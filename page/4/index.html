@@ -120,6 +120,68 @@
     
 <div class="card">
     
+    <div class="card-image">
+        <a href="/passages/20190929/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/24/12/50/sea-4501231_1280.jpg" alt="第一周weekly">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-29T05:48:09.071Z">2019-09-29</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9 minutes 读完 (大约 1286 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20190929/">第一周weekly</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p>1.React Native编译文件导致的编译失败</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//错误提示</span><br><span class="line">error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65:</span><br><span class="line">//处理方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build。</span><br></pre></td></tr></table></figure>
+<p>2.安卓真机调试：摇晃手机选择Dev，手机连接电脑本地Ip地址，例如：192.168.0.105：8081。</p>
+<p>3.父组件向子组件传值通过props方式；子组件向父组件传值：通过props回传，涉及到组件传值，以及点击事件回调。</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/passages/20190929/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -321,61 +383,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-03T07:09:20.400Z">2019-07-03</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute 读完 (大约 177 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20190703/">cocoapods库与库依赖冲突解决</a>
-            
-        </h1>
-        <div class="content">
-            <p>集成TokenCore、web3swift.pod出现了库与库依赖版本的报错问题：</p>
-<h3 id="报错信息如下："><a href="#报错信息如下：" class="headerlink" title="报错信息如下："></a>报错信息如下：</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[!] CocoaPods could not find compatible versions for pod &quot;BigInt&quot;:</span><br><span class="line">  In snapshot (Podfile.lock):</span><br><span class="line">    BigInt (= 3.1, = 3.1.0, ~&gt; 3.1)</span><br><span class="line"></span><br><span class="line">  In Podfile:</span><br><span class="line">    TokenCore was resolved to 0.1, which depends on</span><br><span class="line">      BigInt (= 3.0.0)</span><br><span class="line"></span><br><span class="line">    web3swift.pod was resolved to 2.1.10, which depends on</span><br><span class="line">      BigInt (~&gt; 3.1)</span><br><span class="line"></span><br><span class="line">Specs satisfying the `BigInt (= 3.1, = 3.1.0, ~&gt; 3.1), BigInt (~&gt; 3.1), BigInt (= 3.0.0)` dependency were found, but they required a higher minimum deployment target.</span><br></pre></td></tr></table></figure>
-<h3 id="解决的方法如下："><a href="#解决的方法如下：" class="headerlink" title="解决的方法如下："></a>解决的方法如下：</h3><ol>
-<li>fork TokenCore到自己的github</li>
-<li>修改 s.dependency “BigInt”, “3.1”</li>
-<li>更改pod ‘TokenCore’为 pod ‘TokenCore’, git: ‘<a href="https://github.com/Yxiaogui/token-core-ios.git&#39;" target="_blank" rel="noopener">https://github.com/Yxiaogui/token-core-ios.git&#39;</a>, commit: ‘c87640c72c1cf1662495cf28a90824c6731f790f’</li>
-<li>重新pod install 解决冲突</li>
-</ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod &apos;web3swift.pod&apos;</span><br><span class="line">pod &apos;TokenCore&apos;, git: &apos;https://github.com/Yxiaogui/token-core-ios.git&apos;, commit: &apos;c87640c72c1cf1662495cf28a90824c6731f790f&apos;</span><br></pre></td></tr></table></figure>
-<h3 id="参考文章地址："><a href="#参考文章地址：" class="headerlink" title="参考文章地址："></a>参考文章地址：</h3><p><a href="http://ju.outofmemory.cn/entry/150210" target="_blank" rel="noopener">http://ju.outofmemory.cn/entry/150210</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -397,6 +404,8 @@
             <li><a class="pagination-link is-current" href="/page/4/">4</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/5/">5</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/6/">6</a></li>
             
         </ul>
     </nav>
@@ -445,7 +454,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        25
+                        26
                     </p>
                 </div>
             </div>
@@ -500,7 +509,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -552,6 +561,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191213-algorithm-05/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg" alt="20191213-algorithm-05">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-13T08:41:43.558Z">2019-12-13</time></div>
+                    <a href="/passages/20191213-algorithm-05/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191213-algorithm-05</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191212-algorithm-04/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/06/17/44/japanese-4677848_960_720.jpg" alt="20191212-algorithm-04">
@@ -626,25 +654,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191208/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/21/07/snowman-4676142_1280.jpg" alt="第11周weekly">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-08T15:03:53.388Z">2019-12-08</time></div>
-                    <a href="/passages/20191208/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第11周weekly</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -662,7 +671,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -813,7 +822,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -848,6 +857,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191213-algorithm-05/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg" alt="20191213-algorithm-05">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-13T08:41:43.558Z">2019-12-13</time></div>
+                    <a href="/passages/20191213-algorithm-05/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191213-algorithm-05</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191212-algorithm-04/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/06/17/44/japanese-4677848_960_720.jpg" alt="20191212-algorithm-04">
@@ -922,25 +950,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191208/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/21/07/snowman-4676142_1280.jpg" alt="第11周weekly">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-08T15:03:53.388Z">2019-12-08</time></div>
-                    <a href="/passages/20191208/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第11周weekly</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -958,7 +967,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1109,7 +1118,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
