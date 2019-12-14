@@ -13,15 +13,15 @@
     <meta name="description" content="非著名IT从业者,记录日常的学习打卡目标">
 <meta property="og:type" content="website">
 <meta property="og:title" content="IT从业者">
-<meta property="og:url" content="http://haixinlove123.com/page/6/index.html">
+<meta property="og:url" content="http://www.haixinlove123.com/page/6/index.html">
 <meta property="og:site_name" content="IT从业者">
 <meta property="og:description" content="非著名IT从业者,记录日常的学习打卡目标">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://haixinlove123.com/images/og_image.png">
+<meta property="og:image" content="http://www.haixinlove123.com/images/og_image.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IT从业者">
 <meta name="twitter:description" content="非著名IT从业者,记录日常的学习打卡目标">
-<meta name="twitter:image" content="http://haixinlove123.com/images/og_image.png">
+<meta name="twitter:image" content="http://www.haixinlove123.com/images/og_image.png">
 
 
 
@@ -147,41 +147,56 @@
             
         </h1>
         <div class="content">
-            <h2 id="Algorithm："><a href="#Algorithm：" class="headerlink" title="Algorithm："></a>Algorithm：</h2><p>本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.</p>
-<h2 id="Review"><a href="#Review" class="headerlink" title="Review:"></a>Review:</h2><p>本周还没看是看英语文章</p>
-<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h2><p>本周学习到的技巧、知识点有：</p>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h3><ol>
+            <h2>Algorithm：</h2>
+<p>本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.</p>
+<h2>Review:</h2>
+<p>本周还没看是看英语文章</p>
+<h2>Tip:</h2>
+<p>本周学习到的技巧、知识点有：</p>
+<h3>CSS:</h3>
+<ol>
 <li>html为网页构建基本的结构，而css定义了他们的外观</li>
 <li>定义构造器的方式有：根据元素、类Class、上线文、状态等，Class的前缀是. id的前缀是#</li>
 <li>关于盒子模型的认识，常用的参数有：padding(内边距)、border、margin、width、height、float、position、left、right等。常写app的界面布局，对于盒子模型关于父视图的认知还是有点不一样的，之前关注superview、subview等布局样式，现在需要关注left、right、float等</li>
 <li>文档流很少关注的元素的高，高度大部分都是自动适配的，如果需要元素至少具有某一种特地高度，可以设置min-height 、max-height,同时相对应的有min-width、max-width</li>
 </ol>
-<h3 id="swift"><a href="#swift" class="headerlink" title="swift"></a>swift</h3><p>本周感受最大的是学习了swift的函数方法的传参、默认值、返回值等，总体感觉比OC简单</p>
+<h3>swift</h3>
+<p>本周感受最大的是学习了swift的函数方法的传参、默认值、返回值等，总体感觉比OC简单</p>
 <ol>
-<li><p>方法名是以func开头，区别于oc</p>
+<li>
+<p>方法名是以func开头，区别于oc</p>
 </li>
-<li><p>方法传入参数的是先书写形参在写实参,返回参数可以直接书写以-&gt;开头，同时可以返回多个参数，很方便，一个字：爽。</p>
-<figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">greet</span><span class="hljs-params">(person :String)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> greeting = <span class="hljs-string">"Hello, "</span> + person + <span class="hljs-string">"!"</span></span><br><span class="line">    <span class="hljs-keyword">return</span> greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isArray</span><span class="hljs-params">(array :[Int])</span></span> -&gt; (<span class="hljs-built_in">min</span> :<span class="hljs-type">Int</span>, <span class="hljs-built_in">max</span> :<span class="hljs-type">Int</span>) &#123;</span><br><span class="line"><span class="hljs-comment">//        判空处理</span></span><br><span class="line">        <span class="hljs-keyword">if</span> array.isEmpty &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMin = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMax = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>..&lt;array.<span class="hljs-built_in">count</span>] &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> value &lt; currentMin &#123;</span><br><span class="line">                currentMin = value</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> value &gt; currentMax &#123;</span><br><span class="line">                currentMax = value</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> (currentMin, currentMax)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> bounds = tom.isArray(array: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3545</span>,<span class="hljs-number">899</span>])</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">max</span>)</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">min</span>)</span><br></pre></td></tr></table></figure>
+<li>
+<p>方法传入参数的是先书写形参在写实参,返回参数可以直接书写以-&gt;开头，同时可以返回多个参数，很方便，一个字：爽。</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">greet</span><span class="hljs-params">(person :String)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> greeting = <span class="hljs-string">"Hello, "</span> + person + <span class="hljs-string">"!"</span></span><br><span class="line">    <span class="hljs-keyword">return</span> greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isArray</span><span class="hljs-params">(array :[Int])</span></span> -&gt; (<span class="hljs-built_in">min</span> :<span class="hljs-type">Int</span>, <span class="hljs-built_in">max</span> :<span class="hljs-type">Int</span>) &#123;</span><br><span class="line"><span class="hljs-comment">//        判空处理</span></span><br><span class="line">        <span class="hljs-keyword">if</span> array.isEmpty &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMin = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMax = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>..&lt;array.<span class="hljs-built_in">count</span>] &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> value &lt; currentMin &#123;</span><br><span class="line">                currentMin = value</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> value &gt; currentMax &#123;</span><br><span class="line">                currentMax = value</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> (currentMin, currentMax)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> bounds = tom.isArray(array: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3545</span>,<span class="hljs-number">899</span>])</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">max</span>)</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">min</span>)</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>方法可以社会传入参数的默认值</p>
-<figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isDefaultString</span><span class="hljs-params">(defalutis :String = <span class="hljs-string">"DASAN"</span>)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> defalutis</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> tom = <span class="hljs-type">Tom</span>()</span><br><span class="line"><span class="hljs-built_in">print</span>(tom.isDefaultString())</span><br></pre></td></tr></table></figure>
+<li>
+<p>方法可以社会传入参数的默认值</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isDefaultString</span><span class="hljs-params">(defalutis :String = <span class="hljs-string">"DASAN"</span>)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> defalutis</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> tom = <span class="hljs-type">Tom</span>()</span><br><span class="line"><span class="hljs-built_in">print</span>(tom.isDefaultString())</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<h3 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h3><p>本周配置了flutter的环境：在配置环境是需要注意的问题有：</p>
+<h3>Flutter</h3>
+<p>本周配置了flutter的环境：在配置环境是需要注意的问题有：</p>
 <ol>
-<li><p>配置本地flutter路径：macos配置的flutter路径 ： /Users/haixin/flutter/flutter，最终配置的路径地址为：export PATH=/Users/haixin/flutter/flutter/bin:$PATH</p>
+<li>
+<p>配置本地flutter路径：macos配置的flutter路径 ： /Users/haixin/flutter/flutter，最终配置的路径地址为：export PATH=/Users/haixin/flutter/flutter/bin:$PATH</p>
 </li>
-<li><p>路径打开、启动的方式为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">open ~/.bash_profile</span><br><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure>
+<li>
+<p>路径打开、启动的方式为：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">open ~/.bash_profile</span><br><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>创建flutter项目的命令有：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter create flutterapp</span><br><span class="line">cd flutterapp</span><br><span class="line">flutter run</span><br></pre></td></tr></table></figure>
+<li>
+<p>创建flutter项目的命令有：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter create flutterapp</span><br><span class="line">cd flutterapp</span><br><span class="line">flutter run</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<h3 id="极客时间"><a href="#极客时间" class="headerlink" title="极客时间"></a>极客时间</h3><h4 id="ios专栏"><a href="#ios专栏" class="headerlink" title="ios专栏"></a>ios专栏</h4><p>本周专栏从大方面来说讲了两个方面：代码的静态分析、app的无侵入埋点</p>
+<h3>极客时间</h3>
+<h4>ios专栏</h4>
+<p>本周专栏从大方面来说讲了两个方面：代码的静态分析、app的无侵入埋点</p>
 <p>代码静态分析：xcode自带有静态分析工具analyze,通过静态分析语法，可以找到代码层面的问题如内存泄露，同时也介绍了其他的三种工具：oclint、infer、clang.这三个工具都是clang库开发的。自己尝试安装、编译了infei,扫面了自己的代码。</p>
 <p>埋点与无侵入埋点：无侵入埋点指的是在不触碰业务逻辑、高度解耦的情况下尝试对app的页面跳转、点击事件进行监控，来降低线上bug问题的处理难度。常见的方式有runtime、 category.</p>
-<h2 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h2><p>一下你内容不用看</p>
+<h2>Share:</h2>
+<p>一下你内容不用看</p>
 <p>之前的学习都是无意识的学习，所谓的无意识的学习就能学多少，学多少，这种真的是既浪费时间，有浪费空气。</p>
 
         </div>
