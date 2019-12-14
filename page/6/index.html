@@ -124,6 +124,82 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-07T13:45:20.000Z">2019-04-07</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/ARTS打卡/">ARTS打卡</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes 读完 (大约 1085 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20190407/">ARTS打卡02</a>
+            
+        </h1>
+        <div class="content">
+            <h1>TIP：</h1>
+<h2>极客时间：</h2>
+<h3>Vue:</h3>
+<p>Vue cli致力于将vue生态中的工具基础标准化，他讲确保了各种构建工具能够基于智能的默认配置即可稳衔接，这样就可以专注于撰写应用，而不是纠结于配置。</p>
+<p>Vue组件的核心概念：属性、时间、插槽。属性是单项事件流，不能再组件改变父组件传入的值。</p>
+<p>同时学习了自定义组件，通过props传参数，点击事件回调参数等。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//创建vue项目</span><br><span class="line">1.vue create vueapp</span><br><span class="line">2.cd vueapp</span><br><span class="line">3.npm run serve</span><br></pre></td></tr></table></figure></p>
+<h3>OC:</h3>
+<h4>App启动：</h4>
+<p>首选需要了解的是：app的启动分为冷启动、热启动。app的启动主要分为三个阶段：1.main()函数执行前即pre-main()；2.main()函数执行后；3；首屏渲染完成后。</p>
+<p>那么main()函数执行之前app 做了哪些事情呢：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.加载可执行文件,(app的.o文件)</span><br><span class="line">2.加载动态链接库，进行rebase指针调整和bind符号绑定。</span><br><span class="line">3.objc运行时的初始化处理，包括objc相关类的注册、category注册、selector唯一性检查等</span><br><span class="line">4.初始化，包括执行+load()方法，attribute((constructor))修改的函数的跳转、创建c++静态全局变量。</span><br><span class="line">//相应的对于这个阶段启动的速度优化方法有：</span><br><span class="line">1.减少动态库加载。</span><br><span class="line">2.减少加载启动后不会去使用的类或者方法</span><br><span class="line">3.+load()方法里面的内容可以方法首屏渲染完成之后再执行，或者使用+initialize()方法替换掉。</span><br><span class="line">4.控制c++全局变量的数量。</span><br><span class="line">//同时去看了苹果开发者大会的视频，关于性能优化之后的建议是：切换成swift，因为它足够优秀。</span><br></pre></td></tr></table></figure></p>
+<h4>二维码图片保存相册:</h4>
+<p>第一种：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Photos/PHPhotoLibrary.h&gt;</span><br><span class="line">#import &lt;Photos/PHAssetChangeRequest.h&gt;</span><br><span class="line">[[PHPhotoLibrary sharedPhotoLibrary]performChanges:^&#123;</span><br><span class="line">        [PHAssetChangeRequest creationRequestForAssetFromImage:image];</span><br><span class="line">    &#125; completionHandler:^(BOOL success, NSError * _Nullable error) &#123;</span><br><span class="line">        if (error) &#123;</span><br><span class="line">            [BaseLoading showOnlyText:@&quot;保存失败&quot;];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            [BaseLoading showOnlyText:@&quot;保存成功&quot;];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure></p>
+<p>第二种：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UIGraphicsBeginImageContext(self.qrImage.size);</span><br><span class="line">[self.qrImage drawInRect:CGRectMake(0, 0, self.qrImage.size.width, self.qrImage.size.height)];</span><br><span class="line">self.qrImage  = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">UIGraphicsEndImageContext();</span><br><span class="line">UIImageWriteToSavedPhotosAlbum(self.qrImage, nil, nil, NULL);</span><br></pre></td></tr></table></figure></p>
+<p>测试发现通过[UIImage imageWithCIImage:outImage]生产的图片需要需要第二种方法才能保存到相册。</p>
+<h4>App项目架构-VIEW：</h4>
+<p>之前很少关注项目架构、代码的统一性问题；了解了设计模式代码缺写的还是很不漂亮。现在在对已有项目作调整，都是欠下的，现在需要补上。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.#pragma mark life &amp;&amp; cycle</span><br><span class="line">2.#pragma mark - Table view data source</span><br><span class="line">3.#pragma mark - customeview delegate</span><br><span class="line">4.#pragma mark - viewmodel kvo</span><br><span class="line">5.#pragma mark - getters &amp;&amp; setters</span><br><span class="line">6.为了语义上的好理解，所有常见subview方法为customUI或者buildUI选其中之一</span><br></pre></td></tr></table></figure></p>
+<p>除了视图层的规范还需要关注网络层、缓存层、以及第三方库的管理，这个项目可能是最后一个oc项目了。</p>
+<h3>Swift:</h3>
+<p>代理书写：</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//创建代理</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">NewViewControllerDelegate</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">testCallBackFunc</span><span class="hljs-params">(callName:String)</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//使用代理</span></span><br><span class="line"> <span class="hljs-keyword">var</span> delegate: <span class="hljs-type">NewViewControllerDelegate</span>?</span><br><span class="line"> <span class="hljs-meta">@objc</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">clickEventTap</span><span class="hljs-params">()</span></span>  &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span> &#123;</span><br><span class="line">            delegate?.testCallBackFunc(callName: <span class="hljs-string">"nihao"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h3>CSS：</h3>
+<p>个人很关注css布局、定位，因为移动端上使用的autolayout有比较明显的父视图，再布局是很清楚的知道superview、subview。css在这方面的就显得比较弱，但也不是不可理解。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">postion的6个属性：</span><br><span class="line">1.static(默认)静态定位；2.relative相对定位；3.absolute绝对定位；4.fixed固定位置跟绝对定位相似；5.sticky;6.inherit.</span><br><span class="line">偏移量:top、right、bottom 、left</span><br><span class="line">float属性：left 、right、 none默认值，不浮动、 inherit继承父元素的浮动属性</span><br><span class="line">浮动会脱离正常的文档流布局，会吸附在父容器的左边或者右边等。清除浮动clear三个值：left、right、both</span><br></pre></td></tr></table></figure></p>
+<p>看了书里面对H5的布局称为容器，移动端称为视图。其实作为渲染的View来说两个的称谓可以统一。</p>
+<h1>Share:</h1>
+<p>这周看了村上春树的我的职业是小说家，里面提到关于自己没有得到芥川奖的描述总结下来应该是不高估自己、心态平和、关注自己创作。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-03-30T07:50:23.000Z">2019-03-30</time>
                 
                 <div class="level-item">
@@ -147,41 +223,56 @@
             
         </h1>
         <div class="content">
-            <h2 id="Algorithm："><a href="#Algorithm：" class="headerlink" title="Algorithm："></a>Algorithm：</h2><p>本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.</p>
-<h2 id="Review"><a href="#Review" class="headerlink" title="Review:"></a>Review:</h2><p>本周还没看是看英语文章</p>
-<h2 id="Tip"><a href="#Tip" class="headerlink" title="Tip:"></a>Tip:</h2><p>本周学习到的技巧、知识点有：</p>
-<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h3><ol>
+            <h2>Algorithm：</h2>
+<p>本周leetcode算法：两数之和。ps:学校的算法都还给老师了，所以要从最简单的算法训练开始.本周学习的算法是两数之和.</p>
+<h2>Review:</h2>
+<p>本周还没看是看英语文章</p>
+<h2>Tip:</h2>
+<p>本周学习到的技巧、知识点有：</p>
+<h3>CSS:</h3>
+<ol>
 <li>html为网页构建基本的结构，而css定义了他们的外观</li>
 <li>定义构造器的方式有：根据元素、类Class、上线文、状态等，Class的前缀是. id的前缀是#</li>
 <li>关于盒子模型的认识，常用的参数有：padding(内边距)、border、margin、width、height、float、position、left、right等。常写app的界面布局，对于盒子模型关于父视图的认知还是有点不一样的，之前关注superview、subview等布局样式，现在需要关注left、right、float等</li>
 <li>文档流很少关注的元素的高，高度大部分都是自动适配的，如果需要元素至少具有某一种特地高度，可以设置min-height 、max-height,同时相对应的有min-width、max-width</li>
 </ol>
-<h3 id="swift"><a href="#swift" class="headerlink" title="swift"></a>swift</h3><p>本周感受最大的是学习了swift的函数方法的传参、默认值、返回值等，总体感觉比OC简单</p>
+<h3>swift</h3>
+<p>本周感受最大的是学习了swift的函数方法的传参、默认值、返回值等，总体感觉比OC简单</p>
 <ol>
-<li><p>方法名是以func开头，区别于oc</p>
+<li>
+<p>方法名是以func开头，区别于oc</p>
 </li>
-<li><p>方法传入参数的是先书写形参在写实参,返回参数可以直接书写以-&gt;开头，同时可以返回多个参数，很方便，一个字：爽。</p>
-<figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">greet</span><span class="hljs-params">(person :String)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> greeting = <span class="hljs-string">"Hello, "</span> + person + <span class="hljs-string">"!"</span></span><br><span class="line">    <span class="hljs-keyword">return</span> greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isArray</span><span class="hljs-params">(array :[Int])</span></span> -&gt; (<span class="hljs-built_in">min</span> :<span class="hljs-type">Int</span>, <span class="hljs-built_in">max</span> :<span class="hljs-type">Int</span>) &#123;</span><br><span class="line"><span class="hljs-comment">//        判空处理</span></span><br><span class="line">        <span class="hljs-keyword">if</span> array.isEmpty &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMin = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMax = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>..&lt;array.<span class="hljs-built_in">count</span>] &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> value &lt; currentMin &#123;</span><br><span class="line">                currentMin = value</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> value &gt; currentMax &#123;</span><br><span class="line">                currentMax = value</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> (currentMin, currentMax)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> bounds = tom.isArray(array: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3545</span>,<span class="hljs-number">899</span>])</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">max</span>)</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">min</span>)</span><br></pre></td></tr></table></figure>
+<li>
+<p>方法传入参数的是先书写形参在写实参,返回参数可以直接书写以-&gt;开头，同时可以返回多个参数，很方便，一个字：爽。</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">greet</span><span class="hljs-params">(person :String)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> greeting = <span class="hljs-string">"Hello, "</span> + person + <span class="hljs-string">"!"</span></span><br><span class="line">    <span class="hljs-keyword">return</span> greeting</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isArray</span><span class="hljs-params">(array :[Int])</span></span> -&gt; (<span class="hljs-built_in">min</span> :<span class="hljs-type">Int</span>, <span class="hljs-built_in">max</span> :<span class="hljs-type">Int</span>) &#123;</span><br><span class="line"><span class="hljs-comment">//        判空处理</span></span><br><span class="line">        <span class="hljs-keyword">if</span> array.isEmpty &#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> (<span class="hljs-number">0</span>,<span class="hljs-number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMin = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">var</span> currentMax = array[<span class="hljs-number">0</span>]</span><br><span class="line">        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> array[<span class="hljs-number">1</span>..&lt;array.<span class="hljs-built_in">count</span>] &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> value &lt; currentMin &#123;</span><br><span class="line">                currentMin = value</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> value &gt; currentMax &#123;</span><br><span class="line">                currentMax = value</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> (currentMin, currentMax)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> bounds = tom.isArray(array: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3545</span>,<span class="hljs-number">899</span>])</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">max</span>)</span><br><span class="line"><span class="hljs-built_in">print</span>(bounds.<span class="hljs-built_in">min</span>)</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>方法可以社会传入参数的默认值</p>
-<figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isDefaultString</span><span class="hljs-params">(defalutis :String = <span class="hljs-string">"DASAN"</span>)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> defalutis</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> tom = <span class="hljs-type">Tom</span>()</span><br><span class="line"><span class="hljs-built_in">print</span>(tom.isDefaultString())</span><br></pre></td></tr></table></figure>
+<li>
+<p>方法可以社会传入参数的默认值</p>
+<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isDefaultString</span><span class="hljs-params">(defalutis :String = <span class="hljs-string">"DASAN"</span>)</span></span> -&gt; <span class="hljs-type">String</span> &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> defalutis</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// 调用如下</span></span><br><span class="line"><span class="hljs-keyword">let</span> tom = <span class="hljs-type">Tom</span>()</span><br><span class="line"><span class="hljs-built_in">print</span>(tom.isDefaultString())</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<h3 id="Flutter"><a href="#Flutter" class="headerlink" title="Flutter"></a>Flutter</h3><p>本周配置了flutter的环境：在配置环境是需要注意的问题有：</p>
+<h3>Flutter</h3>
+<p>本周配置了flutter的环境：在配置环境是需要注意的问题有：</p>
 <ol>
-<li><p>配置本地flutter路径：macos配置的flutter路径 ： /Users/haixin/flutter/flutter，最终配置的路径地址为：export PATH=/Users/haixin/flutter/flutter/bin:$PATH</p>
+<li>
+<p>配置本地flutter路径：macos配置的flutter路径 ： /Users/haixin/flutter/flutter，最终配置的路径地址为：export PATH=/Users/haixin/flutter/flutter/bin:$PATH</p>
 </li>
-<li><p>路径打开、启动的方式为：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">open ~/.bash_profile</span><br><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure>
+<li>
+<p>路径打开、启动的方式为：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">open ~/.bash_profile</span><br><span class="line">source .bash_profile</span><br></pre></td></tr></table></figure></p>
 </li>
-<li><p>创建flutter项目的命令有：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter create flutterapp</span><br><span class="line">cd flutterapp</span><br><span class="line">flutter run</span><br></pre></td></tr></table></figure>
+<li>
+<p>创建flutter项目的命令有：</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flutter create flutterapp</span><br><span class="line">cd flutterapp</span><br><span class="line">flutter run</span><br></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<h3 id="极客时间"><a href="#极客时间" class="headerlink" title="极客时间"></a>极客时间</h3><h4 id="ios专栏"><a href="#ios专栏" class="headerlink" title="ios专栏"></a>ios专栏</h4><p>本周专栏从大方面来说讲了两个方面：代码的静态分析、app的无侵入埋点</p>
+<h3>极客时间</h3>
+<h4>ios专栏</h4>
+<p>本周专栏从大方面来说讲了两个方面：代码的静态分析、app的无侵入埋点</p>
 <p>代码静态分析：xcode自带有静态分析工具analyze,通过静态分析语法，可以找到代码层面的问题如内存泄露，同时也介绍了其他的三种工具：oclint、infer、clang.这三个工具都是clang库开发的。自己尝试安装、编译了infei,扫面了自己的代码。</p>
 <p>埋点与无侵入埋点：无侵入埋点指的是在不触碰业务逻辑、高度解耦的情况下尝试对app的页面跳转、点击事件进行监控，来降低线上bug问题的处理难度。常见的方式有runtime、 category.</p>
-<h2 id="Share"><a href="#Share" class="headerlink" title="Share:"></a>Share:</h2><p>一下你内容不用看</p>
+<h2>Share:</h2>
+<p>一下你内容不用看</p>
 <p>之前的学习都是无意识的学习，所谓的无意识的学习就能学多少，学多少，这种真的是既浪费时间，有浪费空气。</p>
 
         </div>
@@ -265,7 +356,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        27
                     </p>
                 </div>
             </div>
@@ -320,7 +411,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -372,6 +463,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191214-algorithm-06/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/10/13/16/fantasy-4685849_1280.jpg" alt="20191214-algorithm-06">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-14T15:19:25.342Z">2019-12-14</time></div>
+                    <a href="/passages/20191214-algorithm-06/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191214-algorithm-06</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191213-algorithm-05/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg" alt="20191213-algorithm-05">
@@ -446,25 +556,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191209-algorithm-01/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/22/13/55/background-4644934_1280.jpg" alt="20191209-algorithm-01">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T14:30:47.977Z">2019-12-09</time></div>
-                    <a href="/passages/20191209-algorithm-01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191209-algorithm-01</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -482,7 +573,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -633,7 +724,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -668,6 +759,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191214-algorithm-06/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/10/13/16/fantasy-4685849_1280.jpg" alt="20191214-algorithm-06">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-14T15:19:25.342Z">2019-12-14</time></div>
+                    <a href="/passages/20191214-algorithm-06/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191214-algorithm-06</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191213-algorithm-05/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg" alt="20191213-algorithm-05">
@@ -742,25 +852,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191209-algorithm-01/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/22/13/55/background-4644934_1280.jpg" alt="20191209-algorithm-01">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-09T14:30:47.977Z">2019-12-09</time></div>
-                    <a href="/passages/20191209-algorithm-01/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191209-algorithm-01</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -778,7 +869,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -929,7 +1020,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
