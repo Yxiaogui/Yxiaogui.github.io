@@ -132,6 +132,62 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191218-algorithm-10/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes 读完 (大约 283 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191218-algorithm-10/">20191218-algorithm-10</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="有效的字母异位词"><a href="#有效的字母异位词" class="headerlink" title="有效的字母异位词"></a><strong>有效的字母异位词</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定两个字符串 <em>s</em> 和 <em>t</em> ，编写一个函数来判断 <em>t</em> 是否是 <em>s</em> 的字母异位词。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: s = &quot;anagram&quot;, t = &quot;nagaram&quot;</span><br><span class="line">输出: true</span><br><span class="line">输入: s = &quot;rat&quot;, t = &quot;car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 最容易想到的方法</span></span><br><span class="line"><span class="hljs-comment">//1.数组转字符串</span></span><br><span class="line"><span class="hljs-comment">//2.字符串转数组</span></span><br><span class="line"><span class="hljs-keyword">var</span> isAnagram = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, t</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> ss = s.split(<span class="hljs-string">''</span>)</span><br><span class="line">    <span class="hljs-keyword">let</span> bb = t.split(<span class="hljs-string">''</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span> ss.sort().join(<span class="hljs-string">'-'</span>) === bb.sort().join(<span class="hljs-string">'-'</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 利用map缓存数据做对比校验</span></span><br><span class="line"><span class="hljs-keyword">var</span> isAnagram = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, t</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (s.length !== t.length) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span><br><span class="line">    <span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; s.length ;i++)&#123;</span><br><span class="line">        map.get(s[i]) === <span class="hljs-literal">undefined</span> ? map.set(s[i],<span class="hljs-number">1</span>) : map.set(s[i],map.get(s[i]) + <span class="hljs-number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span> ; i &lt; t.length ; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (map.get(t[i]) &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">            map.set(t[i],map.get(t[i]) - <span class="hljs-number">1</span>)</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法03："><a href="#解法03：" class="headerlink" title="解法03："></a><strong>解法03：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//利用object</span></span><br><span class="line"><span class="hljs-keyword">var</span> isAnagram = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, t</span>) </span>&#123;</span><br><span class="line">   <span class="hljs-keyword">if</span> (s.length !== t.length) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span><br><span class="line">   <span class="hljs-keyword">let</span> sObj = getObj(s)</span><br><span class="line">   <span class="hljs-keyword">let</span> tObj = getObj(t)</span><br><span class="line">   <span class="hljs-keyword">let</span> sKeys = <span class="hljs-built_in">Object</span>.keys(sObj)</span><br><span class="line">   <span class="hljs-keyword">let</span> tKeys = <span class="hljs-built_in">Object</span>.keys(tObj)</span><br><span class="line">   <span class="hljs-keyword">if</span> (sKeys.length !== tKeys.length) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span><br><span class="line">   <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;sKeys.length;i ++)&#123;</span><br><span class="line">       <span class="hljs-keyword">let</span> v = sKeys[i]</span><br><span class="line">       <span class="hljs-keyword">if</span> (!tObj[v] || tObj[v] !== sObj[v]) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> getObj = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">str</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = &#123;&#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i&lt;str.length;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> v = str.charCodeAt(i)</span><br><span class="line">        <span class="hljs-keyword">if</span> (res[v])&#123;</span><br><span class="line">            res[v] ++</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            res[v] =<span class="hljs-number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191217-angorithm-09/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
         </a>
@@ -151,7 +207,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes 读完 (大约 240 个字)
+                    2 minutes 读完 (大约 230 个字)
                 </span>
                 
                 
@@ -165,8 +221,7 @@
         </h1>
         <div class="content">
             <h4 id="接雨水："><a href="#接雨水：" class="headerlink" title="接雨水："></a><strong>接雨水：</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定 <em>n</em> 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
-<p><strong>图片来自leetcode:</strong></p>
-<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png" alt="图片来自leetcode"></p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png" alt></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure>
 <h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//对于数组中的每个元素，</span></span><br><span class="line"><span class="hljs-comment">//我们找出下雨后水能达到的最高位置，等于两边最大高度的较小值减去当前高度的值。</span></span><br><span class="line"><span class="hljs-comment">//思考的方式类似于木桶效应</span></span><br><span class="line"><span class="hljs-keyword">var</span> trap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">height</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> ans = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> size = height.length</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; size - <span class="hljs-number">1</span>; i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> max_left = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">let</span> max_right = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i ; j &gt;=<span class="hljs-number">0</span>; j--)&#123;</span><br><span class="line">            max_left = <span class="hljs-built_in">Math</span>.max(max_left,height[j])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i ; j&lt;size; j++)&#123;</span><br><span class="line">            max_right = <span class="hljs-built_in">Math</span>.max(max_right,height[j])</span><br><span class="line">        &#125;</span><br><span class="line">        ans += <span class="hljs-built_in">Math</span>.min(max_left,max_right) - height[i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> ans</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 与第一种解法类似，先遍取出左右的最大值</span></span><br><span class="line"><span class="hljs-comment">// 再依次遍历比较取出最小值相加</span></span><br><span class="line"><span class="hljs-comment">// fill() 方法用于将一个固定值替换数组的元素。</span></span><br><span class="line"><span class="hljs-keyword">var</span> trap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">height</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> max_left = <span class="hljs-built_in">Array</span>(height.length).fill(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">let</span> max_right = <span class="hljs-built_in">Array</span>(height.length).fill(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">let</span> res = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = height.length<span class="hljs-number">-2</span>; i &gt;= <span class="hljs-number">1</span>; i--) &#123;</span><br><span class="line">        max_right[i] = <span class="hljs-built_in">Math</span>.max(max_right[i+<span class="hljs-number">1</span>],height[i+<span class="hljs-number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;  height.length<span class="hljs-number">-1</span>; i++) &#123;</span><br><span class="line">        max_left[i] = <span class="hljs-built_in">Math</span>.max(max_left[i<span class="hljs-number">-1</span>],height[i<span class="hljs-number">-1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; height.length<span class="hljs-number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> min = <span class="hljs-built_in">Math</span>.min(max_left[i],max_right[i]);</span><br><span class="line">        <span class="hljs-keyword">if</span>(height[i] &lt; min) &#123;</span><br><span class="line">            res += (min - height[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -701,7 +756,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        31
+                        32
                     </p>
                 </div>
             </div>
@@ -756,7 +811,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -808,6 +863,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191218-algorithm-10/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
+                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191217-angorithm-09/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
@@ -882,25 +956,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191214-algorithm-06/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/10/13/16/fantasy-4685849_1280.jpg" alt="20191214-algorithm-06">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-14T15:19:25.342Z">2019-12-14</time></div>
-                    <a href="/passages/20191214-algorithm-06/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191214-algorithm-06</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -918,7 +973,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1069,7 +1124,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
@@ -1104,6 +1159,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191218-algorithm-10/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
+                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191217-angorithm-09/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
@@ -1178,25 +1252,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191214-algorithm-06/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/10/13/16/fantasy-4685849_1280.jpg" alt="20191214-algorithm-06">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-14T15:19:25.342Z">2019-12-14</time></div>
-                    <a href="/passages/20191214-algorithm-06/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191214-algorithm-06</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1214,7 +1269,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
@@ -1365,7 +1420,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">9</span>
+                        <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
