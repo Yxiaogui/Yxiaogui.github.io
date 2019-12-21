@@ -164,8 +164,7 @@
             
         </h1>
         <div class="content">
-            <h2>小结：</h2>
-<ul>
+            <h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><ul>
 <li>19年的国庆节是待在杭州过的，没有回家。原因也很简单，不想被家人催的不耐烦，同时还要装出一副很体谅且无可奈何的表情。成年人的世界没有容易两字，尽可能的给自己营造舒适的生活氛围。个人感觉还是先把自己的生活过来在想其他的事情。</li>
 <li>本周最大的收获去看完了ios视频课程，课程学完之后可能帮助我在更加全面的理解大型app的架构思想，以及个个模块的依赖关系。了解了组件化有三种方式：Tagrget-Action、Url-Scheme 、Protocol -class，推荐前两种方式。;了解了日志分级上传，ps:之前很少关注日志上传的模块的问题。在组件化思想指导下要关注以下模块：基础业务模块、日志模块、crash模块、缓存模块。</li>
 <li>本周大部分时间还在考虑转型的问题：移动端开发者转型大前端还是后端开发？技术开发的职业生涯会有多久？自己可以做多久不会被淘汰，如果被淘汰自己是否还有其他的技能可以做备用。</li>
@@ -225,49 +224,21 @@
             
         </h1>
         <div class="content">
-            <h3>Tips:</h3>
-<p>1.React Native编译文件导致的编译失败</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//错误提示</span><br><span class="line">error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65:</span><br><span class="line">//处理方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build。</span><br></pre></td></tr></table></figure></p>
+            <h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p>1.React Native编译文件导致的编译失败</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//错误提示</span><br><span class="line">error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65:</span><br><span class="line">//处理方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build。</span><br></pre></td></tr></table></figure>
 <p>2.安卓真机调试：摇晃手机选择Dev，手机连接电脑本地Ip地址，例如：192.168.0.105：8081。</p>
 <p>3.父组件向子组件传值通过props方式；子组件向父组件传值：通过props回传，涉及到组件传值，以及点击事件回调。</p>
-<p>&lt;!--more--&gt;</p>
-<p>4.处理console.log不打印日志的问题：之前index.js文件引入了处理RN项目模拟器显示警告信息代码如下,带来的结果是调试日志打印不出来。</p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.ignoredYellowBox = [<span class="hljs-string">'Warning: BackAndroid is deprecated. Please use BackHandler instead.'</span>,<span class="hljs-string">'source.uri should not be an empty string'</span>,<span class="hljs-string">'Invalid props.style key'</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.disableYellowBox = <span class="hljs-literal">true</span>;</span><br></pre></td></tr></table></figure></p>
-<p>5.8081端口被占用:</p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//错误提示</span></span><br><span class="line">Connection to localhost port <span class="hljs-number">8081</span> [tcp/sunproxyadmin] succeeded!</span><br><span class="line">Port <span class="hljs-number">8081</span> already <span class="hljs-keyword">in</span> use, packager is either not running or not running correctly</span><br><span class="line">Command PhaseScriptExecution failed <span class="hljs-keyword">with</span> a nonzero exit code</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//解决方法</span></span><br><span class="line">sudo lsof -i :<span class="hljs-number">8081</span> </span><br><span class="line">kill <span class="hljs-number">-9</span> <span class="hljs-number">40247</span></span><br></pre></td></tr></table></figure></p>
-<p>6.props属性的定义错误的提示</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//这个错误出现在将设置图片的地址的props设置为string，编译器warning警告</span><br><span class="line">Failed prop type: Invalid prop `bgImage` of type `number` supplied to `MoneyBaseCellView`, expected `string`.</span><br></pre></td></tr></table></figure></p>
-<p>7.ios适配：逻辑分辨率适配、物理分辨率适配。</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">逻辑分辨率适配：通常是基于标准机型如：iphone6的等比例尺寸的方法、缩放；另外一种是对于具体屏幕尺寸的准确布局。</span><br><span class="line">物理分辨率：指的是同一尺寸的像素点的多少，像素点多，分辨率高，色彩丰富，清晰度高，通常用在图片上:testImage@2x.png、estImage@3x.png。</span><br></pre></td></tr></table></figure></p>
-<h3>文摘：</h3>
-<h4>把时间当作朋友:</h4>
-<ul>
-<li>每天制作你的时间预算。</li>
-<li>很多人一生最终一事无成的原因，就是因为他们是脆弱的完美主义者，天真地希望自己可以在这个不完美的世界里完美地生存——所以注定以失败告终。</li>
-<li>有趣的事不见得有用呢</li>
-<li>如果，你甩甩头，强迫自己理智一些，就会知道，无用的事情，哪怕非常有趣都不应该去做；而有用的事情，哪怕非常无趣，你都应该做。</li>
-</ul>
-<h4>异类:</h4>
-<ul>
-<li>罗塞托之谜：当年主流的观点是长寿与否取决于我们是谁—也就是个体的基因，还仰赖个体做出的选择—选择吃什么，选择锻炼多长时间，以及我们受到医疗体系照顾的程度。在此之前，还从来没人从“社区”的角度研究人体健康问题。</li>
-<li>那就是超越个人的范围寻找原因—要理解人们所处的文化背景，要考虑他们的家庭和朋友状况，要追踪其家族渊源。人们必须认识到，人类栖身其中的自然环境和社会环境，对人的发展发挥着不可磨灭的作用。</li>
-<li>人们通常只想到杰出人士是最优质的种子，但很少想到成材还必须有充足的日照，有深厚肥沃的土壤，有足够的运气躲过兔子和伐木工人。</li>
-</ul>
-<h3>小结：</h3>
-<ul>
-<li>本周是第一次开始每晚记录自己当天的时间开销，同时记录Tips(ps:Tips是用来收集当天编码过程中出现问题或者bug的处理方式，这个作用类似于上学是老师让记得错题集)。</li>
-<li>时间开销：记录了一周的时间开销，统计了一下当天编码的时间，3个小时左右，其中可见的很多时间都浪费了。</li>
-<li>思考：在开始记录时间开销的第三天的时候，自己就等会对前两天的时间开销日志不忙，想着急改变。同时另外一个问题也在脑海形成：记录时间开销的时间会坚持多久？养成一个习惯的时间不会再一周之内快速养成，毕竟人的惰性还是很大的。能意识到自己时间开销浪费的正向作用是，会刺激接下来的一天、两天、三天甚至更长的天数来养成习惯，减少日常浪费时间的时间。</li>
-<li>关于高级工程师：昨晚去招聘的网站看了一下招聘需求，看到同样年限大厂需要的是高级前端工程师，不小长需要的是编码的。对我个人的刺激点是怎么才能通向高级前端工程师，这个问题是需要我接下来四个月需要深度思考时间的问题。</li>
-</ul>
-<hr>
-<p>第一周weekly。</p>
-<p>下周就是国庆假期了，希望自己可以及时给自己充电。</p>
-
         </div>
         
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/passages/20190929/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -343,7 +314,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        34
+                        35
                     </p>
                 </div>
             </div>
@@ -398,7 +369,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -435,7 +406,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 15px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 20px;">weekly</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a>
     </div>
 </div>
     
@@ -447,6 +418,25 @@
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <a href="/passages/20191221-algorithm-13/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/07/27/forest-4707812_1280.jpg" alt="20191221-algorithm-13">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-21T12:43:32.416Z">2019-12-21</time></div>
+                    <a href="/passages/20191221-algorithm-13/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191221-algorithm-13</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -524,25 +514,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191216-algorithm-08/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/11/15/08/cat-4688579_1280.jpg" alt="20191216-algorithm-08">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-16T13:42:20.480Z">2019-12-16</time></div>
-                    <a href="/passages/20191216-algorithm-08/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191216-algorithm-08</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -560,7 +531,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">15</span>
+                    <span class="level-item tag">16</span>
                 </span>
             </a>
         </li>
@@ -711,7 +682,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -746,6 +717,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191221-algorithm-13/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/07/27/forest-4707812_1280.jpg" alt="20191221-algorithm-13">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-21T12:43:32.416Z">2019-12-21</time></div>
+                    <a href="/passages/20191221-algorithm-13/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191221-algorithm-13</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191220-algorithm-12/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg" alt="20191220-algorithm-12">
@@ -820,25 +810,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191216-algorithm-08/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/11/15/08/cat-4688579_1280.jpg" alt="20191216-algorithm-08">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-16T13:42:20.480Z">2019-12-16</time></div>
-                    <a href="/passages/20191216-algorithm-08/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191216-algorithm-08</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -856,7 +827,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">15</span>
+                    <span class="level-item tag">16</span>
                 </span>
             </a>
         </li>
@@ -1007,7 +978,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
