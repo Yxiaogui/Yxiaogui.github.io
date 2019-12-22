@@ -157,44 +157,25 @@
             
         </h1>
         <div class="content">
-            <h1>本周小结:</h1>
-<h2>OC:</h2>
-<h3>MQTT：</h3>
-<h4>解释：</h4>
-<p>MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。</p>
+            <h1 id="本周小结"><a href="#本周小结" class="headerlink" title="本周小结:"></a>本周小结:</h1><h2 id="OC"><a href="#OC" class="headerlink" title="OC:"></a>OC:</h2><h3 id="MQTT："><a href="#MQTT：" class="headerlink" title="MQTT："></a>MQTT：</h3><h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><p>MQTT(消息队列遥测传输)是ISO 标准(ISO/IEC PRF 20922)下基于发布/订阅范式的消息协议。它工作在 TCP/IP协议族上，是为硬件性能低下的远程设备以及网络状况糟糕的情况下而设计的发布/订阅型消息协议，为此，它需要一个消息中间件 。</p>
 <p>本次项目用到mqtt主要使用在k线绘制，订阅K线实时数据、买卖盘数据等。</p>
-<h4>用法：</h4>
-<p>用到的第三方库是阿里推荐的MQTTClient。常规参数配置如下：</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">- (MQTTCFSocketTransport *)transport&#123;</span><br><span class="line">  if (!_transport) &#123;</span><br><span class="line">      _transport = [[MQTTCFSocketTransport alloc] init];</span><br><span class="line">      _transport.host = @&quot;your host&quot;;</span><br><span class="line">      _transport.port = your port;</span><br><span class="line">  &#125;</span><br><span class="line">  return _transport;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (MQTTSession *)session&#123;</span><br><span class="line">  if (!_session) &#123;</span><br><span class="line">      _session = [[MQTTSession alloc] init];</span><br><span class="line">      _session.userName = @&quot;your userName&quot;;</span><br><span class="line">      _session.password = @&quot;your password&quot;;</span><br><span class="line">      _session.clientId = @&quot;you clientId&quot;;</span><br><span class="line">      _session.delegate = self;</span><br><span class="line">  &#125;</span><br><span class="line">  return _session;</span><br><span class="line">&#125;</span><br><span class="line">//连接</span><br><span class="line">- (void)connectMqtt&#123;</span><br><span class="line">      self.session.transport = self.transport;</span><br><span class="line">      [self.session connectWithConnectHandler:^(NSError *error) &#123;</span><br><span class="line">          if (!error) &#123;</span><br><span class="line">               [self.session subscribeToTopic:self.topicName atLevel:MQTTQosLevelExactlyOnce];</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;];   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4>易错点：</h4>
-<p><strong>mqtt需要维持重连的</strong>。看了网上的文档有两种常规的方式。1：KVO即观察session的status；2.通过定时器，判断mqtt的状态，如果断开连接就重连。通过第一种方法观察不到status的变化，导致不能及时判断状态，因此选择了第二张方式。</p>
+<h4 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h4><p>用到的第三方库是阿里推荐的MQTTClient。常规参数配置如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">- (MQTTCFSocketTransport *)transport&#123;</span><br><span class="line">  if (!_transport) &#123;</span><br><span class="line">      _transport = [[MQTTCFSocketTransport alloc] init];</span><br><span class="line">      _transport.host = @&quot;your host&quot;;</span><br><span class="line">      _transport.port = your port;</span><br><span class="line">  &#125;</span><br><span class="line">  return _transport;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (MQTTSession *)session&#123;</span><br><span class="line">  if (!_session) &#123;</span><br><span class="line">      _session = [[MQTTSession alloc] init];</span><br><span class="line">      _session.userName = @&quot;your userName&quot;;</span><br><span class="line">      _session.password = @&quot;your password&quot;;</span><br><span class="line">      _session.clientId = @&quot;you clientId&quot;;</span><br><span class="line">      _session.delegate = self;</span><br><span class="line">  &#125;</span><br><span class="line">  return _session;</span><br><span class="line">&#125;</span><br><span class="line">//连接</span><br><span class="line">- (void)connectMqtt&#123;</span><br><span class="line">      self.session.transport = self.transport;</span><br><span class="line">      [self.session connectWithConnectHandler:^(NSError *error) &#123;</span><br><span class="line">          if (!error) &#123;</span><br><span class="line">               [self.session subscribeToTopic:self.topicName atLevel:MQTTQosLevelExactlyOnce];</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;];   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="易错点："><a href="#易错点：" class="headerlink" title="易错点："></a>易错点：</h4><p> <strong>mqtt需要维持重连的</strong>。看了网上的文档有两种常规的方式。1：KVO即观察session的status；2.通过定时器，判断mqtt的状态，如果断开连接就重连。通过第一种方法观察不到status的变化，导致不能及时判断状态，因此选择了第二张方式。</p>
 <p>mqtt关闭。需要设置<strong>self.session = nil</strong>。如果不设置只调用[self.session disconnect]，会看到mqtt日志在一直打印。因此完整的关闭mqtt的代码如下：</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (void)disconnectMqtt&#123;</span><br><span class="line">    [self.session unsubscribeTopic:self.topicName];</span><br><span class="line">    [self.session disconnect];</span><br><span class="line">    self.session = nil;</span><br><span class="line">    [self.timer invalidate];</span><br><span class="line">    self.timer = nil;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>K线：</h3>
-<p>k线主要的作用是反应盘口大势状态和价格的信息，通常绘制k线需要的数据有：最高价、最低价、开盘价、收盘价、日期、成交量。</p>
-<h4>单个蜡烛图的绘制：</h4>
-<p>绘制k线首先需要了解：UIBezierPath、CAShapeLayer。其中UIBezierPath指定了蜡烛图的大小位置，CAShapeLayer根据路径将蜡烛图绘制在layer上。以下是一个蜡烛图的绘制：</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CGRect candleFrame = CGRectMake(313.5, 160, 5,20);    </span><br><span class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRect:candleFrame];</span><br><span class="line">[path moveToPoint:CGPointMake(316, 103)];</span><br><span class="line">[path addLineToPoint:CGPointMake(316,  160 + 20 + 7)];</span><br><span class="line">CAShapeLayer *layer = [CAShapeLayer layer];</span><br><span class="line">layer.path = path.CGPath;</span><br><span class="line">layer.lineWidth = 1.0f;</span><br><span class="line">layer.strokeColor = [UIColor redColor].CGColor;</span><br><span class="line">layer.fillColor = [UIColor redColor].CGColor;</span><br><span class="line">[self.view.layer addSublayer:layer];</span><br></pre></td></tr></table></figure></p>
-<h4>web端与移动端数据问题：</h4>
-<p>由于这个项目是是先开发web端先定版本，导致在移动端在使用K线数据是需要沿用web使用的数据结构。</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.web端使用数据按照日期倒叙的，移动端需要自己手动逆序数据。</span><br><span class="line">2.mqtt订阅主题数据的时间维度问题：每次订阅都会给出全量的时间维度数据即：1分钟、5分钟、15分钟、1小时、4小时......,每次想获取数据增量都需要遍历自己查找。</span><br></pre></td></tr></table></figure></p>
-<h4>k线实时绘制：</h4>
-<p>用消息队列就是K线可以实时绘制，提供准确的交易信息。在处理K线实时绘制是的一个错误的认识：每次拿到K线数据就替换之前的数据开重新绘制界面。通过对比火币的K线图发现，火币的1分钟蜡烛图只会重复绘制最后一个蜡烛图，同时实施修改蜡烛图的颜色(蜡烛图的颜色表示涨跌)，下一分钟在新增一个蜡烛图。同理5分钟、15分钟的维度也是这样绘制的。因此要以时间为参考指标来判断是否需要新增数据，代码如下：</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSString *timeString = dict[@&quot;time&quot;];</span><br><span class="line">if ([timeString isEqualToString:oldDict[@&quot;time&quot;]]) &#123;</span><br><span class="line">    [self.oldklineModels replaceObjectAtIndex:0 withObject:dict];</span><br><span class="line">    [self.timeTypeArray addObject:dict];</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    [self.oldklineModels insertObject:dict atIndex:0];</span><br><span class="line">    [self.timeTypeArray addObject:dict];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>GCD:</h2>
-<h3>常用：</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123; </span><br><span class="line">  // 处理耗时操作的代码块... </span><br><span class="line">  //通知主线程刷新 </span><br><span class="line">  dispatch_async(dispatch_get_main_queue(), ^&#123; </span><br><span class="line">  //回调或者说是通知主线程刷新， </span><br><span class="line">  &#125;); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (instancetype)sharedInstance &#123;</span><br><span class="line">    static id sharedInstance = nil;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">        sharedInstance = [[self alloc] init];</span><br><span class="line">    &#125;);</span><br><span class="line">    return sharedInstance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>什么是GCD：</h3>
-<p>GCD是异步执行任务的技术之一，开发者只需要定义想要执行的任务并追加到适当的Dispatch Queue内，GCD就能生产必需的线程并计划任务执行。GCD 通过简单的方式实现了复杂的多线程编程。</p>
-<h1>ARTS:</h1>
-<h2>算法：</h2>
-<h2>极客时间：</h2>
-<h3>ios自动布局：</h3>
-<h4>常用：</h4>
-<p>关不布局，最开始的时候用frame,慢慢的随着屏幕尺寸的不断新增，自动布局便成了需要被关注的点。常用的自动布局库有：Masonry、SDAutoLayout、SnapKit。其次需要了解两个单位pt、px.</p>
-<h4>学习：</h4>
-<ol>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (void)disconnectMqtt&#123;</span><br><span class="line">    [self.session unsubscribeTopic:self.topicName];</span><br><span class="line">    [self.session disconnect];</span><br><span class="line">    self.session = nil;</span><br><span class="line">    [self.timer invalidate];</span><br><span class="line">    self.timer = nil;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="K线："><a href="#K线：" class="headerlink" title="K线："></a>K线：</h3><p>k线主要的作用是反应盘口大势状态和价格的信息，通常绘制k线需要的数据有：最高价、最低价、开盘价、收盘价、日期、成交量。</p>
+<h4 id="单个蜡烛图的绘制："><a href="#单个蜡烛图的绘制：" class="headerlink" title="单个蜡烛图的绘制："></a>单个蜡烛图的绘制：</h4><p>绘制k线首先需要了解：UIBezierPath、CAShapeLayer。其中UIBezierPath指定了蜡烛图的大小位置，CAShapeLayer根据路径将蜡烛图绘制在layer上。以下是一个蜡烛图的绘制：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">CGRect candleFrame = CGRectMake(313.5, 160, 5,20);    </span><br><span class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRect:candleFrame];</span><br><span class="line">[path moveToPoint:CGPointMake(316, 103)];</span><br><span class="line">[path addLineToPoint:CGPointMake(316,  160 + 20 + 7)];</span><br><span class="line">CAShapeLayer *layer = [CAShapeLayer layer];</span><br><span class="line">layer.path = path.CGPath;</span><br><span class="line">layer.lineWidth = 1.0f;</span><br><span class="line">layer.strokeColor = [UIColor redColor].CGColor;</span><br><span class="line">layer.fillColor = [UIColor redColor].CGColor;</span><br><span class="line">[self.view.layer addSublayer:layer];</span><br></pre></td></tr></table></figure>
+<h4 id="web端与移动端数据问题："><a href="#web端与移动端数据问题：" class="headerlink" title="web端与移动端数据问题："></a>web端与移动端数据问题：</h4><p>由于这个项目是是先开发web端先定版本，导致在移动端在使用K线数据是需要沿用web使用的数据结构。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.web端使用数据按照日期倒叙的，移动端需要自己手动逆序数据。</span><br><span class="line">2.mqtt订阅主题数据的时间维度问题：每次订阅都会给出全量的时间维度数据即：1分钟、5分钟、15分钟、1小时、4小时......,每次想获取数据增量都需要遍历自己查找。</span><br></pre></td></tr></table></figure>
+<h4 id="k线实时绘制："><a href="#k线实时绘制：" class="headerlink" title="k线实时绘制："></a>k线实时绘制：</h4><p>用消息队列就是K线可以实时绘制，提供准确的交易信息。在处理K线实时绘制是的一个错误的认识：每次拿到K线数据就替换之前的数据开重新绘制界面。通过对比火币的K线图发现，火币的1分钟蜡烛图只会重复绘制最后一个蜡烛图，同时实施修改蜡烛图的颜色(蜡烛图的颜色表示涨跌)，下一分钟在新增一个蜡烛图。同理5分钟、15分钟的维度也是这样绘制的。因此要以时间为参考指标来判断是否需要新增数据，代码如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NSString *timeString = dict[@&quot;time&quot;];</span><br><span class="line">if ([timeString isEqualToString:oldDict[@&quot;time&quot;]]) &#123;</span><br><span class="line">    [self.oldklineModels replaceObjectAtIndex:0 withObject:dict];</span><br><span class="line">    [self.timeTypeArray addObject:dict];</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    [self.oldklineModels insertObject:dict atIndex:0];</span><br><span class="line">    [self.timeTypeArray addObject:dict];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD:"></a>GCD:</h2><h3 id="常用："><a href="#常用：" class="headerlink" title="常用："></a>常用：</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dispatch_async(dispatch_get_global_queue(0, 0), ^&#123; </span><br><span class="line">  // 处理耗时操作的代码块... </span><br><span class="line">  //通知主线程刷新 </span><br><span class="line">  dispatch_async(dispatch_get_main_queue(), ^&#123; </span><br><span class="line">  //回调或者说是通知主线程刷新， </span><br><span class="line">  &#125;); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (instancetype)sharedInstance &#123;</span><br><span class="line">    static id sharedInstance = nil;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">        sharedInstance = [[self alloc] init];</span><br><span class="line">    &#125;);</span><br><span class="line">    return sharedInstance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="什么是GCD："><a href="#什么是GCD：" class="headerlink" title="什么是GCD："></a>什么是GCD：</h3><p>GCD是异步执行任务的技术之一，开发者只需要定义想要执行的任务并追加到适当的Dispatch Queue内，GCD就能生产必需的线程并计划任务执行。GCD 通过简单的方式实现了复杂的多线程编程。</p>
+<h1 id="ARTS"><a href="#ARTS" class="headerlink" title="ARTS:"></a>ARTS:</h1><h2 id="算法："><a href="#算法：" class="headerlink" title="算法："></a>算法：</h2><h2 id="极客时间："><a href="#极客时间：" class="headerlink" title="极客时间："></a>极客时间：</h2><h3 id="ios自动布局："><a href="#ios自动布局：" class="headerlink" title="ios自动布局："></a>ios自动布局：</h3><h4 id="常用：-1"><a href="#常用：-1" class="headerlink" title="常用："></a>常用：</h4><p>关不布局，最开始的时候用frame,慢慢的随着屏幕尺寸的不断新增，自动布局便成了需要被关注的点。常用的自动布局库有：Masonry、SDAutoLayout、SnapKit。其次需要了解两个单位pt、px.</p>
+<h4 id="学习："><a href="#学习：" class="headerlink" title="学习："></a>学习：</h4><ol>
 <li>1997年，Auto Layout用到的布局算法Cassowary出现。</li>
 <li>2011年，苹果将Cassowary算法用到自动布局引擎Auto Layout。</li>
 <li>Auto Layout的核心：Layout Engine布局引擎系统，主导整个页面布局。</li>
@@ -259,7 +240,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        36
+                        37
                     </p>
                 </div>
             </div>
@@ -322,7 +303,7 @@
                 <span class="level-item">weekly</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/新技能get/">
@@ -366,6 +347,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
+                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222-algorithm-14/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
@@ -440,25 +440,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191218-algorithm-10/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
-                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -476,7 +457,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">18</span>
                 </span>
             </a>
         </li>
@@ -634,7 +615,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -662,6 +643,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
+                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222-algorithm-14/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
@@ -736,25 +736,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191218-algorithm-10/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
-                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -772,7 +753,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">18</span>
                 </span>
             </a>
         </li>
@@ -930,7 +911,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 

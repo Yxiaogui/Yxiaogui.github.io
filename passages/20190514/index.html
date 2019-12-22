@@ -10,18 +10,18 @@
 <title>swift请求 - IT从业者</title>
 
 
-    <meta name="description" content="Alamofire 请求简单封装 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import UIKitimport Alamofireimport SwiftyJSONprotocol HTTP">
+    <meta name="description" content="Alamofire 请求简单封装12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import UIKitimport Alamofireimport SwiftyJSONprotocol HTTPP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swift请求">
 <meta property="og:url" content="https://www.haixinlove123.com/passages/20190514/index.html">
 <meta property="og:site_name" content="IT从业者">
-<meta property="og:description" content="Alamofire 请求简单封装 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import UIKitimport Alamofireimport SwiftyJSONprotocol HTTP">
+<meta property="og:description" content="Alamofire 请求简单封装12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import UIKitimport Alamofireimport SwiftyJSONprotocol HTTPP">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://www.haixinlove123.com/images/og_image.png">
 <meta property="og:updated_time" content="2019-10-16T03:16:47.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift请求">
-<meta name="twitter:description" content="Alamofire 请求简单封装 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import UIKitimport Alamofireimport SwiftyJSONprotocol HTTP">
+<meta name="twitter:description" content="Alamofire 请求简单封装12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667import UIKitimport Alamofireimport SwiftyJSONprotocol HTTPP">
 <meta name="twitter:image" content="https://www.haixinlove123.com/images/og_image.png">
 
 
@@ -147,10 +147,8 @@
             
         </h1>
         <div class="content">
-            <h3>Alamofire 请求简单封装</h3>
-<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> UIKit</span><br><span class="line"><span class="hljs-keyword">import</span> Alamofire</span><br><span class="line"><span class="hljs-keyword">import</span> SwiftyJSON</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">HTTPProxyDelegate</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxySuccess</span><span class="hljs-params">(msg:String,data:NSDictionary)</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxyfailure</span><span class="hljs-params">(msg:String)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTTPProxy</span>: <span class="hljs-title">NSObject</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isPost :<span class="hljs-type">Bool</span>!</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isFile :<span class="hljs-type">Bool</span>!</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> path = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> hosturl = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> urlString = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> parameters = [<span class="hljs-type">String</span> :<span class="hljs-type">Any</span>]()</span><br><span class="line">    <span class="hljs-keyword">var</span> delegate :<span class="hljs-type">HTTPProxyDelegate</span>?</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">let</span> headers = [<span class="hljs-string">"Sign"</span>:<span class="hljs-string">"ios"</span>,<span class="hljs-string">"Authorization"</span>:<span class="hljs-string">"1234567890"</span>]</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">loadData</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">        urlString = hosturl + path</span><br><span class="line">        <span class="hljs-keyword">if</span> isPost &#123;</span><br><span class="line">            postRequest()</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            getRequest()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRequest</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">        <span class="hljs-type">Alamofire</span>.request(urlString, method:.<span class="hljs-keyword">get</span>, parameters: parameters, encoding: <span class="hljs-type">URLEncoding</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">ParameterEncoding</span>, headers: headers).responseJSON &#123; (response) <span class="hljs-keyword">in</span></span><br><span class="line">            <span class="hljs-built_in">print</span>(<span class="hljs-string">"get request "</span>)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">postRequest</span><span class="hljs-params">()</span></span>  &#123;</span><br><span class="line">        <span class="hljs-type">Alamofire</span>.request(urlString, method:.post, parameters: parameters, encoding: <span class="hljs-type">URLEncoding</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">ParameterEncoding</span>, headers: headers).responseJSON &#123; (responese) <span class="hljs-keyword">in</span></span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> value = responese.result.value &#123;  </span><br><span class="line">                <span class="hljs-keyword">let</span> jsonData = <span class="hljs-type">JSON</span>(value)</span><br><span class="line">                <span class="hljs-keyword">let</span> code = jsonData[<span class="hljs-string">"Code"</span>].stringValue</span><br><span class="line">                <span class="hljs-keyword">let</span> msg = jsonData[<span class="hljs-string">"Msg"</span>].stringValue</span><br><span class="line">                <span class="hljs-keyword">let</span> data = jsonData[<span class="hljs-string">"Data"</span>].dictionary</span><br><span class="line">              </span><br><span class="line">                <span class="hljs-keyword">if</span> (code == <span class="hljs-string">"200"</span>)&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxySuccess(msg: msg, data: data! <span class="hljs-keyword">as</span> <span class="hljs-type">NSDictionary</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (code ==  <span class="hljs-string">"202"</span>)&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: msg)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: msg)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                    <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: <span class="hljs-string">"网络错误"</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>请求调用</h3>
-<p><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> httpproxy = <span class="hljs-type">HTTPProxy</span>()</span><br><span class="line">httpproxy.isPost = <span class="hljs-literal">true</span></span><br><span class="line">httpproxy.path = <span class="hljs-string">"index/investlist"</span></span><br><span class="line">httpproxy.delegate = <span class="hljs-keyword">self</span></span><br><span class="line">httpproxy.loadData()</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxyfailure</span><span class="hljs-params">(msg:String)</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxySuccess</span><span class="hljs-params">(msg:String,data:NSDictionary)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h3 id="Alamofire-请求简单封装"><a href="#Alamofire-请求简单封装" class="headerlink" title="Alamofire 请求简单封装"></a>Alamofire 请求简单封装</h3><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> UIKit</span><br><span class="line"><span class="hljs-keyword">import</span> Alamofire</span><br><span class="line"><span class="hljs-keyword">import</span> SwiftyJSON</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">HTTPProxyDelegate</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxySuccess</span><span class="hljs-params">(msg:String,data:NSDictionary)</span></span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxyfailure</span><span class="hljs-params">(msg:String)</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTTPProxy</span>: <span class="hljs-title">NSObject</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isPost :<span class="hljs-type">Bool</span>!</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> isFile :<span class="hljs-type">Bool</span>!</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> path = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> hosturl = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> urlString = <span class="hljs-string">""</span></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">var</span> parameters = [<span class="hljs-type">String</span> :<span class="hljs-type">Any</span>]()</span><br><span class="line">    <span class="hljs-keyword">var</span> delegate :<span class="hljs-type">HTTPProxyDelegate</span>?</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">let</span> headers = [<span class="hljs-string">"Sign"</span>:<span class="hljs-string">"ios"</span>,<span class="hljs-string">"Authorization"</span>:<span class="hljs-string">"1234567890"</span>]</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">loadData</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">        urlString = hosturl + path</span><br><span class="line">        <span class="hljs-keyword">if</span> isPost &#123;</span><br><span class="line">            postRequest()</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            getRequest()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getRequest</span><span class="hljs-params">()</span></span> &#123;</span><br><span class="line">        <span class="hljs-type">Alamofire</span>.request(urlString, method:.<span class="hljs-keyword">get</span>, parameters: parameters, encoding: <span class="hljs-type">URLEncoding</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">ParameterEncoding</span>, headers: headers).responseJSON &#123; (response) <span class="hljs-keyword">in</span></span><br><span class="line">            <span class="hljs-built_in">print</span>(<span class="hljs-string">"get request "</span>)</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">postRequest</span><span class="hljs-params">()</span></span>  &#123;</span><br><span class="line">        <span class="hljs-type">Alamofire</span>.request(urlString, method:.post, parameters: parameters, encoding: <span class="hljs-type">URLEncoding</span>() <span class="hljs-keyword">as</span> <span class="hljs-type">ParameterEncoding</span>, headers: headers).responseJSON &#123; (responese) <span class="hljs-keyword">in</span></span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> value = responese.result.value &#123;  </span><br><span class="line">                <span class="hljs-keyword">let</span> jsonData = <span class="hljs-type">JSON</span>(value)</span><br><span class="line">                <span class="hljs-keyword">let</span> code = jsonData[<span class="hljs-string">"Code"</span>].stringValue</span><br><span class="line">                <span class="hljs-keyword">let</span> msg = jsonData[<span class="hljs-string">"Msg"</span>].stringValue</span><br><span class="line">                <span class="hljs-keyword">let</span> data = jsonData[<span class="hljs-string">"Data"</span>].dictionary</span><br><span class="line">              </span><br><span class="line">                <span class="hljs-keyword">if</span> (code == <span class="hljs-string">"200"</span>)&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxySuccess(msg: msg, data: data! <span class="hljs-keyword">as</span> <span class="hljs-type">NSDictionary</span>)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (code ==  <span class="hljs-string">"202"</span>)&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: msg)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                    <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                        <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: msg)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">                <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.delegate != <span class="hljs-literal">nil</span>&#123;</span><br><span class="line">                    <span class="hljs-keyword">self</span>.delegate?.httpProxyfailure(msg: <span class="hljs-string">"网络错误"</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="请求调用"><a href="#请求调用" class="headerlink" title="请求调用"></a>请求调用</h3><figure class="highlight swift hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">let</span> httpproxy = <span class="hljs-type">HTTPProxy</span>()</span><br><span class="line">httpproxy.isPost = <span class="hljs-literal">true</span></span><br><span class="line">httpproxy.path = <span class="hljs-string">"index/investlist"</span></span><br><span class="line">httpproxy.delegate = <span class="hljs-keyword">self</span></span><br><span class="line">httpproxy.loadData()</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxyfailure</span><span class="hljs-params">(msg:String)</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">httpProxySuccess</span><span class="hljs-params">(msg:String,data:NSDictionary)</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>项目一直用的OC开发的，swift作为趋势，慢慢的需要对项目代码做迁移，OC请求封装跟swift的不同点在于：oc用的是block回调的方式，swift选择的代理。</p>
 
         </div>
@@ -240,7 +238,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        36
+                        37
                     </p>
                 </div>
             </div>
@@ -303,7 +301,7 @@
                 <span class="level-item">weekly</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/新技能get/">
@@ -347,6 +345,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
+                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222-algorithm-14/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
@@ -421,25 +438,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191218-algorithm-10/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
-                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -457,7 +455,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">18</span>
                 </span>
             </a>
         </li>
@@ -615,7 +613,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -643,6 +641,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
+                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222-algorithm-14/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
@@ -717,25 +734,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191218-algorithm-10/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
-                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -753,7 +751,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">18</span>
                 </span>
             </a>
         </li>
@@ -911,7 +909,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 

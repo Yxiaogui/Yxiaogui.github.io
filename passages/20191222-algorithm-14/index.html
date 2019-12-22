@@ -10,19 +10,19 @@
 <title>20191222-algorithm-14 - IT从业者</title>
 
 
-    <meta name="description" content="N叉树的后序遍历 题目： 给定一个 N 叉树，返回其节点值的后序遍历。 解法01： 1234567891011121314var postorder = function(root) &amp;#123;    if (!root) return []    let res = []    let stack = [root]    while (stack.length)&amp;#123;        le">
+    <meta name="description" content="N叉树的后序遍历题目：给定一个 N 叉树，返回其节点值的后序遍历。 解法01：1234567891011121314var postorder = function(root) &amp;#123;    if (!root) return []    let res = []    let stack = [root]    while (stack.length)&amp;#123;        let n">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20191222-algorithm-14">
 <meta property="og:url" content="https://www.haixinlove123.com/passages/20191222-algorithm-14/index.html">
 <meta property="og:site_name" content="IT从业者">
-<meta property="og:description" content="N叉树的后序遍历 题目： 给定一个 N 叉树，返回其节点值的后序遍历。 解法01： 1234567891011121314var postorder = function(root) &amp;#123;    if (!root) return []    let res = []    let stack = [root]    while (stack.length)&amp;#123;        le">
+<meta property="og:description" content="N叉树的后序遍历题目：给定一个 N 叉树，返回其节点值的后序遍历。 解法01：1234567891011121314var postorder = function(root) &amp;#123;    if (!root) return []    let res = []    let stack = [root]    while (stack.length)&amp;#123;        let n">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg">
 <meta property="og:updated_time" content="2019-12-22T14:27:59.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20191222-algorithm-14">
-<meta name="twitter:description" content="N叉树的后序遍历 题目： 给定一个 N 叉树，返回其节点值的后序遍历。 解法01： 1234567891011121314var postorder = function(root) &amp;#123;    if (!root) return []    let res = []    let stack = [root]    while (stack.length)&amp;#123;        le">
+<meta name="twitter:description" content="N叉树的后序遍历题目：给定一个 N 叉树，返回其节点值的后序遍历。 解法01：1234567891011121314var postorder = function(root) &amp;#123;    if (!root) return []    let res = []    let stack = [root]    while (stack.length)&amp;#123;        let n">
 <meta name="twitter:image" content="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg">
 
 
@@ -154,13 +154,9 @@
             
         </h1>
         <div class="content">
-            <h4><strong>N叉树的后序遍历</strong></h4>
-<h5><strong>题目：</strong></h5>
-<p>给定一个 N 叉树，返回其节点值的<em>后序遍历</em>。</p>
-<h5><strong>解法01：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> postorder = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (!root) <span class="hljs-keyword">return</span> []</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    <span class="hljs-keyword">let</span> stack = [root]</span><br><span class="line">    <span class="hljs-keyword">while</span> (stack.length)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> node = stack.pop()</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span> ; i &lt; node.children.length; i ++)&#123;</span><br><span class="line">            stack.push(node.children[i])</span><br><span class="line">        &#125;</span><br><span class="line">        res.unshift(node.val)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h5><strong>解法02：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> postorder = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    helper (root,res)</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> helper = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root,res</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (!root) <span class="hljs-keyword">return</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;root.children.length;i ++)&#123;</span><br><span class="line">        helper (root.children[i],res)</span><br><span class="line">    &#125;</span><br><span class="line">    res.push (root.val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h4 id="N叉树的后序遍历"><a href="#N叉树的后序遍历" class="headerlink" title="N叉树的后序遍历"></a><strong>N叉树的后序遍历</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定一个 N 叉树，返回其节点值的<em>后序遍历</em>。</p>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> postorder = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (!root) <span class="hljs-keyword">return</span> []</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    <span class="hljs-keyword">let</span> stack = [root]</span><br><span class="line">    <span class="hljs-keyword">while</span> (stack.length)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> node = stack.pop()</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span> ; i &lt; node.children.length; i ++)&#123;</span><br><span class="line">            stack.push(node.children[i])</span><br><span class="line">        &#125;</span><br><span class="line">        res.unshift(node.val)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> postorder = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    helper (root,res)</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> helper = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root,res</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (!root) <span class="hljs-keyword">return</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;root.children.length;i ++)&#123;</span><br><span class="line">        helper (root.children[i],res)</span><br><span class="line">    &#125;</span><br><span class="line">    res.push (root.val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -194,6 +190,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/passages/20191222/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">第13周weekly</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -251,7 +254,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        36
+                        37
                     </p>
                 </div>
             </div>
@@ -314,7 +317,7 @@
                 <span class="level-item">weekly</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">12</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/新技能get/">
@@ -358,6 +361,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
+                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222-algorithm-14/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
@@ -432,25 +454,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191218-algorithm-10/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
-                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -468,7 +471,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">18</span>
                 </span>
             </a>
         </li>
@@ -626,7 +629,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -654,6 +657,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
+                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222-algorithm-14/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
@@ -728,25 +750,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191218-algorithm-10/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/27/12/29/forest-4656859_960_720.jpg" alt="20191218-algorithm-10">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-18T07:26:08.452Z">2019-12-18</time></div>
-                    <a href="/passages/20191218-algorithm-10/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191218-algorithm-10</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -764,7 +767,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">17</span>
+                    <span class="level-item tag">18</span>
                 </span>
             </a>
         </li>
@@ -922,7 +925,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
