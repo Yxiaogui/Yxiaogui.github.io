@@ -10,19 +10,19 @@
 <title>20191213-algorithm-05 - IT从业者</title>
 
 
-    <meta name="description" content="删除排序数组中的重复项题目描述：给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 解法01：1234567891011121314//依次比较相邻两个元素的大小//相同不做处理//不相同长度加1，同时将后一个元素赋值给前一个元素var removeDuplic">
+    <meta name="description" content="删除排序数组中的重复项 题目描述： 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 解法01： 1234567891011121314//依次比较相邻两个元素的大小//相同不做处理//不相同长度加1，同时将后一个元素赋值给前一个元素var removeDup">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20191213-algorithm-05">
 <meta property="og:url" content="https://www.haixinlove123.com/passages/20191213-algorithm-05/index.html">
 <meta property="og:site_name" content="IT从业者">
-<meta property="og:description" content="删除排序数组中的重复项题目描述：给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 解法01：1234567891011121314//依次比较相邻两个元素的大小//相同不做处理//不相同长度加1，同时将后一个元素赋值给前一个元素var removeDuplic">
+<meta property="og:description" content="删除排序数组中的重复项 题目描述： 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 解法01： 1234567891011121314//依次比较相邻两个元素的大小//相同不做处理//不相同长度加1，同时将后一个元素赋值给前一个元素var removeDup">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg">
 <meta property="og:updated_time" content="2019-12-13T09:27:45.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20191213-algorithm-05">
-<meta name="twitter:description" content="删除排序数组中的重复项题目描述：给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 解法01：1234567891011121314//依次比较相邻两个元素的大小//相同不做处理//不相同长度加1，同时将后一个元素赋值给前一个元素var removeDuplic">
+<meta name="twitter:description" content="删除排序数组中的重复项 题目描述： 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 解法01： 1234567891011121314//依次比较相邻两个元素的大小//相同不做处理//不相同长度加1，同时将后一个元素赋值给前一个元素var removeDup">
 <meta name="twitter:image" content="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg">
 
 
@@ -154,9 +154,13 @@
             
         </h1>
         <div class="content">
-            <h4 id="删除排序数组中的重复项"><a href="#删除排序数组中的重复项" class="headerlink" title="删除排序数组中的重复项"></a><strong>删除排序数组中的重复项</strong></h4><h5 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a><strong>题目描述</strong>：</h5><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
-<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//依次比较相邻两个元素的大小</span></span><br><span class="line"><span class="hljs-comment">//相同不做处理</span></span><br><span class="line"><span class="hljs-comment">//不相同长度加1，同时将后一个元素赋值给前一个元素</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">1</span>; j &lt;nums.length; j ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (nums[i] != nums[j])&#123;</span><br><span class="line">            i ++</span><br><span class="line">            nums[i] = nums[j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h5 id="解法02"><a href="#解法02" class="headerlink" title="解法02"></a><strong>解法02</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">  nums.forEach(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (item !== nums[i])&#123;</span><br><span class="line">          nums[++i] = item</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <h4><strong>删除排序数组中的重复项</strong></h4>
+<h5><strong>题目描述</strong>：</h5>
+<p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+<h5><strong>解法01：</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//依次比较相邻两个元素的大小</span></span><br><span class="line"><span class="hljs-comment">//相同不做处理</span></span><br><span class="line"><span class="hljs-comment">//不相同长度加1，同时将后一个元素赋值给前一个元素</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">1</span>; j &lt;nums.length; j ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (nums[i] != nums[j])&#123;</span><br><span class="line">            i ++</span><br><span class="line">            nums[i] = nums[j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h5><strong>解法02</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">  nums.forEach(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (item !== nums[i])&#123;</span><br><span class="line">          nums[++i] = item</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
@@ -254,7 +258,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        36
                     </p>
                 </div>
             </div>
@@ -309,7 +313,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">13</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -361,6 +365,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222-algorithm-14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:04:39.246Z">2019-12-22</time></div>
+                    <a href="/passages/20191222-algorithm-14/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191222-algorithm-14</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191221-algorithm-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/07/27/forest-4707812_1280.jpg" alt="20191221-algorithm-13">
@@ -435,25 +458,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191217-angorithm-09/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T09:07:24.238Z">2019-12-17</time></div>
-                    <a href="/passages/20191217-angorithm-09/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191217-algorithm-09</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -471,7 +475,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -622,7 +626,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -657,6 +661,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222-algorithm-14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:04:39.246Z">2019-12-22</time></div>
+                    <a href="/passages/20191222-algorithm-14/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191222-algorithm-14</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191221-algorithm-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/07/27/forest-4707812_1280.jpg" alt="20191221-algorithm-13">
@@ -731,25 +754,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191217-angorithm-09/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T09:07:24.238Z">2019-12-17</time></div>
-                    <a href="/passages/20191217-angorithm-09/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191217-algorithm-09</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -767,7 +771,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -918,7 +922,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 

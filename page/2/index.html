@@ -121,6 +121,67 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191217-angorithm-09/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-17T09:07:24.238Z">2019-12-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes 读完 (大约 230 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191217-angorithm-09/">20191217-algorithm-09</a>
+            
+        </h1>
+        <div class="content">
+            <h4><strong>接雨水：</strong></h4>
+<h5><strong>题目：</strong></h5>
+<p>给定 <em>n</em> 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png" alt></p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure></p>
+<h5><strong>解法01：</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//对于数组中的每个元素，</span></span><br><span class="line"><span class="hljs-comment">//我们找出下雨后水能达到的最高位置，等于两边最大高度的较小值减去当前高度的值。</span></span><br><span class="line"><span class="hljs-comment">//思考的方式类似于木桶效应</span></span><br><span class="line"><span class="hljs-keyword">var</span> trap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">height</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> ans = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> size = height.length</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; size - <span class="hljs-number">1</span>; i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> max_left = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">let</span> max_right = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i ; j &gt;=<span class="hljs-number">0</span>; j--)&#123;</span><br><span class="line">            max_left = <span class="hljs-built_in">Math</span>.max(max_left,height[j])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i ; j&lt;size; j++)&#123;</span><br><span class="line">            max_right = <span class="hljs-built_in">Math</span>.max(max_right,height[j])</span><br><span class="line">        &#125;</span><br><span class="line">        ans += <span class="hljs-built_in">Math</span>.min(max_left,max_right) - height[i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> ans</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h5><strong>解法02：</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 与第一种解法类似，先遍取出左右的最大值</span></span><br><span class="line"><span class="hljs-comment">// 再依次遍历比较取出最小值相加</span></span><br><span class="line"><span class="hljs-comment">// fill() 方法用于将一个固定值替换数组的元素。</span></span><br><span class="line"><span class="hljs-keyword">var</span> trap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">height</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> max_left = <span class="hljs-built_in">Array</span>(height.length).fill(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">let</span> max_right = <span class="hljs-built_in">Array</span>(height.length).fill(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">let</span> res = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = height.length<span class="hljs-number">-2</span>; i &gt;= <span class="hljs-number">1</span>; i--) &#123;</span><br><span class="line">        max_right[i] = <span class="hljs-built_in">Math</span>.max(max_right[i+<span class="hljs-number">1</span>],height[i+<span class="hljs-number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;  height.length<span class="hljs-number">-1</span>; i++) &#123;</span><br><span class="line">        max_left[i] = <span class="hljs-built_in">Math</span>.max(max_left[i<span class="hljs-number">-1</span>],height[i<span class="hljs-number">-1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; height.length<span class="hljs-number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> min = <span class="hljs-built_in">Math</span>.min(max_left[i],max_right[i]);</span><br><span class="line">        <span class="hljs-keyword">if</span>(height[i] &lt; min) &#123;</span><br><span class="line">            res += (min - height[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191216-algorithm-08/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/11/15/08/cat-4688579_1280.jpg" alt="20191216-algorithm-08">
         </a>
@@ -153,7 +214,9 @@
             
         </h1>
         <div class="content">
-            <h4 id="设计循环双端队列"><a href="#设计循环双端队列" class="headerlink" title="设计循环双端队列"></a><strong>设计循环双端队列</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>设计实现双端队列。你的实现需要支持以下操作：</p>
+            <h4><strong>设计循环双端队列</strong></h4>
+<h5><strong>题目：</strong></h5>
+<p>设计实现双端队列。你的实现需要支持以下操作：</p>
 <p>MyCircularDeque(k)：构造函数,双端队列的大小为k。</p>
 <p>insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true。</p>
 <p>insertLast()：将一个元素添加到双端队列尾部。如果操作成功返回 true。</p>
@@ -163,8 +226,11 @@
 <p>getRear()：获得双端队列的最后一个元素。 如果双端队列为空，返回 -1。</p>
 <p>isEmpty()：检查双端队列是否为空。</p>
 <p>isFull()：检查双端队列是否满了。</p>
-<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Initialize your data structure here. Set the size of the deque to be k.</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; k</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> MyCircularDeque = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">k</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(k + <span class="hljs-number">1</span>); <span class="hljs-comment">// 数组会有一个空间不能存值</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.head = <span class="hljs-number">0</span>; <span class="hljs-comment">// 头指针</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.tail = <span class="hljs-number">0</span>; <span class="hljs-comment">// 尾指针</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.size = k + <span class="hljs-number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Adds an item at the front of Deque. Return true if the operation is successful. </span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; value</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.insertFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.head = (<span class="hljs-keyword">this</span>.head - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.head] = value;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Adds an item at the rear of Deque. Return true if the operation is successful. </span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; value</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.insertLast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.tail] = value;</span><br><span class="line">        <span class="hljs-keyword">this</span>.tail = (<span class="hljs-keyword">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Deletes an item from the front of Deque. Return true if the operation is successful.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.deleteFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.head = (<span class="hljs-keyword">this</span>.head + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Deletes an item from the rear of Deque. Return true if the operation is successful.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.deleteLast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.tail = (<span class="hljs-keyword">this</span>.tail - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Get the front item from the deque.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.getFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEmpty() ? <span class="hljs-number">-1</span> : <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.head];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Get the last item from the deque.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.getRear = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> tail = (<span class="hljs-keyword">this</span>.tail - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEmpty() ? <span class="hljs-number">-1</span> : <span class="hljs-keyword">this</span>.arr[tail];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Checks whether the circular deque is empty or not.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.isEmpty = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.head === <span class="hljs-keyword">this</span>.tail;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Checks whether the circular deque is full or not.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.isFull = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size === <span class="hljs-keyword">this</span>.head;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点：</strong></h4><h5 id="队列："><a href="#队列：" class="headerlink" title="队列："></a><strong>队列：</strong></h5><p>1.先进先出</p>
+<h5><strong>解法01：</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Initialize your data structure here. Set the size of the deque to be k.</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; k</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> MyCircularDeque = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">k</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(k + <span class="hljs-number">1</span>); <span class="hljs-comment">// 数组会有一个空间不能存值</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.head = <span class="hljs-number">0</span>; <span class="hljs-comment">// 头指针</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.tail = <span class="hljs-number">0</span>; <span class="hljs-comment">// 尾指针</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.size = k + <span class="hljs-number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Adds an item at the front of Deque. Return true if the operation is successful. </span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; value</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.insertFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.head = (<span class="hljs-keyword">this</span>.head - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.head] = value;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Adds an item at the rear of Deque. Return true if the operation is successful. </span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; value</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.insertLast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.tail] = value;</span><br><span class="line">        <span class="hljs-keyword">this</span>.tail = (<span class="hljs-keyword">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Deletes an item from the front of Deque. Return true if the operation is successful.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.deleteFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.head = (<span class="hljs-keyword">this</span>.head + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Deletes an item from the rear of Deque. Return true if the operation is successful.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.deleteLast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.tail = (<span class="hljs-keyword">this</span>.tail - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Get the front item from the deque.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.getFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEmpty() ? <span class="hljs-number">-1</span> : <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.head];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Get the last item from the deque.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.getRear = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> tail = (<span class="hljs-keyword">this</span>.tail - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEmpty() ? <span class="hljs-number">-1</span> : <span class="hljs-keyword">this</span>.arr[tail];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Checks whether the circular deque is empty or not.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.isEmpty = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.head === <span class="hljs-keyword">this</span>.tail;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Checks whether the circular deque is full or not.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.isFull = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size === <span class="hljs-keyword">this</span>.head;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h4><strong>知识点：</strong></h4>
+<h5><strong>队列：</strong></h5>
+<p>1.先进先出</p>
 <p>2.最基本的操作是两个：入队enqueue()，方一个数据到队列尾部；出队dequeue(),从队列头部去一个元素.</p>
 <p>3 . 队列需要两个指针，一个是head指针，指向对头;一个是tail指针，指向队尾。tail指针不存储数据，以上可解释长度为K的循环指针，实际长长度为k+1.</p>
 <p>4.循环队列的判空条件是tail==head;队满条件是（tail + 1)%n= head</p>
@@ -220,10 +286,12 @@
             
         </h1>
         <div class="content">
-            <h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h4><p>React Native:position定位实现”公章覆盖文字”的效果，实现效果的关键点是方向可以用负数如：<code>top: -10</code></p>
+            <h4>Tips:</h4>
+<p>React Native:position定位实现&quot;公章覆盖文字&quot;的效果，实现效果的关键点是方向可以用负数如：<code>top: -10</code></p>
 <p>学习了使用XMind绘制思维导图，掌握快捷键以及概要方式的使用。</p>
 <p>本周是打卡算法题的第一周坚持下来了，希望再接再厉小伙子。</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p>面向未来。</p>
+<h4>小结：</h4>
+<p>面向未来。</p>
 
         </div>
         
@@ -276,9 +344,12 @@
             
         </h1>
         <div class="content">
-            <h4 id="加一"><a href="#加一" class="headerlink" title="加一"></a><strong>加一</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [1,2,3]</span><br><span class="line">输出: [1,2,4]</span><br><span class="line">解释: 输入数组表示数字 123。</span><br></pre></td></tr></table></figure>
-<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.倒叙遍历数组 9是一个临界值</span></span><br><span class="line"><span class="hljs-comment">//2.小于9直接加一,大于9逢十进一</span></span><br><span class="line"><span class="hljs-keyword">var</span> plusOne = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">digits</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> len = digits.length;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = len<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (digits[i]!=<span class="hljs-number">9</span>)&#123;</span><br><span class="line">            digits[i]++ ;</span><br><span class="line">            <span class="hljs-keyword">break</span>;</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            digits[i]=<span class="hljs-number">0</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span> (i===<span class="hljs-number">0</span>) digits.unshift(<span class="hljs-number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> digits</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <h4><strong>加一</strong></h4>
+<h5><strong>题目：</strong></h5>
+<p>给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [1,2,3]</span><br><span class="line">输出: [1,2,4]</span><br><span class="line">解释: 输入数组表示数字 123。</span><br></pre></td></tr></table></figure></p>
+<h5><strong>解法01：</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.倒叙遍历数组 9是一个临界值</span></span><br><span class="line"><span class="hljs-comment">//2.小于9直接加一,大于9逢十进一</span></span><br><span class="line"><span class="hljs-keyword">var</span> plusOne = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">digits</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">var</span> len = digits.length;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = len<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (digits[i]!=<span class="hljs-number">9</span>)&#123;</span><br><span class="line">            digits[i]++ ;</span><br><span class="line">            <span class="hljs-keyword">break</span>;</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            digits[i]=<span class="hljs-number">0</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span> (i===<span class="hljs-number">0</span>) digits.unshift(<span class="hljs-number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> digits</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
@@ -331,64 +402,12 @@
             
         </h1>
         <div class="content">
-            <h4 id="移动零"><a href="#移动零" class="headerlink" title="移动零"></a><strong>移动零</strong></h4><h5 id="题目"><a href="#题目" class="headerlink" title="题目"></a><strong>题目</strong></h5><p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [0,1,0,3,12]</span><br><span class="line">输出: [1,3,12,0,0]</span><br></pre></td></tr></table></figure>
-<h5 id="解法01"><a href="#解法01" class="headerlink" title="解法01"></a><strong>解法01</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.非零数组重新排序</span></span><br><span class="line"><span class="hljs-comment">//2.添加零元素</span></span><br><span class="line"><span class="hljs-keyword">var</span> moveZeroes = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nums.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> </span><br><span class="line">    <span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (nums[i] !== <span class="hljs-number">0</span>)&#123;</span><br><span class="line">            nums[k++] = nums[i]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> (j = k ; j &lt; nums.length; j ++)&#123;</span><br><span class="line">        nums[j] = <span class="hljs-number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> nums</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-        </div>
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/passages/20191213-algorithm-05/" class="image is-7by1">
-            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg" alt="20191213-algorithm-05">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-13T08:41:43.558Z">2019-12-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute 读完 (大约 174 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20191213-algorithm-05/">20191213-algorithm-05</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="删除排序数组中的重复项"><a href="#删除排序数组中的重复项" class="headerlink" title="删除排序数组中的重复项"></a><strong>删除排序数组中的重复项</strong></h4><h5 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a><strong>题目描述</strong>：</h5><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
-<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//依次比较相邻两个元素的大小</span></span><br><span class="line"><span class="hljs-comment">//相同不做处理</span></span><br><span class="line"><span class="hljs-comment">//不相同长度加1，同时将后一个元素赋值给前一个元素</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">1</span>; j &lt;nums.length; j ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (nums[i] != nums[j])&#123;</span><br><span class="line">            i ++</span><br><span class="line">            nums[i] = nums[j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h5 id="解法02"><a href="#解法02" class="headerlink" title="解法02"></a><strong>解法02</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">  nums.forEach(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (item !== nums[i])&#123;</span><br><span class="line">          nums[++i] = item</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <h4><strong>移动零</strong></h4>
+<h5><strong>题目</strong></h5>
+<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [0,1,0,3,12]</span><br><span class="line">输出: [1,3,12,0,0]</span><br></pre></td></tr></table></figure></p>
+<h5><strong>解法01</strong></h5>
+<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//1.非零数组重新排序</span></span><br><span class="line"><span class="hljs-comment">//2.添加零元素</span></span><br><span class="line"><span class="hljs-keyword">var</span> moveZeroes = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nums.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> </span><br><span class="line">    <span class="hljs-keyword">var</span> k = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (nums[i] !== <span class="hljs-number">0</span>)&#123;</span><br><span class="line">            nums[k++] = nums[i]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span> (j = k ; j &lt; nums.length; j ++)&#123;</span><br><span class="line">        nums[j] = <span class="hljs-number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> nums</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
         </div>
         
@@ -425,7 +444,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/7/">7</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/8/">8</a></li>
             
         </ul>
     </nav>
@@ -474,7 +493,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        35
+                        36
                     </p>
                 </div>
             </div>
@@ -529,7 +548,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">13</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -581,6 +600,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222-algorithm-14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:04:39.246Z">2019-12-22</time></div>
+                    <a href="/passages/20191222-algorithm-14/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191222-algorithm-14</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191221-algorithm-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/07/27/forest-4707812_1280.jpg" alt="20191221-algorithm-13">
@@ -655,25 +693,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191217-angorithm-09/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T09:07:24.238Z">2019-12-17</time></div>
-                    <a href="/passages/20191217-angorithm-09/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191217-algorithm-09</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -691,7 +710,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -842,7 +861,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
@@ -877,6 +896,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191222-algorithm-14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:04:39.246Z">2019-12-22</time></div>
+                    <a href="/passages/20191222-algorithm-14/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191222-algorithm-14</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191221-algorithm-13/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/07/27/forest-4707812_1280.jpg" alt="20191221-algorithm-13">
@@ -951,25 +989,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191217-angorithm-09/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-17T09:07:24.238Z">2019-12-17</time></div>
-                    <a href="/passages/20191217-angorithm-09/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191217-algorithm-09</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -987,7 +1006,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">16</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -1138,7 +1157,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">13</span>
+                        <span class="tag is-grey">14</span>
                     </a>
                 </div>
                 
