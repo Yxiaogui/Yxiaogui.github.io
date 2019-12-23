@@ -121,6 +121,71 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191013/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/08/06/22/48/artificial-intelligence-4389372_1280.jpg" alt="第3周weekly">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-13T12:53:13.501Z">2019-10-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes 读完 (大约 561 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191013/">第3周weekly</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="MacOS-10-15："><a href="#MacOS-10-15：" class="headerlink" title="MacOS 10.15："></a>MacOS 10.15：</h2><p>本周Mac更新系统遇到的问题：</p>
+<ul>
+<li>键盘的中/英切换的按钮，灯不亮了，功能还在，真的是让人不爽。</li>
+<li>终端改为zsh,个人还是比较喜欢的，因为有很多主题可以更换，很不错的。</li>
+<li>Pod install出错。这个网上的教程很多，更新gem源就好了。</li>
+</ul>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/passages/20191013/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191006/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/09/10/10/08/autumn-4465774_1280.jpg" alt="第二周weekly">
         </a>
@@ -153,8 +218,7 @@
             
         </h1>
         <div class="content">
-            <h2>小结：</h2>
-<ul>
+            <h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><ul>
 <li>19年的国庆节是待在杭州过的，没有回家。原因也很简单，不想被家人催的不耐烦，同时还要装出一副很体谅且无可奈何的表情。成年人的世界没有容易两字，尽可能的给自己营造舒适的生活氛围。个人感觉还是先把自己的生活过来在想其他的事情。</li>
 <li>本周最大的收获去看完了ios视频课程，课程学完之后可能帮助我在更加全面的理解大型app的架构思想，以及个个模块的依赖关系。了解了组件化有三种方式：Tagrget-Action、Url-Scheme 、Protocol -class，推荐前两种方式。;了解了日志分级上传，ps:之前很少关注日志上传的模块的问题。在组件化思想指导下要关注以下模块：基础业务模块、日志模块、crash模块、缓存模块。</li>
 <li>本周大部分时间还在考虑转型的问题：移动端开发者转型大前端还是后端开发？技术开发的职业生涯会有多久？自己可以做多久不会被淘汰，如果被淘汰自己是否还有其他的技能可以做备用。</li>
@@ -214,49 +278,21 @@
             
         </h1>
         <div class="content">
-            <h3>Tips:</h3>
-<p>1.React Native编译文件导致的编译失败</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//错误提示</span><br><span class="line">error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65:</span><br><span class="line">//处理方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build。</span><br></pre></td></tr></table></figure></p>
+            <h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p>1.React Native编译文件导致的编译失败</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//错误提示</span><br><span class="line">error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65:</span><br><span class="line">//处理方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build。</span><br></pre></td></tr></table></figure>
 <p>2.安卓真机调试：摇晃手机选择Dev，手机连接电脑本地Ip地址，例如：192.168.0.105：8081。</p>
 <p>3.父组件向子组件传值通过props方式；子组件向父组件传值：通过props回传，涉及到组件传值，以及点击事件回调。</p>
-<p>&lt;!--more--&gt;</p>
-<p>4.处理console.log不打印日志的问题：之前index.js文件引入了处理RN项目模拟器显示警告信息代码如下,带来的结果是调试日志打印不出来。</p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">console</span>.ignoredYellowBox = [<span class="hljs-string">'Warning: BackAndroid is deprecated. Please use BackHandler instead.'</span>,<span class="hljs-string">'source.uri should not be an empty string'</span>,<span class="hljs-string">'Invalid props.style key'</span>];</span><br><span class="line"><span class="hljs-built_in">console</span>.disableYellowBox = <span class="hljs-literal">true</span>;</span><br></pre></td></tr></table></figure></p>
-<p>5.8081端口被占用:</p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//错误提示</span></span><br><span class="line">Connection to localhost port <span class="hljs-number">8081</span> [tcp/sunproxyadmin] succeeded!</span><br><span class="line">Port <span class="hljs-number">8081</span> already <span class="hljs-keyword">in</span> use, packager is either not running or not running correctly</span><br><span class="line">Command PhaseScriptExecution failed <span class="hljs-keyword">with</span> a nonzero exit code</span><br></pre></td></tr></table></figure></p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//解决方法</span></span><br><span class="line">sudo lsof -i :<span class="hljs-number">8081</span> </span><br><span class="line">kill <span class="hljs-number">-9</span> <span class="hljs-number">40247</span></span><br></pre></td></tr></table></figure></p>
-<p>6.props属性的定义错误的提示</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//这个错误出现在将设置图片的地址的props设置为string，编译器warning警告</span><br><span class="line">Failed prop type: Invalid prop `bgImage` of type `number` supplied to `MoneyBaseCellView`, expected `string`.</span><br></pre></td></tr></table></figure></p>
-<p>7.ios适配：逻辑分辨率适配、物理分辨率适配。</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">逻辑分辨率适配：通常是基于标准机型如：iphone6的等比例尺寸的方法、缩放；另外一种是对于具体屏幕尺寸的准确布局。</span><br><span class="line">物理分辨率：指的是同一尺寸的像素点的多少，像素点多，分辨率高，色彩丰富，清晰度高，通常用在图片上:testImage@2x.png、estImage@3x.png。</span><br></pre></td></tr></table></figure></p>
-<h3>文摘：</h3>
-<h4>把时间当作朋友:</h4>
-<ul>
-<li>每天制作你的时间预算。</li>
-<li>很多人一生最终一事无成的原因，就是因为他们是脆弱的完美主义者，天真地希望自己可以在这个不完美的世界里完美地生存——所以注定以失败告终。</li>
-<li>有趣的事不见得有用呢</li>
-<li>如果，你甩甩头，强迫自己理智一些，就会知道，无用的事情，哪怕非常有趣都不应该去做；而有用的事情，哪怕非常无趣，你都应该做。</li>
-</ul>
-<h4>异类:</h4>
-<ul>
-<li>罗塞托之谜：当年主流的观点是长寿与否取决于我们是谁—也就是个体的基因，还仰赖个体做出的选择—选择吃什么，选择锻炼多长时间，以及我们受到医疗体系照顾的程度。在此之前，还从来没人从“社区”的角度研究人体健康问题。</li>
-<li>那就是超越个人的范围寻找原因—要理解人们所处的文化背景，要考虑他们的家庭和朋友状况，要追踪其家族渊源。人们必须认识到，人类栖身其中的自然环境和社会环境，对人的发展发挥着不可磨灭的作用。</li>
-<li>人们通常只想到杰出人士是最优质的种子，但很少想到成材还必须有充足的日照，有深厚肥沃的土壤，有足够的运气躲过兔子和伐木工人。</li>
-</ul>
-<h3>小结：</h3>
-<ul>
-<li>本周是第一次开始每晚记录自己当天的时间开销，同时记录Tips(ps:Tips是用来收集当天编码过程中出现问题或者bug的处理方式，这个作用类似于上学是老师让记得错题集)。</li>
-<li>时间开销：记录了一周的时间开销，统计了一下当天编码的时间，3个小时左右，其中可见的很多时间都浪费了。</li>
-<li>思考：在开始记录时间开销的第三天的时候，自己就等会对前两天的时间开销日志不忙，想着急改变。同时另外一个问题也在脑海形成：记录时间开销的时间会坚持多久？养成一个习惯的时间不会再一周之内快速养成，毕竟人的惰性还是很大的。能意识到自己时间开销浪费的正向作用是，会刺激接下来的一天、两天、三天甚至更长的天数来养成习惯，减少日常浪费时间的时间。</li>
-<li>关于高级工程师：昨晚去招聘的网站看了一下招聘需求，看到同样年限大厂需要的是高级前端工程师，不小长需要的是编码的。对我个人的刺激点是怎么才能通向高级前端工程师，这个问题是需要我接下来四个月需要深度思考时间的问题。</li>
-</ul>
-<hr>
-<p>第一周weekly。</p>
-<p>下周就是国庆假期了，希望自己可以及时给自己充电。</p>
-
         </div>
         
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/passages/20190929/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -299,16 +335,12 @@
             
         </h1>
         <div class="content">
-            <h3>React Native:</h3>
-<p>关于flex 、postion的结合在移动端的布局，在C端App的实践很有效果，十几个页面写完，布局不在困难。</p>
-<h4>自定义组件</h4>
-<p>传入参数，后调点击事件：</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 以下的自定义组件的为导航栏右侧按钮</span><br><span class="line">// 需要注意的是要导入 import PropTypes from &apos;prop-types&apos;;</span><br><span class="line">class NavRightTextView extends Component &#123;</span><br><span class="line">    static propTypes = &#123;</span><br><span class="line">        title: PropTypes.string,</span><br><span class="line">        rightButtonClick: PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static defaultProps = &#123;</span><br><span class="line">        title: &apos;&apos;,</span><br><span class="line">        rightButtonClick: PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _rightButtonClick() &#123;</span><br><span class="line">        this.props.rightButtonClick()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;TouchableOpacity onPress=&#123;() =&gt; this._rightButtonClick()&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.rightButton&#125;&gt;&#123;this.props.title&#125;&lt;/Text&gt;</span><br><span class="line">            &lt;/TouchableOpacity&gt;</span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>Vue:</h3>
-<p>vue 渐进式框架 关注视图层.</p>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="hljs-string">"app"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;mg&#125;&#125;&lt;<span class="hljs-regexp">/p&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;input v-on:input="inputHandle"&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;p v-bind:title="mg"&gt;&#123;&#123;mg&#125;&#125;&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;script&gt;</span></span><br><span class="line"><span class="hljs-regexp">    var msg = 'hello world ';</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/根实例 启动应用</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/ 传入一个对象作为参数</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/&#123;&#123;&#125;&#125; 模板语法</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/ vue 绑定事件</span></span><br><span class="line"><span class="hljs-regexp">    /</span>*</span><br><span class="line">    * 指令 将数据与dom关联 v-bind   预期值是一个表达式</span><br><span class="line">    * v-on:事件名=<span class="hljs-string">"表达式"</span></span><br><span class="line">    * *<span class="hljs-regexp">/</span></span><br><span class="line"><span class="hljs-regexp">    var app = document.getElementById('app')</span></span><br><span class="line"><span class="hljs-regexp">    var vm = new Vue(&#123;</span></span><br><span class="line"><span class="hljs-regexp">        /</span><span class="hljs-regexp">/ el: app</span></span><br><span class="line"><span class="hljs-regexp">        el:'#app',</span></span><br><span class="line"><span class="hljs-regexp">        data:&#123;/</span><span class="hljs-regexp">/数据对象</span></span><br><span class="line"><span class="hljs-regexp">            mg:msg,</span></span><br><span class="line"><span class="hljs-regexp">        &#125;,</span></span><br><span class="line"><span class="hljs-regexp">        methods:&#123;</span></span><br><span class="line"><span class="hljs-regexp">            inputHandle()&#123;</span></span><br><span class="line"><span class="hljs-regexp">                console.log("09090")</span></span><br><span class="line"><span class="hljs-regexp">            &#125;,</span></span><br><span class="line"><span class="hljs-regexp">        &#125;</span></span><br><span class="line"><span class="hljs-regexp">    &#125;)</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure></p>
-<h3>Tips:</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">库：方法的封装，以供调用。</span><br><span class="line">框架： 一套架构 是一个解决方法，必须要延续使用框架定义的规范。同时要注意框架也是有复杂度的。</span><br><span class="line">区别在于控制权在谁手里。</span><br></pre></td></tr></table></figure></p>
+            <h3 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native:"></a>React Native:</h3><p>关于flex 、postion的结合在移动端的布局，在C端App的实践很有效果，十几个页面写完，布局不在困难。</p>
+<h4 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h4><p>传入参数，后调点击事件：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 以下的自定义组件的为导航栏右侧按钮</span><br><span class="line">// 需要注意的是要导入 import PropTypes from &apos;prop-types&apos;;</span><br><span class="line">class NavRightTextView extends Component &#123;</span><br><span class="line">    static propTypes = &#123;</span><br><span class="line">        title: PropTypes.string,</span><br><span class="line">        rightButtonClick: PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static defaultProps = &#123;</span><br><span class="line">        title: &apos;&apos;,</span><br><span class="line">        rightButtonClick: PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _rightButtonClick() &#123;</span><br><span class="line">        this.props.rightButtonClick()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;TouchableOpacity onPress=&#123;() =&gt; this._rightButtonClick()&#125;&gt;</span><br><span class="line">                &lt;Text style=&#123;styles.rightButton&#125;&gt;&#123;this.props.title&#125;&lt;/Text&gt;</span><br><span class="line">            &lt;/TouchableOpacity&gt;</span><br><span class="line">        )</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Vue"><a href="#Vue" class="headerlink" title="Vue:"></a>Vue:</h3><p>vue 渐进式框架 关注视图层.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="hljs-string">"app"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;mg&#125;&#125;&lt;<span class="hljs-regexp">/p&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;input v-on:input="inputHandle"&gt;</span></span><br><span class="line"><span class="hljs-regexp">    &lt;p v-bind:title="mg"&gt;&#123;&#123;mg&#125;&#125;&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="hljs-regexp">/div&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;script&gt;</span></span><br><span class="line"><span class="hljs-regexp">    var msg = 'hello world ';</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/根实例 启动应用</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/ 传入一个对象作为参数</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/&#123;&#123;&#125;&#125; 模板语法</span></span><br><span class="line"><span class="hljs-regexp">    /</span><span class="hljs-regexp">/ vue 绑定事件</span></span><br><span class="line"><span class="hljs-regexp">    /</span>*</span><br><span class="line">    * 指令 将数据与dom关联 v-bind   预期值是一个表达式</span><br><span class="line">    * v-on:事件名=<span class="hljs-string">"表达式"</span></span><br><span class="line">    * *<span class="hljs-regexp">/</span></span><br><span class="line"><span class="hljs-regexp">    var app = document.getElementById('app')</span></span><br><span class="line"><span class="hljs-regexp">    var vm = new Vue(&#123;</span></span><br><span class="line"><span class="hljs-regexp">        /</span><span class="hljs-regexp">/ el: app</span></span><br><span class="line"><span class="hljs-regexp">        el:'#app',</span></span><br><span class="line"><span class="hljs-regexp">        data:&#123;/</span><span class="hljs-regexp">/数据对象</span></span><br><span class="line"><span class="hljs-regexp">            mg:msg,</span></span><br><span class="line"><span class="hljs-regexp">        &#125;,</span></span><br><span class="line"><span class="hljs-regexp">        methods:&#123;</span></span><br><span class="line"><span class="hljs-regexp">            inputHandle()&#123;</span></span><br><span class="line"><span class="hljs-regexp">                console.log("09090")</span></span><br><span class="line"><span class="hljs-regexp">            &#125;,</span></span><br><span class="line"><span class="hljs-regexp">        &#125;</span></span><br><span class="line"><span class="hljs-regexp">    &#125;)</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">库：方法的封装，以供调用。</span><br><span class="line">框架： 一套架构 是一个解决方法，必须要延续使用框架定义的规范。同时要注意框架也是有复杂度的。</span><br><span class="line">区别在于控制权在谁手里。</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -355,71 +387,9 @@
             
         </h1>
         <div class="content">
-            <h3>React</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.组件化</span><br><span class="line">2.单向数据流 ,props state</span><br><span class="line">3.虚拟DOM</span><br></pre></td></tr></table></figure></p>
-<h3>Flex Box</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果</span><br><span class="line">1.flexWrap子组件组件换行方向</span><br><span class="line">2.flexDirection决定组件主轴的排列方向</span><br></pre></td></tr></table></figure></p>
-<h3>react-navigation</h3>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方式容易把之前的经验自动带入，属性赋值操作看起来就没有想象中的那么容易，方法如下：</span><br><span class="line"></span><br><span class="line">showIcon: true</span><br><span class="line">HomeTab: &#123;</span><br><span class="line">            screen: HomeNav,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &apos;首页&apos;,</span><br><span class="line">                tabBarIcon: (&#123;focused&#125;) =&gt; (</span><br><span class="line">                    focused ? &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_select.png&apos;)&#125;/&gt; :</span><br><span class="line">                        &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_normal.png&apos;)&#125;/&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure></p>
-
-        </div>
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-10T11:11:36.012Z">2019-09-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/每日/">每日</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes 读完 (大约 317 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20190910/">20190910</a>
-            
-        </h1>
-        <div class="content">
-            <h3>React Native项目编译：</h3>
-<h4>React Navigation</h4>
-<p>React Navigation库引入失败的问题，导致各种的报错，具体修复问题见官方文档提示如下：特点：容易混淆是不同版本的link的方式不同。</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.In your project directory, run yarn add react-native-reanimated react-native-gesture-handler react-native-screens.</span><br><span class="line">2.React Native 0.60 and higher:linking is automatic; cd ios、pod install</span><br><span class="line">3.React Native 0.59 and lower；react-native link react-native-reanimated、react-native link react-native-gesture-handler、react-native link react-native-screens</span><br></pre></td></tr></table></figure></p>
-<h4>编译报错</h4>
-<p>编译报错内如下，特点：通过react-native run-ios 会提示报错，通过build ios app可以编译通过；错误信息如下：</p>
-<p>error Failed to build iOS project. We ran &quot;xcodebuild&quot; command but it exited with error code 65. To debug build logs further, consider building your app with Xcode.app, by opening ctranceplatform.xcworkspace. Run CLI with --verbose flag for more details.</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">解决方法：</span><br><span class="line">clear build folder: &apos;Your Project&apos;/ios/build</span><br><span class="line">react-native run-ios</span><br></pre></td></tr></table></figure></p>
-<h3>One-Click:</h3>
-<p>简介：通过运营商的接口能力直接获取用户的手机的号码。</p>
-<p>能力输出：集成三大运营的接口能力做成SDK，以供客户使用。同时开发了One-Click应用发布应该市场，便于大家体现能力。</p>
-<h3>Tips:</h3>
-<p>1.React 自定义组件命名需要首字母大写</p>
+            <h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.组件化</span><br><span class="line">2.单向数据流 ,props state</span><br><span class="line">3.虚拟DOM</span><br></pre></td></tr></table></figure>
+<h3 id="Flex-Box"><a href="#Flex-Box" class="headerlink" title="Flex Box"></a>Flex Box</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过绘制C端首页体会一次，flex布局的魅力,快速的布局瀑布流效果</span><br><span class="line">1.flexWrap子组件组件换行方向</span><br><span class="line">2.flexDirection决定组件主轴的排列方向</span><br></pre></td></tr></table></figure>
+<h3 id="react-navigation"><a href="#react-navigation" class="headerlink" title="react-navigation"></a>react-navigation</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">今天比较上头的操作是设置底部tabbar的图片，难点在于接触新的的编程方式容易把之前的经验自动带入，属性赋值操作看起来就没有想象中的那么容易，方法如下：</span><br><span class="line"></span><br><span class="line">showIcon: true</span><br><span class="line">HomeTab: &#123;</span><br><span class="line">            screen: HomeNav,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &apos;首页&apos;,</span><br><span class="line">                tabBarIcon: (&#123;focused&#125;) =&gt; (</span><br><span class="line">                    focused ? &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_select.png&apos;)&#125;/&gt; :</span><br><span class="line">                        &lt;Image style=&#123;styles.iconStyle&#125; source=&#123;require(&apos;../Images/home_normal.png&apos;)&#125;/&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -507,7 +477,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        37
+                        38
                     </p>
                 </div>
             </div>
@@ -562,7 +532,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">15</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -614,6 +584,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191223-algorithm-15/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/17/14/08/landscape-4701725_960_720.jpg" alt="20191223-algorithm-15">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-23T07:56:29.180Z">2019-12-23</time></div>
+                    <a href="/passages/20191223-algorithm-15/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191223-algorithm-15</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
@@ -688,25 +677,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191219-algorithm-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_960_720.jpg" alt="20191219-algorithm-11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T08:55:22.666Z">2019-12-19</time></div>
-                    <a href="/passages/20191219-algorithm-11/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191219-algorithm-11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -724,7 +694,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">18</span>
+                    <span class="level-item tag">19</span>
                 </span>
             </a>
         </li>
@@ -875,7 +845,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">14</span>
+                        <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
@@ -910,6 +880,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191223-algorithm-15/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/17/14/08/landscape-4701725_960_720.jpg" alt="20191223-algorithm-15">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-23T07:56:29.180Z">2019-12-23</time></div>
+                    <a href="/passages/20191223-algorithm-15/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191223-algorithm-15</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191222/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
@@ -984,25 +973,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191219-algorithm-11/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_960_720.jpg" alt="20191219-algorithm-11">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T08:55:22.666Z">2019-12-19</time></div>
-                    <a href="/passages/20191219-algorithm-11/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191219-algorithm-11</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1020,7 +990,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">18</span>
+                    <span class="level-item tag">19</span>
                 </span>
             </a>
         </li>
@@ -1171,7 +1141,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">14</span>
+                        <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
