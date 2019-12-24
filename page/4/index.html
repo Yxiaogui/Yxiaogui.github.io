@@ -121,6 +121,88 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191211-algorithm-03/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/06/17/44/japanese-4677855_960_720.jpg" alt="20191211-algorithm-03">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-11T08:38:43.265Z">2019-12-11</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes 读完 (大约 459 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191211-algorithm-03/">20191211-algorithm-03</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="题目：合并两个有序链表"><a href="#题目：合并两个有序链表" class="headerlink" title="题目：合并两个有序链表"></a><strong>题目：合并两个有序链表</strong></h4><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
+<blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">&gt; 输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="解法01"><a href="#解法01" class="headerlink" title="解法01"></a><strong>解法01</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">如果 l1 或者 l2 一开始就是 null ，那么没有任何操作需要合并，</span></span><br><span class="line"><span class="hljs-comment">所以我们只需要返回非空链表。否则，我们要判断 l1 和 l2 哪一个的头元素更小，</span></span><br><span class="line"><span class="hljs-comment">然后递归地决定下一个添加到结果里的值。</span></span><br><span class="line"><span class="hljs-comment">如果两个链表都是空的，那么过程终止，所以递归过程最终一定会终止。</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-comment">// 递归</span></span><br><span class="line"><span class="hljs-keyword">var</span> mergeTwoLists = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l1, l2</span>) </span>&#123;</span><br><span class="line">     <span class="hljs-keyword">if</span> (l1 == <span class="hljs-literal">null</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> l2</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (l2 == <span class="hljs-literal">null</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> l1</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (l1.val &lt; l2.val)&#123;</span><br><span class="line">        l1.next = mergeTwoLists(l1.next,l2)</span><br><span class="line">        <span class="hljs-keyword">return</span> l1</span><br><span class="line">    &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        l2.next = mergeTwoLists(l1,l2.next)</span><br><span class="line">        <span class="hljs-keyword">return</span> l2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//创建一个新的节点</span></span><br><span class="line"><span class="hljs-keyword">var</span> mergeTwoLists = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l1, l2</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span> (l1 == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> l2</span><br><span class="line">  <span class="hljs-keyword">if</span> (l2 == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> l1 </span><br><span class="line">  <span class="hljs-keyword">var</span> current = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-string">''</span>)</span><br><span class="line">  <span class="hljs-keyword">if</span>(l1.val &lt; l2.val)&#123;</span><br><span class="line">      current.val = l1.val</span><br><span class="line">      current.next = mergeTwoLists(l1.next,l2)</span><br><span class="line">  &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">       current.val = l2.val</span><br><span class="line">       current.next = mergeTwoLists(l2.next,l1)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> current  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点：</strong></h4><h5 id="数组、链表对比："><a href="#数组、链表对比：" class="headerlink" title="数组、链表对比："></a><strong>数组、链表对比：</strong></h5><p>数组需要一块连续的内存空间</p>
+<p>链表不需要一块连续的内存空间，它是通过指针将一组零散的内存块串联起来的。内存块成为链表的“结点”，为了链表的结点串联起来，每个链表的结点出来存储数据之外，还需要记录链上的下一个结点的地址，把记录下一个结点地址的指针叫做后继指针next.</p>
+<p>链表结构：单链表、双链表、循环链表。</p>
+<table>
+<thead>
+<tr>
+<th>时间复杂度</th>
+<th>数组</th>
+<th>链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入、删除</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>随机访问</td>
+<td>O(1)</td>
+<td>O(n)</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191210-algorithm-02/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/26/19/06/fantasy-4655269_960_720.jpg" alt="20191210-algorithm-02">
         </a>
@@ -338,64 +420,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/passages/20191124/" class="image is-7by1">
-            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/01/15/16/48/winter-1142029_1280.jpg" alt="第9周weekly">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-24T15:25:54.443Z">2019-11-24</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute 读完 (大约 206 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20191124/">第9周weekly</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h4><h5 id="react-navigation-导航栏隐藏："><a href="#react-navigation-导航栏隐藏：" class="headerlink" title="react-navigation 导航栏隐藏："></a>react-navigation 导航栏隐藏：</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">static navigationOptions = (&#123;navigation&#125;) =&gt; &#123;</span><br><span class="line">     return &#123;</span><br><span class="line">         header: null</span><br><span class="line">     &#125;;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
-<h5 id="FlatList实现类瀑布流效果："><a href="#FlatList实现类瀑布流效果：" class="headerlink" title="FlatList实现类瀑布流效果："></a>FlatList实现类瀑布流效果：</h5><p><strong>注意高度需要保持一致</strong>。Warning: <code>flexWrap:</code>wrap<code></code> is not supported with the <code>VirtualizedList</code> components.Consider using <code>numColumns</code> with <code>FlatList</code> instead.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">const BaseCellWidth = Dimensions.get(&apos;window&apos;).width / 2.0;</span><br><span class="line"></span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;FlatList</span><br><span class="line">            data=&#123;this.state.listData&#125;</span><br><span class="line">            renderItem=&#123;(&#123;item&#125;) =&gt; &lt;FoodsBaseListView styles.foodsListBase/&gt;&#125;</span><br><span class="line">            keyExtractor=&#123;(item, index) =&gt; item + index&#125;</span><br><span class="line">            contentContainerStyle=&#123;styles.listViewStyle&#125;</span><br><span class="line">            numColumns=&#123;2&#125;</span><br><span class="line">            horizontal=&#123;false&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  listViewStyle: &#123;</span><br><span class="line">      flexDirection: &apos;column&apos;,</span><br><span class="line">  &#125;,</span><br><span class="line">  foodsListBase: &#123;</span><br><span class="line">      backgroundColor: &apos;white&apos;,</span><br><span class="line">      width: BaseCellWidth,</span><br><span class="line">      alignItems: &apos;center&apos;,</span><br><span class="line">      marginTop: 10,</span><br><span class="line">      height: 220,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h5 id="安卓打release包时报错与处理："><a href="#安卓打release包时报错与处理：" class="headerlink" title="安卓打release包时报错与处理："></a>安卓打release包时报错与处理：</h5><p>安卓打包阿里云oss库报错：Task :aliyun-oss-react-native:verifyReleaseResources FAILED FAILURE: Build failed with an exception.处理方案：<a href="https://github.com/aliyun/aliyun-oss-react-native/issues/49" target="_blank" rel="noopener">https://github.com/aliyun/aliyun-oss-react-native/issues/49</a></p>
-<p>Task :app:bundleReleaseJsAndAssets FAILEDFAILURE: Build failed with an exception.What went wrong:<br>Execution failed for task ‘:app:bundleReleaseJsAndAssets’.处理方案：<a href="https://github.com/facebook/metro/issues/288" target="_blank" rel="noopener">https://github.com/facebook/metro/issues/288</a></p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p>本周RN编译的移动端(andriod、ios)项目正式切入线上环境，期待下周的发布与审核。</p>
-
-        </div>
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -469,7 +493,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        38
+                        39
                     </p>
                 </div>
             </div>
@@ -524,7 +548,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">15</span>
+                <span class="level-item tag">16</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -576,6 +600,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191224-algorithm-16/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/12/22/46/mouse-4691724_1280.jpg" alt="20191224-algorithm-16">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T09:17:34.319Z">2019-12-24</time></div>
+                    <a href="/passages/20191224-algorithm-16/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191224-algorithm-16</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191223-algorithm-15/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/17/14/08/landscape-4701725_960_720.jpg" alt="20191223-algorithm-15">
@@ -650,25 +693,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191220-algorithm-12/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg" alt="20191220-algorithm-12">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-20T08:56:52.307Z">2019-12-20</time></div>
-                    <a href="/passages/20191220-algorithm-12/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191220-algorithm-12</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -686,7 +710,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
@@ -837,7 +861,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">15</span>
+                        <span class="tag is-grey">16</span>
                     </a>
                 </div>
                 
@@ -872,6 +896,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191224-algorithm-16/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/12/22/46/mouse-4691724_1280.jpg" alt="20191224-algorithm-16">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T09:17:34.319Z">2019-12-24</time></div>
+                    <a href="/passages/20191224-algorithm-16/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191224-algorithm-16</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191223-algorithm-15/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/17/14/08/landscape-4701725_960_720.jpg" alt="20191223-algorithm-15">
@@ -946,25 +989,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191220-algorithm-12/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg" alt="20191220-algorithm-12">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-20T08:56:52.307Z">2019-12-20</time></div>
-                    <a href="/passages/20191220-algorithm-12/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191220-algorithm-12</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -982,7 +1006,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">19</span>
+                    <span class="level-item tag">20</span>
                 </span>
             </a>
         </li>
@@ -1133,7 +1157,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">15</span>
+                        <span class="tag is-grey">16</span>
                     </a>
                 </div>
                 
