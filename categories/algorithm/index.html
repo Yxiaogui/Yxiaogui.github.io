@@ -132,6 +132,61 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191226-algorithm-18/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-26T08:47:28.820Z">2019-12-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute 读完 (大约 218 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191226-algorithm-18/">20191226-algorithm-18</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="从前序与中序遍历序列结构二叉树"><a href="#从前序与中序遍历序列结构二叉树" class="headerlink" title="从前序与中序遍历序列结构二叉树"></a><strong>从前序与中序遍历序列结构二叉树</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>根据一棵树的前序遍历与中序遍历构造二叉树。注意:你可以假设树中没有重复的元素。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">前序遍历 preorder = [3,9,20,15,7]</span><br><span class="line">中序遍历 inorder = [9,3,15,20,7]</span><br><span class="line">返回如下的二叉树：</span><br><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br></pre></td></tr></table></figure>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//递归</span></span><br><span class="line"><span class="hljs-comment">//preorder前序 根 左 右</span></span><br><span class="line"><span class="hljs-comment">//inorder中序 左 根 右</span></span><br><span class="line"><span class="hljs-keyword">var</span> buildTree = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">preorder, inorder</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (inorder.length == <span class="hljs-number">0</span> &amp;&amp; preorder.length == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">let</span> root = &#123;&#125;</span><br><span class="line">    <span class="hljs-comment">//获取根的值</span></span><br><span class="line">    root.val = preorder[<span class="hljs-number">0</span>]</span><br><span class="line">    <span class="hljs-comment">//indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置</span></span><br><span class="line">    <span class="hljs-keyword">let</span> rootIndxInOrder = inorder.indexOf(root.val)</span><br><span class="line">    <span class="hljs-comment">//slice(start,end) 方法可从已有的数组中返回选定的元素。 start必需</span></span><br><span class="line">    <span class="hljs-comment">//分别找到左右节点的数据</span></span><br><span class="line">    <span class="hljs-keyword">let</span> leftTreeInOrder = inorder.slice(<span class="hljs-number">0</span>,rootIndxInOrder)</span><br><span class="line">    <span class="hljs-keyword">let</span> leftTreePreOrder = preorder.slice(<span class="hljs-number">1</span>,rootIndxInOrder + <span class="hljs-number">1</span>)</span><br><span class="line">    root.left = buildTree(leftTreePreOrder,leftTreeInOrder)</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">let</span> rightTreeInOrder = inorder.slice(rootIndxInOrder + <span class="hljs-number">1</span>)</span><br><span class="line">    <span class="hljs-keyword">let</span> rightTreePreOrder = preorder.slice(rootIndxInOrder + <span class="hljs-number">1</span>)</span><br><span class="line">    root.right = buildTree(rightTreePreOrder,rightTreeInOrder)</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> root</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191225-algorithm-17/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/01/20/34/christmas-4666370_1280.jpg" alt="20191225-algorithm-17">
         </a>
@@ -637,73 +692,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/passages/20191216-algorithm-08/" class="image is-7by1">
-            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/11/15/08/cat-4688579_1280.jpg" alt="20191216-algorithm-08">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-16T13:42:20.480Z">2019-12-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5 minutes 读完 (大约 677 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20191216-algorithm-08/">20191216-algorithm-08</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="设计循环双端队列"><a href="#设计循环双端队列" class="headerlink" title="设计循环双端队列"></a><strong>设计循环双端队列</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>设计实现双端队列。你的实现需要支持以下操作：</p>
-<p>MyCircularDeque(k)：构造函数,双端队列的大小为k。</p>
-<p>insertFront()：将一个元素添加到双端队列头部。 如果操作成功返回 true。</p>
-<p>insertLast()：将一个元素添加到双端队列尾部。如果操作成功返回 true。</p>
-<p>deleteFront()：从双端队列头部删除一个元素。 如果操作成功返回 true。</p>
-<p>deleteLast()：从双端队列尾部删除一个元素。如果操作成功返回 true。</p>
-<p>getFront()：从双端队列头部获得一个元素。如果双端队列为空，返回 -1。</p>
-<p>getRear()：获得双端队列的最后一个元素。 如果双端队列为空，返回 -1。</p>
-<p>isEmpty()：检查双端队列是否为空。</p>
-<p>isFull()：检查双端队列是否满了。</p>
-<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Initialize your data structure here. Set the size of the deque to be k.</span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; k</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">var</span> MyCircularDeque = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">k</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">this</span>.arr = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(k + <span class="hljs-number">1</span>); <span class="hljs-comment">// 数组会有一个空间不能存值</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.head = <span class="hljs-number">0</span>; <span class="hljs-comment">// 头指针</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.tail = <span class="hljs-number">0</span>; <span class="hljs-comment">// 尾指针</span></span><br><span class="line">    <span class="hljs-keyword">this</span>.size = k + <span class="hljs-number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Adds an item at the front of Deque. Return true if the operation is successful. </span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; value</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.insertFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.head = (<span class="hljs-keyword">this</span>.head - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.head] = value;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Adds an item at the rear of Deque. Return true if the operation is successful. </span></span><br><span class="line"><span class="hljs-comment"> * @param &#123;number&#125; value</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.insertLast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.tail] = value;</span><br><span class="line">        <span class="hljs-keyword">this</span>.tail = (<span class="hljs-keyword">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Deletes an item from the front of Deque. Return true if the operation is successful.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.deleteFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.head = (<span class="hljs-keyword">this</span>.head + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Deletes an item from the rear of Deque. Return true if the operation is successful.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.deleteLast = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isEmpty()) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>.tail = (<span class="hljs-keyword">this</span>.tail - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Get the front item from the deque.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.getFront = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEmpty() ? <span class="hljs-number">-1</span> : <span class="hljs-keyword">this</span>.arr[<span class="hljs-keyword">this</span>.head];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Get the last item from the deque.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.getRear = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> tail = (<span class="hljs-keyword">this</span>.tail - <span class="hljs-number">1</span> + <span class="hljs-keyword">this</span>.size) % <span class="hljs-keyword">this</span>.size;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.isEmpty() ? <span class="hljs-number">-1</span> : <span class="hljs-keyword">this</span>.arr[tail];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Checks whether the circular deque is empty or not.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.isEmpty = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.head === <span class="hljs-keyword">this</span>.tail;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Checks whether the circular deque is full or not.</span></span><br><span class="line"><span class="hljs-comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line">MyCircularDeque.prototype.isFull = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span>.tail + <span class="hljs-number">1</span>) % <span class="hljs-keyword">this</span>.size === <span class="hljs-keyword">this</span>.head;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h4 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点：</strong></h4><h5 id="队列："><a href="#队列：" class="headerlink" title="队列："></a><strong>队列：</strong></h5><p>1.先进先出</p>
-<p>2.最基本的操作是两个：入队enqueue()，方一个数据到队列尾部；出队dequeue(),从队列头部去一个元素.</p>
-<p>3 . 队列需要两个指针，一个是head指针，指向对头;一个是tail指针，指向队尾。tail指针不存储数据，以上可解释长度为K的循环指针，实际长长度为k+1.</p>
-<p>4.循环队列的判空条件是tail==head;队满条件是（tail + 1)%n= head</p>
-
-        </div>
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -767,7 +755,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        40
+                        41
                     </p>
                 </div>
             </div>
@@ -822,7 +810,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">17</span>
+                <span class="level-item tag">18</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -874,6 +862,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191226-algorithm-18/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T08:47:28.820Z">2019-12-26</time></div>
+                    <a href="/passages/20191226-algorithm-18/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191226-algorithm-18</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191225-algorithm-17/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/01/20/34/christmas-4666370_1280.jpg" alt="20191225-algorithm-17">
@@ -948,25 +955,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191222-algorithm-14/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:04:39.246Z">2019-12-22</time></div>
-                    <a href="/passages/20191222-algorithm-14/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191222-algorithm-14</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -984,7 +972,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">21</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
@@ -1135,7 +1123,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">17</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1170,6 +1158,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191226-algorithm-18/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T08:47:28.820Z">2019-12-26</time></div>
+                    <a href="/passages/20191226-algorithm-18/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191226-algorithm-18</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191225-algorithm-17/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/01/20/34/christmas-4666370_1280.jpg" alt="20191225-algorithm-17">
@@ -1244,25 +1251,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191222-algorithm-14/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/13/28/winter-4708429_1280.jpg" alt="20191222-algorithm-14">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:04:39.246Z">2019-12-22</time></div>
-                    <a href="/passages/20191222-algorithm-14/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191222-algorithm-14</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1280,7 +1268,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">21</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
@@ -1431,7 +1419,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">17</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
