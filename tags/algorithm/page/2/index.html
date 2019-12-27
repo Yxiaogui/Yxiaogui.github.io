@@ -131,6 +131,63 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191217-angorithm-09/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_1280.jpg" alt="20191217-algorithm-09">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-17T09:07:24.238Z">2019-12-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes 读完 (大约 230 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191217-angorithm-09/">20191217-algorithm-09</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="接雨水："><a href="#接雨水：" class="headerlink" title="接雨水："></a><strong>接雨水：</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定 <em>n</em> 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png" alt></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [0,1,0,2,1,0,1,3,2,1,2,1]</span><br><span class="line">输出: 6</span><br></pre></td></tr></table></figure>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//对于数组中的每个元素，</span></span><br><span class="line"><span class="hljs-comment">//我们找出下雨后水能达到的最高位置，等于两边最大高度的较小值减去当前高度的值。</span></span><br><span class="line"><span class="hljs-comment">//思考的方式类似于木桶效应</span></span><br><span class="line"><span class="hljs-keyword">var</span> trap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">height</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> ans = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> size = height.length</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; size - <span class="hljs-number">1</span>; i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> max_left = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">let</span> max_right = <span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i ; j &gt;=<span class="hljs-number">0</span>; j--)&#123;</span><br><span class="line">            max_left = <span class="hljs-built_in">Math</span>.max(max_left,height[j])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i ; j&lt;size; j++)&#123;</span><br><span class="line">            max_right = <span class="hljs-built_in">Math</span>.max(max_right,height[j])</span><br><span class="line">        &#125;</span><br><span class="line">        ans += <span class="hljs-built_in">Math</span>.min(max_left,max_right) - height[i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> ans</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 与第一种解法类似，先遍取出左右的最大值</span></span><br><span class="line"><span class="hljs-comment">// 再依次遍历比较取出最小值相加</span></span><br><span class="line"><span class="hljs-comment">// fill() 方法用于将一个固定值替换数组的元素。</span></span><br><span class="line"><span class="hljs-keyword">var</span> trap = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">height</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> max_left = <span class="hljs-built_in">Array</span>(height.length).fill(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">let</span> max_right = <span class="hljs-built_in">Array</span>(height.length).fill(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">let</span> res = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = height.length<span class="hljs-number">-2</span>; i &gt;= <span class="hljs-number">1</span>; i--) &#123;</span><br><span class="line">        max_right[i] = <span class="hljs-built_in">Math</span>.max(max_right[i+<span class="hljs-number">1</span>],height[i+<span class="hljs-number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;  height.length<span class="hljs-number">-1</span>; i++) &#123;</span><br><span class="line">        max_left[i] = <span class="hljs-built_in">Math</span>.max(max_left[i<span class="hljs-number">-1</span>],height[i<span class="hljs-number">-1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; height.length<span class="hljs-number">-1</span>; i++) &#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> min = <span class="hljs-built_in">Math</span>.min(max_left[i],max_right[i]);</span><br><span class="line">        <span class="hljs-keyword">if</span>(height[i] &lt; min) &#123;</span><br><span class="line">            res += (min - height[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191216-algorithm-08/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/11/15/08/cat-4688579_1280.jpg" alt="20191216-algorithm-08">
         </a>
@@ -670,7 +727,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        41
+                        42
                     </p>
                 </div>
             </div>
@@ -725,7 +782,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">18</span>
+                <span class="level-item tag">19</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -777,6 +834,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191227-algorithm-19/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/15/30/dog-4708726_1280.jpg" alt="20191227-algorithm-19">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-27T14:35:32.963Z">2019-12-27</time></div>
+                    <a href="/passages/20191227-algorithm-19/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191227-algorithm-19</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191226-algorithm-18/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
@@ -851,25 +927,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191222/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
-                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -887,7 +944,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">22</span>
+                    <span class="level-item tag">23</span>
                 </span>
             </a>
         </li>
@@ -1038,7 +1095,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">18</span>
+                        <span class="tag is-grey">19</span>
                     </a>
                 </div>
                 
@@ -1073,6 +1130,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191227-algorithm-19/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/15/30/dog-4708726_1280.jpg" alt="20191227-algorithm-19">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-27T14:35:32.963Z">2019-12-27</time></div>
+                    <a href="/passages/20191227-algorithm-19/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191227-algorithm-19</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191226-algorithm-18/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
@@ -1147,25 +1223,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191222/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/20/14/06/winter-4708505_1280.jpg" alt="第13周weekly">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-22T14:28:50.385Z">2019-12-22</time></div>
-                    <a href="/passages/20191222/" class="title has-link-black-ter is-size-6 has-text-weight-normal">第13周weekly</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1183,7 +1240,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">22</span>
+                    <span class="level-item tag">23</span>
                 </span>
             </a>
         </li>
@@ -1334,7 +1391,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">18</span>
+                        <span class="tag is-grey">19</span>
                     </a>
                 </div>
                 
