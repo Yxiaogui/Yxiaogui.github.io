@@ -121,6 +121,68 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/passages/20191220-algorithm-12/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg" alt="20191220-algorithm-12">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-20T08:56:52.307Z">2019-12-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes 读完 (大约 364 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191220-algorithm-12/">20191220-algorithm-12</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="二叉树的中序遍历"><a href="#二叉树的中序遍历" class="headerlink" title="二叉树的中序遍历"></a><strong>二叉树的中序遍历</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定一个二叉树，返回它的<em>中序</em> 遍历。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [1,null,2,3]</span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3</span><br><span class="line"></span><br><span class="line">输出: [1,3,2]</span><br></pre></td></tr></table></figure>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//递归法：</span></span><br><span class="line"><span class="hljs-keyword">var</span> inorderTraversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    helper(root,res)</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> helper = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root,res</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span></span><br><span class="line">    helper(root.left,res)</span><br><span class="line">    res.push(root.val)</span><br><span class="line">    helper(root.right,res)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//使用栈</span></span><br><span class="line"><span class="hljs-keyword">var</span> inorderTraversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    <span class="hljs-keyword">let</span> stack = []</span><br><span class="line">    <span class="hljs-keyword">let</span> p = root </span><br><span class="line">    <span class="hljs-keyword">while</span> (p || stack.length &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span> (p)&#123;</span><br><span class="line">            stack.push(p)</span><br><span class="line">            p = p.left</span><br><span class="line">        &#125;</span><br><span class="line">        p = stack.pop()</span><br><span class="line">        res.push(p.val)</span><br><span class="line">        p = p.right</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点：</strong></h4><p>树：一种非线性表数据结构。</p>
+<p>树的节点有：根节点、子节点、兄弟节点，把没有子节点的节点叫做叶子节点。</p>
+<p>二叉树：每个节点最多有两个“叉”，分别是左子节点、右子节点。</p>
+<p>存储一颗二叉树：链式存储法：每个节点有三个字段：left 、data 、right</p>
+<p>二叉树遍历：前序遍历、中序遍历、后序遍历，其中前、中、后序表示的是节点与它的左右子树节点遍历打印的先后顺序，遍历的时间复杂度为O(n)。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">前：先打印根节点，在打印左子树，最后打印右子树</span><br><span class="line">中：先打印左子树，在打印根节点，最后打印右子树</span><br><span class="line">后：先打印左子树，在打印右子树，最后打印根节点</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/passages/20191219-algorithm-11/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2018/10/16/17/24/dog-3751980_960_720.jpg" alt="20191219-algorithm-11">
         </a>
@@ -354,62 +416,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/passages/20191215/" class="image is-7by1">
-            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/08/31/09/08/apple-1632919_1280.jpg" alt="第12周weekly">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-15T14:57:51.387Z">2019-12-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds 读完 (大约 101 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20191215/">第12周weekly</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h4><p>React Native:position定位实现”公章覆盖文字”的效果，实现效果的关键点是方向可以用负数如：<code>top: -10</code></p>
-<p>学习了使用XMind绘制思维导图，掌握快捷键以及概要方式的使用。</p>
-<p>本周是打卡算法题的第一周坚持下来了，希望再接再厉小伙子。</p>
-<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p>面向未来。</p>
-
-        </div>
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -481,7 +487,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        43
+                        44
                     </p>
                 </div>
             </div>
@@ -536,7 +542,7 @@
                 <span class="level-item">algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">20</span>
+                <span class="level-item tag">21</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/weekly/">
@@ -588,6 +594,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191230-algorithm-21/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/08/16/00/nature-4681448_960_720.jpg" alt="20191230-algorithm-21">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-30T09:16:45.514Z">2019-12-30</time></div>
+                    <a href="/passages/20191230-algorithm-21/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191230-algorithm-21</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191228-angorithm-20/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/11/10/snowman-4674856_1280.jpg" alt="20191228-algorithm-20">
@@ -662,25 +687,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191224-algorithm-16/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/12/22/46/mouse-4691724_1280.jpg" alt="20191224-algorithm-16">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T09:17:34.319Z">2019-12-24</time></div>
-                    <a href="/passages/20191224-algorithm-16/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191224-algorithm-16</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -698,7 +704,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -849,7 +855,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">20</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
@@ -884,6 +890,25 @@
         
         <article class="media">
             
+            <a href="/passages/20191230-algorithm-21/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/08/16/00/nature-4681448_960_720.jpg" alt="20191230-algorithm-21">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-30T09:16:45.514Z">2019-12-30</time></div>
+                    <a href="/passages/20191230-algorithm-21/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191230-algorithm-21</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/passages/20191228-angorithm-20/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/11/10/snowman-4674856_1280.jpg" alt="20191228-algorithm-20">
@@ -958,25 +983,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/passages/20191224-algorithm-16/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/12/22/46/mouse-4691724_1280.jpg" alt="20191224-algorithm-16">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-24T09:17:34.319Z">2019-12-24</time></div>
-                    <a href="/passages/20191224-algorithm-16/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191224-algorithm-16</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -994,7 +1000,7 @@
                     <span class="level-item">December 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1145,7 +1151,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/algorithm/">
                         <span class="tag">algorithm</span>
-                        <span class="tag is-grey">20</span>
+                        <span class="tag is-grey">21</span>
                     </a>
                 </div>
                 
