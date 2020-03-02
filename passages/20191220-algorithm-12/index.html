@@ -10,19 +10,19 @@
 <title>20191220-algorithm-12 - 海信-IT从业者</title>
 
 
-    <meta name="description" content="二叉树的中序遍历 题目： 给定一个二叉树，返回它的中序 遍历。 123456789示例：输入: [1,null,2,3]   1    \     2    /   3输出: [1,3,2] 解法01： 12345678910111213//递归法：var inorderTraversal = function(root) &amp;#123;    let res = []    helper(root">
+    <meta name="description" content="二叉树的中序遍历题目：给定一个二叉树，返回它的中序 遍历。 123456789示例：输入: [1,null,2,3]   1    \     2    /   3输出: [1,3,2] 解法01：12345678910111213//递归法：var inorderTraversal = function(root) &amp;#123;    let res = []    helper(root,re">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20191220-algorithm-12">
 <meta property="og:url" content="https://www.haixinlove123.com/passages/20191220-algorithm-12/index.html">
 <meta property="og:site_name" content="海信-IT从业者">
-<meta property="og:description" content="二叉树的中序遍历 题目： 给定一个二叉树，返回它的中序 遍历。 123456789示例：输入: [1,null,2,3]   1    \     2    /   3输出: [1,3,2] 解法01： 12345678910111213//递归法：var inorderTraversal = function(root) &amp;#123;    let res = []    helper(root">
+<meta property="og:description" content="二叉树的中序遍历题目：给定一个二叉树，返回它的中序 遍历。 123456789示例：输入: [1,null,2,3]   1    \     2    /   3输出: [1,3,2] 解法01：12345678910111213//递归法：var inorderTraversal = function(root) &amp;#123;    let res = []    helper(root,re">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg">
 <meta property="og:updated_time" content="2019-12-20T09:43:59.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="20191220-algorithm-12">
-<meta name="twitter:description" content="二叉树的中序遍历 题目： 给定一个二叉树，返回它的中序 遍历。 123456789示例：输入: [1,null,2,3]   1    \     2    /   3输出: [1,3,2] 解法01： 12345678910111213//递归法：var inorderTraversal = function(root) &amp;#123;    let res = []    helper(root">
+<meta name="twitter:description" content="二叉树的中序遍历题目：给定一个二叉树，返回它的中序 遍历。 123456789示例：输入: [1,null,2,3]   1    \     2    /   3输出: [1,3,2] 解法01：12345678910111213//递归法：var inorderTraversal = function(root) &amp;#123;    let res = []    helper(root,re">
 <meta name="twitter:image" content="https://cdn.pixabay.com/photo/2019/11/08/11/56/cat-4611189_960_720.jpg">
 
 
@@ -154,21 +154,16 @@
             
         </h1>
         <div class="content">
-            <h4><strong>二叉树的中序遍历</strong></h4>
-<h5><strong>题目：</strong></h5>
-<p>给定一个二叉树，返回它的<em>中序</em> 遍历。</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [1,null,2,3]</span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3</span><br><span class="line"></span><br><span class="line">输出: [1,3,2]</span><br></pre></td></tr></table></figure></p>
-<h5><strong>解法01：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//递归法：</span></span><br><span class="line"><span class="hljs-keyword">var</span> inorderTraversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    helper(root,res)</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> helper = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root,res</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span></span><br><span class="line">    helper(root.left,res)</span><br><span class="line">    res.push(root.val)</span><br><span class="line">    helper(root.right,res)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5><strong>解法02：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//使用栈</span></span><br><span class="line"><span class="hljs-keyword">var</span> inorderTraversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    <span class="hljs-keyword">let</span> stack = []</span><br><span class="line">    <span class="hljs-keyword">let</span> p = root </span><br><span class="line">    <span class="hljs-keyword">while</span> (p || stack.length &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span> (p)&#123;</span><br><span class="line">            stack.push(p)</span><br><span class="line">            p = p.left</span><br><span class="line">        &#125;</span><br><span class="line">        p = stack.pop()</span><br><span class="line">        res.push(p.val)</span><br><span class="line">        p = p.right</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h4><strong>知识点：</strong></h4>
-<p>树：一种非线性表数据结构。</p>
+            <h4 id="二叉树的中序遍历"><a href="#二叉树的中序遍历" class="headerlink" title="二叉树的中序遍历"></a><strong>二叉树的中序遍历</strong></h4><h5 id="题目："><a href="#题目：" class="headerlink" title="题目："></a><strong>题目：</strong></h5><p>给定一个二叉树，返回它的<em>中序</em> 遍历。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">输入: [1,null,2,3]</span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    /</span><br><span class="line">   3</span><br><span class="line"></span><br><span class="line">输出: [1,3,2]</span><br></pre></td></tr></table></figure>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//递归法：</span></span><br><span class="line"><span class="hljs-keyword">var</span> inorderTraversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    helper(root,res)</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> helper = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root,res</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span></span><br><span class="line">    helper(root.left,res)</span><br><span class="line">    res.push(root.val)</span><br><span class="line">    helper(root.right,res)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//使用栈</span></span><br><span class="line"><span class="hljs-keyword">var</span> inorderTraversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">root</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> res = []</span><br><span class="line">    <span class="hljs-keyword">let</span> stack = []</span><br><span class="line">    <span class="hljs-keyword">let</span> p = root </span><br><span class="line">    <span class="hljs-keyword">while</span> (p || stack.length &gt; <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span> (p)&#123;</span><br><span class="line">            stack.push(p)</span><br><span class="line">            p = p.left</span><br><span class="line">        &#125;</span><br><span class="line">        p = stack.pop()</span><br><span class="line">        res.push(p.val)</span><br><span class="line">        p = p.right</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a><strong>知识点：</strong></h4><p>树：一种非线性表数据结构。</p>
 <p>树的节点有：根节点、子节点、兄弟节点，把没有子节点的节点叫做叶子节点。</p>
 <p>二叉树：每个节点最多有两个“叉”，分别是左子节点、右子节点。</p>
 <p>存储一颗二叉树：链式存储法：每个节点有三个字段：left 、data 、right</p>
 <p>二叉树遍历：前序遍历、中序遍历、后序遍历，其中前、中、后序表示的是节点与它的左右子树节点遍历打印的先后顺序，遍历的时间复杂度为O(n)。</p>
-<p><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">前：先打印根节点，在打印左子树，最后打印右子树</span><br><span class="line">中：先打印左子树，在打印根节点，最后打印右子树</span><br><span class="line">后：先打印左子树，在打印右子树，最后打印根节点</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">前：先打印根节点，在打印左子树，最后打印右子树</span><br><span class="line">中：先打印左子树，在打印根节点，最后打印右子树</span><br><span class="line">后：先打印左子树，在打印右子树，最后打印根节点</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -276,7 +271,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        5
                     </p>
                 </div>
             </div>
@@ -332,20 +327,12 @@
                 <span class="level-item tag">13</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/年终总结/">
-            <span class="level-start">
-                <span class="level-item">年终总结</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/新技能get/">
             <span class="level-start">
                 <span class="level-item">新技能get</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/每日/">
@@ -366,7 +353,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a> <a href="/tags/新技能get/" style="font-size: 10px;">新技能get</a>
     </div>
 </div>
     
@@ -381,18 +368,18 @@
         
         <article class="media">
             
-            <a href="/passages/20200107/" class="media-left">
+            <a href="/passages/20200302/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/25/16/49/happy-new-year-4718894_960_720.png" alt="2019年终总结">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2020/02/15/15/47/boat-4851275_1280.jpg" alt="iOS内存优化">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-07T08:36:19.840Z">2020-01-07</time></div>
-                    <a href="/passages/20200107/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年终总结</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T06:33:31.727Z">2020-03-02</time></div>
+                    <a href="/passages/20200302/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS内存优化</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/年终总结/">年终总结</a>
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
                     </p>
                 </div>
             </div>
@@ -486,9 +473,9 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2020/01/">
+            <a class="level is-marginless" href="/archives/2020/03/">
                 <span class="level-start">
-                    <span class="level-item">January 2020</span>
+                    <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -665,8 +652,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/年终总结/">
-                        <span class="tag">年终总结</span>
+                    <a class="tags has-addons" href="/tags/新技能get/">
+                        <span class="tag">新技能get</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -695,18 +682,18 @@
         
         <article class="media">
             
-            <a href="/passages/20200107/" class="media-left">
+            <a href="/passages/20200302/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/25/16/49/happy-new-year-4718894_960_720.png" alt="2019年终总结">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2020/02/15/15/47/boat-4851275_1280.jpg" alt="iOS内存优化">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-07T08:36:19.840Z">2020-01-07</time></div>
-                    <a href="/passages/20200107/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年终总结</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T06:33:31.727Z">2020-03-02</time></div>
+                    <a href="/passages/20200302/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS内存优化</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/年终总结/">年终总结</a>
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
                     </p>
                 </div>
             </div>
@@ -800,9 +787,9 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2020/01/">
+            <a class="level is-marginless" href="/archives/2020/03/">
                 <span class="level-start">
-                    <span class="level-item">January 2020</span>
+                    <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -979,8 +966,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/年终总结/">
-                        <span class="tag">年终总结</span>
+                    <a class="tags has-addons" href="/tags/新技能get/">
+                        <span class="tag">新技能get</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

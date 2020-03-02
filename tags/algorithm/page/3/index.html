@@ -163,14 +163,10 @@
             
         </h1>
         <div class="content">
-            <h4><strong>旋转数组：</strong></h4>
-<p>给定一个数组，将数组中的元素向右移动 <em>k</em> 个位置，其中 <em>k</em> 是非负数。</p>
-<h5><strong>解法01：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//暴力求解</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n^k)</span></span><br><span class="line"><span class="hljs-keyword">var</span> rotate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;</span><br><span class="line"> <span class="hljs-keyword">let</span> temp,previous</span><br><span class="line"> <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; k; i++)&#123;</span><br><span class="line">     previous = nums[nums.length - <span class="hljs-number">1</span>]</span><br><span class="line">     <span class="hljs-keyword">for</span>(j = <span class="hljs-number">0</span>; j &lt;nums.length; j ++)&#123;</span><br><span class="line">       temp = nums[j]</span><br><span class="line">       nums[j] = previous</span><br><span class="line">       previous = temp</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h5><strong>解法02：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//该解法需要了解数组的两个方法：</span></span><br><span class="line"><span class="hljs-comment">//pop()删除并返回的数组的最后一个元素</span></span><br><span class="line"><span class="hljs-comment">//unshift()向数组的开头添加一个或者多个元素，并返回新的长度</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n)</span></span><br><span class="line"><span class="hljs-keyword">var</span> rotate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;</span><br><span class="line">   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        nums.unshift(nums.pop())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h5><strong>解法03：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</span></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">  arrayObject.splice(index,howmany,item1,.....,itemX)</span></span><br><span class="line"><span class="hljs-comment">  index 必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</span></span><br><span class="line"><span class="hljs-comment">  howmany 必需。要删除的项目数量。如果设置为 0，则不会删除项目</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-keyword">var</span> rotate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;</span><br><span class="line">   k %= nums.length</span><br><span class="line">   nums.unshift(...nums.splice(-k, k));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+            <h4 id="旋转数组："><a href="#旋转数组：" class="headerlink" title="旋转数组："></a><strong>旋转数组：</strong></h4><p>给定一个数组，将数组中的元素向右移动 <em>k</em> 个位置，其中 <em>k</em> 是非负数。</p>
+<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//暴力求解</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n^k)</span></span><br><span class="line"><span class="hljs-keyword">var</span> rotate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;</span><br><span class="line"> <span class="hljs-keyword">let</span> temp,previous</span><br><span class="line"> <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; k; i++)&#123;</span><br><span class="line">     previous = nums[nums.length - <span class="hljs-number">1</span>]</span><br><span class="line">     <span class="hljs-keyword">for</span>(j = <span class="hljs-number">0</span>; j &lt;nums.length; j ++)&#123;</span><br><span class="line">       temp = nums[j]</span><br><span class="line">       nums[j] = previous</span><br><span class="line">       previous = temp</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//该解法需要了解数组的两个方法：</span></span><br><span class="line"><span class="hljs-comment">//pop()删除并返回的数组的最后一个元素</span></span><br><span class="line"><span class="hljs-comment">//unshift()向数组的开头添加一个或者多个元素，并返回新的长度</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n)</span></span><br><span class="line"><span class="hljs-keyword">var</span> rotate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;</span><br><span class="line">   <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">        nums.unshift(nums.pop())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法03："><a href="#解法03：" class="headerlink" title="解法03："></a><strong>解法03：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</span></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">  arrayObject.splice(index,howmany,item1,.....,itemX)</span></span><br><span class="line"><span class="hljs-comment">  index 必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</span></span><br><span class="line"><span class="hljs-comment">  howmany 必需。要删除的项目数量。如果设置为 0，则不会删除项目</span></span><br><span class="line"><span class="hljs-comment">*/</span></span><br><span class="line"><span class="hljs-keyword">var</span> rotate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, k</span>) </span>&#123;</span><br><span class="line">   k %= nums.length</span><br><span class="line">   nums.unshift(...nums.splice(-k, k));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -223,11 +219,8 @@
             
         </h1>
         <div class="content">
-            <h4><strong>两数之和：</strong></h4>
-<h5><strong>解法01:</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//暴力求解</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n^2)</span></span><br><span class="line"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; nums.length;i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j= i + <span class="hljs-number">1</span>;j &lt;nums.length;j ++)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(nums[i] + nums[j] === target)&#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> [i,j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h5><strong>解法02：</strong></h5>
-<p><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 时间复杂度O(n)</span></span><br><span class="line"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt;nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> next = target- nums[i]</span><br><span class="line">        <span class="hljs-keyword">if</span>(map.has(next))&#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> [map.get(next),i]</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            map.set(nums[i],i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+            <h4 id="两数之和："><a href="#两数之和：" class="headerlink" title="两数之和："></a><strong>两数之和：</strong></h4><h5 id="解法01"><a href="#解法01" class="headerlink" title="解法01:"></a><strong>解法01:</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//暴力求解</span></span><br><span class="line"><span class="hljs-comment">//时间复杂度O(n^2)</span></span><br><span class="line"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt; nums.length;i ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j= i + <span class="hljs-number">1</span>;j &lt;nums.length;j ++)&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(nums[i] + nums[j] === target)&#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> [i,j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="解法02："><a href="#解法02：" class="headerlink" title="解法02："></a><strong>解法02：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 时间复杂度O(n)</span></span><br><span class="line"><span class="hljs-keyword">var</span> twoSum = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">let</span> map = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>()</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i &lt;nums.length; i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">let</span> next = target- nums[i]</span><br><span class="line">        <span class="hljs-keyword">if</span>(map.has(next))&#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> [map.get(next),i]</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            map.set(nums[i],i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -319,7 +312,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        5
                     </p>
                 </div>
             </div>
@@ -375,20 +368,12 @@
                 <span class="level-item tag">13</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/年终总结/">
-            <span class="level-start">
-                <span class="level-item">年终总结</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
         <a class="level is-marginless" href="/categories/新技能get/">
             <span class="level-start">
                 <span class="level-item">新技能get</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/每日/">
@@ -409,7 +394,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a> <a href="/tags/年终总结/" style="font-size: 10px;">年终总结</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a> <a href="/tags/新技能get/" style="font-size: 10px;">新技能get</a>
     </div>
 </div>
     
@@ -424,18 +409,18 @@
         
         <article class="media">
             
-            <a href="/passages/20200107/" class="media-left">
+            <a href="/passages/20200302/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/25/16/49/happy-new-year-4718894_960_720.png" alt="2019年终总结">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2020/02/15/15/47/boat-4851275_1280.jpg" alt="iOS内存优化">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-07T08:36:19.840Z">2020-01-07</time></div>
-                    <a href="/passages/20200107/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年终总结</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T06:33:31.727Z">2020-03-02</time></div>
+                    <a href="/passages/20200302/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS内存优化</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/年终总结/">年终总结</a>
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
                     </p>
                 </div>
             </div>
@@ -529,9 +514,9 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2020/01/">
+            <a class="level is-marginless" href="/archives/2020/03/">
                 <span class="level-start">
-                    <span class="level-item">January 2020</span>
+                    <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -708,8 +693,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/年终总结/">
-                        <span class="tag">年终总结</span>
+                    <a class="tags has-addons" href="/tags/新技能get/">
+                        <span class="tag">新技能get</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -738,18 +723,18 @@
         
         <article class="media">
             
-            <a href="/passages/20200107/" class="media-left">
+            <a href="/passages/20200302/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/25/16/49/happy-new-year-4718894_960_720.png" alt="2019年终总结">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2020/02/15/15/47/boat-4851275_1280.jpg" alt="iOS内存优化">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-07T08:36:19.840Z">2020-01-07</time></div>
-                    <a href="/passages/20200107/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019年终总结</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T06:33:31.727Z">2020-03-02</time></div>
+                    <a href="/passages/20200302/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS内存优化</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/年终总结/">年终总结</a>
+                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
                     </p>
                 </div>
             </div>
@@ -843,9 +828,9 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2020/01/">
+            <a class="level is-marginless" href="/archives/2020/03/">
                 <span class="level-start">
-                    <span class="level-item">January 2020</span>
+                    <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1022,8 +1007,8 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/年终总结/">
-                        <span class="tag">年终总结</span>
+                    <a class="tags has-addons" href="/tags/新技能get/">
+                        <span class="tag">新技能get</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
