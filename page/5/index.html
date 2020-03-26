@@ -121,61 +121,6 @@
 <div class="card">
     
     <div class="card-image">
-        <a href="/passages/20191213-algorithm-05/" class="image is-7by1">
-            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2016/10/31/14/55/rottweiler-1785760_960_720.jpg" alt="20191213-algorithm-05">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-12-13T08:41:43.558Z">2019-12-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute 读完 (大约 174 个字)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/passages/20191213-algorithm-05/">20191213-algorithm-05</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="删除排序数组中的重复项"><a href="#删除排序数组中的重复项" class="headerlink" title="删除排序数组中的重复项"></a><strong>删除排序数组中的重复项</strong></h4><h5 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a><strong>题目描述</strong>：</h5><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
-<h5 id="解法01："><a href="#解法01：" class="headerlink" title="解法01："></a><strong>解法01：</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//依次比较相邻两个元素的大小</span></span><br><span class="line"><span class="hljs-comment">//相同不做处理</span></span><br><span class="line"><span class="hljs-comment">//不相同长度加1，同时将后一个元素赋值给前一个元素</span></span><br><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">1</span>; j &lt;nums.length; j ++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (nums[i] != nums[j])&#123;</span><br><span class="line">            i ++</span><br><span class="line">            nums[i] = nums[j]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h5 id="解法02"><a href="#解法02" class="headerlink" title="解法02"></a><strong>解法02</strong></h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> removeDuplicates = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span></span><br><span class="line">  nums.forEach(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span> (item !== nums[i])&#123;</span><br><span class="line">          nums[++i] = item</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-        </div>
-        
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
         <a href="/passages/20191212-algorithm-04/" class="image is-7by1">
             <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/06/17/44/japanese-4677848_960_720.jpg" alt="20191212-algorithm-04">
         </a>
@@ -420,6 +365,63 @@
 
 
 
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/passages/20191208/" class="image is-7by1">
+            <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/05/21/07/snowman-4676142_1280.jpg" alt="第11周weekly">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-12-08T15:03:53.388Z">2019-12-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/weekly/">weekly</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds 读完 (大约 110 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/passages/20191208/">第11周weekly</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h4><p>本周找时间敲了一遍菜鸟教程的Node.js的代码，对于Node.js有了初步的了解。</p>
+<p>在连接数据库的时候出现了问题：Client does not support authentication protocol requested by server</p>
+<p>处理方法如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1、alter user &apos;root&apos;@&apos;localhost&apos; identified with mysql_native_password by &apos;********&apos;;</span><br></pre></td></tr></table></figure>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p><strong>下周开始一个新的任务，每天打卡至少一道算法题目，先坚持一个月的。</strong></p>
+
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
 
     
 <div class="card card-transparent">
@@ -444,7 +446,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/10/">10</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/9/">9</a></li>
             
         </ul>
     </nav>
@@ -493,7 +495,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        46
+                        45
                     </p>
                 </div>
             </div>
@@ -513,7 +515,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        8
                     </p>
                 </div>
             </div>
@@ -564,7 +566,7 @@
                 <span class="level-item">新技能get</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/每日/">
@@ -585,7 +587,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a> <a href="/tags/新技能get/" style="font-size: 10px;">新技能get</a>
+        <a href="/tags/K线/" style="font-size: 10px;">K线</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/OneClick/" style="font-size: 10px;">OneClick</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/React-Native/" style="font-size: 13.33px;">React Native</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/weekly/" style="font-size: 16.67px;">weekly</a>
     </div>
 </div>
     
@@ -597,25 +599,6 @@
         <h3 class="menu-label">
             最新文章
         </h3>
-        
-        <article class="media">
-            
-            <a href="/passages/20200302/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2020/02/15/15/47/boat-4851275_1280.jpg" alt="iOS内存优化">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T06:33:31.727Z">2020-03-02</time></div>
-                    <a href="/passages/20200302/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS内存优化</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
-                    </p>
-                </div>
-            </div>
-        </article>
         
         <article class="media">
             
@@ -693,6 +676,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/passages/20191226-algorithm-18/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T08:47:28.820Z">2019-12-26</time></div>
+                    <a href="/passages/20191226-algorithm-18/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191226-algorithm-18</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
         
@@ -703,17 +705,6 @@
             归档
         </h3>
         <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/03/">
-                <span class="level-start">
-                    <span class="level-item">March 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -880,13 +871,6 @@
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
                         <span class="tag is-grey">13</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/新技能get/">
-                        <span class="tag">新技能get</span>
-                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -914,25 +898,6 @@
         
         <article class="media">
             
-            <a href="/passages/20200302/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2020/02/15/15/47/boat-4851275_1280.jpg" alt="iOS内存优化">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-02T06:33:31.727Z">2020-03-02</time></div>
-                    <a href="/passages/20200302/" class="title has-link-black-ter is-size-6 has-text-weight-normal">iOS内存优化</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/新技能get/">新技能get</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/passages/20191231-algorithm-22/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/29/12/56/new-years-eve-4727013_960_720.jpg" alt="20191231-algorithm-22">
@@ -1007,6 +972,25 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/passages/20191226-algorithm-18/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://cdn.pixabay.com/photo/2019/12/14/09/22/landscape-4694558_1280.jpg" alt="20191226-algorithm-18">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-26T08:47:28.820Z">2019-12-26</time></div>
+                    <a href="/passages/20191226-algorithm-18/" class="title has-link-black-ter is-size-6 has-text-weight-normal">20191226-algorithm-18</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/algorithm/">algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
     
@@ -1017,17 +1001,6 @@
             归档
         </h3>
         <ul class="menu-list">
-        
-        <li>
-            <a class="level is-marginless" href="/archives/2020/03/">
-                <span class="level-start">
-                    <span class="level-item">March 2020</span>
-                </span>
-                <span class="level-end">
-                    <span class="level-item tag">1</span>
-                </span>
-            </a>
-        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/12/">
@@ -1194,13 +1167,6 @@
                     <a class="tags has-addons" href="/tags/weekly/">
                         <span class="tag">weekly</span>
                         <span class="tag is-grey">13</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/新技能get/">
-                        <span class="tag">新技能get</span>
-                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
